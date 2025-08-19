@@ -1,0 +1,614 @@
+/* NYC-Specific Styles - Premium Design with Mobile-First Approach */
+
+:root {
+  /* NYC Brand Colors */
+  --nyc-primary: #3AA6A4;
+  --nyc-secondary: #FF6B35;
+  --nyc-accent: #2C3E50;
+  --nyc-cta-bg: #E67E22; /* Warmer accent for NYC */
+  --nyc-text: #2C3E50;
+  --nyc-light: #ECF0F1;
+  --nyc-dark: #1A252F;
+  
+  /* Typography */
+  --nyc-font-primary: 'MuseoModerno', sans-serif;
+  --nyc-font-secondary: 'Nunito', sans-serif;
+  
+  /* Spacing */
+  --nyc-spacing-xs: 0.5rem;
+  --nyc-spacing-sm: 1rem;
+  --nyc-spacing-md: 2rem;
+  --nyc-spacing-lg: 3rem;
+  --nyc-spacing-xl: 4rem;
+  
+  /* Shadows */
+  --nyc-shadow-subtle: 0 2px 8px rgba(0,0,0,0.1);
+  --nyc-shadow-medium: 0 4px 16px rgba(0,0,0,0.15);
+  --nyc-shadow-strong: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+/* Mobile-First Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--nyc-font-secondary);
+  line-height: 1.6;
+  color: var(--nyc-text);
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+/* Skip to Main Link */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--nyc-primary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.skip-to-main:focus {
+  top: 6px;
+}
+
+/* Header Styles */
+.nyc-header {
+  background: linear-gradient(135deg, var(--nyc-dark) 0%, var(--nyc-accent) 100%);
+  color: white;
+  padding: var(--nyc-spacing-sm) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--nyc-shadow-medium);
+}
+
+.nyc-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--nyc-spacing-sm);
+}
+
+.nyc-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nyc-logo {
+  font-family: var(--nyc-font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  margin: 0;
+}
+
+.nyc-phone-info {
+  display: flex;
+  align-items: center;
+  gap: var(--nyc-spacing-sm);
+  font-size: 0.9rem;
+}
+
+.nyc-phone-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nyc-phone-link:hover {
+  color: var(--nyc-cta-bg);
+}
+
+.nyc-hours {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.8rem;
+}
+
+/* Hero Section */
+.nyc-hero {
+  background: linear-gradient(135deg, var(--nyc-primary) 0%, var(--nyc-accent) 100%);
+  color: white;
+  padding: var(--nyc-spacing-xl) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.nyc-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('assets/new-york-hero.jpg') center/cover;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.nyc-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--nyc-spacing-sm);
+}
+
+.nyc-hero h1 {
+  font-family: var(--nyc-font-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--nyc-spacing-md);
+  line-height: 1.2;
+}
+
+.nyc-hero p {
+  font-size: 1.2rem;
+  margin-bottom: var(--nyc-spacing-lg);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.nyc-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--nyc-cta-bg);
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--nyc-shadow-medium);
+}
+
+.nyc-hero-cta:hover {
+  background: #d35400;
+  transform: translateY(-2px);
+  box-shadow: var(--nyc-shadow-strong);
+  color: white;
+  text-decoration: none;
+}
+
+/* Main Content */
+.nyc-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--nyc-spacing-lg) var(--nyc-spacing-sm);
+}
+
+.nyc-section {
+  margin-bottom: var(--nyc-spacing-xl);
+}
+
+.nyc-section h2 {
+  font-family: var(--nyc-font-primary);
+  font-size: 2rem;
+  color: var(--nyc-accent);
+  margin-bottom: var(--nyc-spacing-md);
+  text-align: center;
+}
+
+.nyc-section h3 {
+  font-family: var(--nyc-font-primary);
+  font-size: 1.5rem;
+  color: var(--nyc-accent);
+  margin-bottom: var(--nyc-spacing-sm);
+}
+
+/* Services Grid */
+.nyc-services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--nyc-spacing-md);
+  margin-bottom: var(--nyc-spacing-xl);
+}
+
+.nyc-service-card {
+  background: white;
+  padding: var(--nyc-spacing-md);
+  border-radius: 12px;
+  box-shadow: var(--nyc-shadow-subtle);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nyc-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--nyc-primary), var(--nyc-cta-bg));
+  border-radius: 12px 12px 0 0;
+}
+
+.nyc-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--nyc-shadow-medium);
+}
+
+.nyc-service-card h3 {
+  color: var(--nyc-accent);
+  margin-bottom: var(--nyc-spacing-sm);
+}
+
+.nyc-service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nyc-service-card li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.nyc-service-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--nyc-primary);
+  font-weight: bold;
+}
+
+.nyc-service-card li:last-child {
+  border-bottom: none;
+}
+
+/* Case Studies */
+.nyc-case-studies {
+  background: var(--nyc-light);
+  padding: var(--nyc-spacing-xl) 0;
+  margin: var(--nyc-spacing-xl) 0;
+}
+
+.nyc-case-studies .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--nyc-spacing-sm);
+}
+
+.nyc-case-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--nyc-spacing-md);
+}
+
+.nyc-case-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--nyc-shadow-subtle);
+  transition: all 0.3s ease;
+}
+
+.nyc-case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--nyc-shadow-medium);
+}
+
+.nyc-case-image {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--nyc-primary), var(--nyc-accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  opacity: 0.8;
+}
+
+.nyc-case-content {
+  padding: var(--nyc-spacing-md);
+}
+
+.nyc-case-metric {
+  background: var(--nyc-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: var(--nyc-spacing-sm);
+}
+
+.nyc-case-title {
+  font-family: var(--nyc-font-primary);
+  font-size: 1.3rem;
+  color: var(--nyc-accent);
+  margin-bottom: var(--nyc-spacing-sm);
+}
+
+.nyc-case-description {
+  color: var(--nyc-text);
+  margin-bottom: var(--nyc-spacing-sm);
+  line-height: 1.6;
+}
+
+.nyc-case-link {
+  color: var(--nyc-primary);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nyc-case-link:hover {
+  color: var(--nyc-accent);
+  text-decoration: none;
+}
+
+/* FAQ Section */
+.nyc-faq {
+  background: white;
+  padding: var(--nyc-spacing-xl) 0;
+}
+
+.nyc-faq-item {
+  margin-bottom: var(--nyc-spacing-md);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nyc-faq-question {
+  background: var(--nyc-light);
+  padding: var(--nyc-spacing-md);
+  margin: 0;
+  font-weight: 600;
+  color: var(--nyc-accent);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nyc-faq-question:hover {
+  background: #d5dbdb;
+}
+
+.nyc-faq-answer {
+  padding: var(--nyc-spacing-md);
+  margin: 0;
+  color: var(--nyc-text);
+  line-height: 1.6;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Reviews Section */
+.nyc-reviews {
+  background: var(--nyc-accent);
+  color: white;
+  padding: var(--nyc-spacing-xl) 0;
+  text-align: center;
+}
+
+.nyc-reviews h2 {
+  color: white;
+  margin-bottom: var(--nyc-spacing-lg);
+}
+
+.nyc-review-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--nyc-spacing-md);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.nyc-review-card {
+  background: rgba(255,255,255,0.1);
+  padding: var(--nyc-spacing-md);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.nyc-review-stars {
+  color: #f1c40f;
+  font-size: 1.2rem;
+  margin-bottom: var(--nyc-spacing-sm);
+}
+
+.nyc-review-text {
+  font-style: italic;
+  margin-bottom: var(--nyc-spacing-sm);
+  line-height: 1.6;
+}
+
+.nyc-review-source {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Callback Form */
+.nyc-callback {
+  background: var(--nyc-light);
+  padding: var(--nyc-spacing-xl) 0;
+}
+
+.nyc-callback-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: var(--nyc-spacing-lg);
+  border-radius: 12px;
+  box-shadow: var(--nyc-shadow-medium);
+}
+
+.nyc-form-group {
+  margin-bottom: var(--nyc-spacing-md);
+}
+
+.nyc-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--nyc-accent);
+}
+
+.nyc-form-group input,
+.nyc-form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.nyc-form-group input:focus,
+.nyc-form-group select:focus {
+  outline: none;
+  border-color: var(--nyc-primary);
+}
+
+.nyc-form-submit {
+  background: var(--nyc-cta-bg);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.nyc-form-submit:hover {
+  background: #d35400;
+  transform: translateY(-2px);
+}
+
+/* Sticky CTA */
+.nyc-sticky-cta {
+  position: fixed;
+  bottom: var(--nyc-spacing-md);
+  right: var(--nyc-spacing-md);
+  background: var(--nyc-cta-bg);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: var(--nyc-shadow-strong);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nyc-sticky-cta:hover {
+  background: #d35400;
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+}
+
+/* Footer */
+.nyc-footer {
+  background: var(--nyc-dark);
+  color: white;
+  padding: var(--nyc-spacing-xl) 0;
+  text-align: center;
+}
+
+.nyc-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--nyc-spacing-sm);
+}
+
+.nyc-footer p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .nyc-hero h1 {
+    font-size: 3.5rem;
+  }
+  
+  .nyc-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .nyc-case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .nyc-review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nyc-services {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .nyc-case-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .nyc-review-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .nyc-hero h1 {
+    font-size: 4rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles */
+.nyc-hero-cta:focus,
+.nyc-sticky-cta:focus,
+.nyc-form-submit:focus {
+  outline: 3px solid var(--nyc-primary);
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.nyc-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Print styles */
+@media print {
+  .nyc-sticky-cta,
+  .nyc-callback {
+    display: none;
+  }
+}

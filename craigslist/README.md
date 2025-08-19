@@ -2,6 +2,27 @@
 
 This directory contains the Craigslist landing page hub and city-specific service pages for Sigma Soft AI.
 
+## 🚀 NEW: City-First Structure Implementation
+
+**Status**: Hub archived, redirecting to NYC as primary city page
+
+### Recent Changes (Feature Branch: `feature/city-first-nyc`)
+- ✅ Hub page moved to `/craigslist/legacy/hub-index.html`
+- ✅ Redirect implemented at `/craigslist/index.html` → `/craigslist/new-york/`
+- ✅ New NYC landing page created with premium design
+- ✅ NYC-specific CSS with mobile-first approach
+- ✅ SEO-optimized content with structured data
+- ✅ Phone-first UX with callback forms
+- ✅ Case studies integration with metrics
+- ✅ Local business schema and FAQ markup
+
+### NYC Implementation Details
+- **Design**: Clean, minimal layout with premium accents
+- **Mobile-First**: Optimized for NYC's mobile-heavy users
+- **SEO**: Local keywords, neighborhood mentions, GMB-ready markup
+- **Performance**: Target ≤4s Time to Interactive on 3G
+- **Accessibility**: WCAG AA compliant with skip links
+
 ## Configuration
 
 ### config.js
@@ -36,231 +57,172 @@ const CONFIG = {
 3. **Phone Number**: Update `phone` with actual US business phone number
 4. **GA4 ID**: Add Google Analytics 4 tracking ID if desired
 
-## How to Enable Header Navigation Link
+## NYC Assets & Images
 
-To add a header navigation link to the main site:
+### Required Image Replacements
+- **new-york-hero.jpg**: Manhattan skyline or NYC business district
+- **nyc-street-1.jpg**: NYC storefront or business interior  
+- **nyc-business-1.jpg**: NYC professional office or clinic
 
-1. Set `CONFIG.addHeaderNavLink = true` in `config.js`
-2. Add the following link to the main navigation in all HTML files:
-   ```html
-   <a href="craigslist/" class="nav-item nav-link">Fast Websites</a>
-   ```
+### Unsplash Search Queries for NYC Images
+```
+manhattan storefront
+soho cafe interior
+brooklyn small business
+new york office building
+manhattan medical clinic
+nyc restaurant interior
+queens business district
+bronx local business
+staten island commercial
+new york professional services
+manhattan tech startup
+brooklyn creative agency
+```
+
+### Video Testimonials Needed
+- **smile-enhancer-testimonial.mp4** - Dental clinic testimonial
+- **rcm-automation-testimonial.mp4** - Medical billing testimonial
+- **ai-coach-testimonial.mp4** - Business coaching testimonial
 
 ## URL Structure
 
-The Craigslist hub uses clean URLs without file extensions:
-- Main hub: `/craigslist/` (instead of `/craigslist/index.html`)
-- City pages: `/craigslist/new-york-websites.html`, `/craigslist/los-angeles-ai-chatbot.html`, etc.
+### New City-First Structure
+- **NYC Home**: `/craigslist/new-york/` (main landing page)
+- **NYC Web Dev**: `/craigslist/new-york/web-development/` (service page)
+- **Hub Redirect**: `/craigslist/` → `/craigslist/new-york/` (automatic redirect)
 
-### Clean URL Implementation
-All internal links use clean URLs:
-- Links to main site: `../` (instead of `../index.html`)
-- Links to hub: `./` (instead of `index.html`)
-- Links between city pages: direct filenames (e.g., `new-york-websites.html`)
+### Legacy Structure (Archived)
+- Hub page moved to `/craigslist/legacy/hub-index.html`
+- Old city pages remain in `/craigslist/legacy/` for reference
 
-This provides a cleaner, more professional URL structure that's better for SEO and user experience.
+## NYC Page Features
 
-## Creating New City Pages
+### SEO Content
+- **Title**: "New York Web Development | SigmasoftAI — Fast 7-day Websites & Local SEO"
+- **Meta**: Optimized for NYC local search keywords
+- **Schema**: LocalBusiness + FAQ structured data
+- **Neighborhoods**: Manhattan, Brooklyn, Queens, Bronx, Staten Island mentions
 
-To create a new city page:
+### Phone-First UX
+- **Header Phone**: "Call SigmasoftAI — Head Office (New York): +1-212-555-0123"
+- **Support Hours**: "Mon–Fri 9am–6pm EST"
+- **Sticky CTA**: Fixed call button on all pages
+- **Callback Form**: "Request a callback (within 30–60 minutes)"
 
-1. Copy `templates/service-template.html`
-2. Replace all instances of `{{CITY}}`, `{{SERVICE}}`, and `{{FILENAME}}` with actual values
-3. Update meta tags, titles, and content for the specific city/service
-4. Add the new page to the hub's service cards in `index.html`
+### Case Studies
+- **Smile Enhancer**: +45% calls in 30 days
+- **RCM Automation**: 80% reduction in processing time
+- **AI Coach**: 300% increase in engagement
 
-Example:
-```bash
-cp templates/service-template.html austin-restaurants.html
-# Then edit the file to replace placeholders
-```
-
-## SEO and Indexing
-
-### To prevent indexing of the entire /craigslist folder:
-1. Set `CONFIG.noindex = true` in `config.js`
-2. Add `<meta name="robots" content="noindex">` to all pages in the folder
-
-### To allow indexing:
-- Keep `CONFIG.noindex = false` (default)
-- Ensure all pages have proper meta tags and structured data
+### Trust Signals
+- **Reviews**: 4 Google review placeholders with NYC business names
+- **Metrics**: Specific numbers and outcomes
+- **Local Focus**: NYC-specific content and neighborhood targeting
 
 ## File Structure
 
 ```
 craigslist/
-├── index.html                 # Main hub page
-├── config.js                  # Configuration file
-├── craigslist.css            # Custom styles
-├── README.md                 # This file
-├── _components/              # Reusable components (future use)
-├── assets/craigslist/        # Images and assets
-├── templates/
-│   └── service-template.html # Template for city pages
-├── new-york-websites.html    # NYC business websites
-├── los-angeles-ai-chatbot.html # LA AI chatbot solutions
-├── chicago-websites.html     # Chicago business websites
-├── houston-clinic-websites.html # Houston clinic websites
-├── phoenix-smallbiz.html     # Phoenix small business sites
-└── philadelphia-marketing.html # Philadelphia marketing sites
-```
-
-## Phase 0 Audit Report Summary
-
-### ✅ PASSED ITEMS:
-- HTML titles and meta descriptions present
-- Language attributes correct
-- Phone number in header
-- Brand color scheme consistency
-
-## Phone-First Implementation
-
-### Features Implemented:
-- **Sticky Call Button**: Fixed position call button on desktop
-- **Mobile Call Bar**: Full-width call bar on mobile devices
-- **Header Phone CTA**: Prominent phone number in header
-- **Call Hours Display**: Shows business hours in header
-- **Callback Form**: Alternative to direct calling
-- **Click Tracking**: All phone clicks are logged and tracked
-
-### Configuration:
-- Phone-first settings in `config.js`
-- City-specific labels for phone support
-- SMS option toggle
-- Call hours and timezone display
-
-## Case Studies System
-
-### Modular Case Studies:
-- 7 comprehensive case studies in `case-studies/case-studies.js`
-- Tagged by industry and service type
-- Automatically matched to city pages
-- Includes problem/solution/outcome structure
-
-### Case Study Tags:
-- healthcare, dental, automation, ai, coaching, productivity, tourism, erp
-- Automatically filtered by city and service relevance
-
-## Local Images
-
-### Image Structure:
-```
-assets/local-images/
+├── index.html                    # Redirect to NYC
+├── config.js                     # Configuration file
+├── craigslist.css               # Legacy styles
+├── README.md                    # This file
+├── legacy/
+│   ├── hub-index.html           # Archived hub page
+│   └── [old city pages]         # Archived city pages
 ├── new-york/
-├── los-angeles/
-├── chicago/
-├── houston/
-├── phoenix/
-└── philadelphia/
+│   ├── index.html               # NYC main landing page
+│   ├── new-york.css             # NYC-specific styles
+│   ├── web-development/
+│   │   └── index.html           # NYC web development service
+│   └── assets/
+│       └── README.md            # NYC assets guide
+├── case-studies/                # Case study pages
+├── assets/local-images/         # Local business images
+└── templates/                   # Page templates
 ```
 
-### Recommended Unsplash Queries:
-- **NYC**: `new york street storefront`, `manhattan small business storefront`, `nyc local business`
-- **LA**: `los angeles restaurant interior`, `la creative studio`, `la small business storefront`
-- **Chicago**: `chicago contractor`, `chicago small business`, `chicago storefront`
-- **Phoenix**: `phoenix contractor`, `home services`, `phoenix small business`
-- **Houston**: `houston clinic`, `texas doctor office`, `houston small business`
-- **Philadelphia**: `philadelphia clinic`, `philly small business`
+## NYC Design Principles
 
-## City-Specific Content
+### Aesthetic
+- Clean, minimal layout with generous white space
+- Refined typography with MuseoModerno + Nunito fonts
+- Subtle luxury accents (thin metallic borders, dark-mode overlays)
+- NYC brand colors with warmer CTA accent (`--nyc-cta-bg: #E67E22`)
 
-### New York:
-- Local SEO focus with GMB optimization
-- Conversion copy for competitive NYC market
-- Mobile-first design for NYC's mobile-heavy users
+### Mobile & Performance
+- Mobile-first CSS with responsive breakpoints
+- Target ≤4s Time to Interactive on 3G
+- Optimized images with `srcset` and lazy loading
+- Inline critical CSS for hero to avoid FOUC
 
-### Los Angeles:
-- AI chatbot solutions for restaurants/creative businesses
-- Visual portfolios and social media integration
-- Influencer package options
+### Interaction
+- Subtle micro-animations with `prefers-reduced-motion` support
+- IntersectionObserver for entrance effects
+- Smooth transitions and hover states
 
-### Chicago:
-- Contractor and service business focus
-- "Near me" local SEO optimization
-- Service industry specific features
+## How to Update CONFIG Values
 
-### Houston:
-- Healthcare/clinic website packages
-- HIPAA compliant features
-- Appointment flow optimization
+### Phone/Calendar/Intake Updates
+1. Edit `craigslist/config.js`
+2. Update the relevant values:
+   ```javascript
+   phone: "+1-212-555-0123", // Replace with actual number
+   calendar_link: "https://calendly.com/your-link", // Replace with actual Calendly
+   intake_form: "https://forms.gle/your-form", // Replace with actual Google Form
+   ```
+3. All pages automatically use these values
 
-### Phoenix:
-- Home services landing pages
-- Lead generation focus
-- Local contractor optimization
+### Adding New Cities
+1. Create new city directory: `/craigslist/[city-name]/`
+2. Copy NYC structure and adapt content
+3. Update navigation and sitemap
+4. Add city-specific assets and images
 
-### Philadelphia:
-- Healthcare & professional services
-- Marketing and paid search integration
-- Patient acquisition focus
+## SEO Content Blocks (Copy/Paste)
 
-## Pricing Plans
+### NYC Meta Tags
+```html
+<title>New York Web Development | SigmasoftAI — Fast 7-day Websites & Local SEO</title>
+<meta name="description" content="SigmasoftAI builds high-converting websites & local SEO for New York small businesses. 7-day launches, AI chatbots, & conversion-first design. Call +1-212-555-0123.">
+```
 
-### Three-Tier Structure:
-1. **Standard** ($2,250) - 5 pages, basic SEO, 7 days
-2. **Growth** ($3,800) - 8 pages, GMB optimization, 10 days
-3. **Premium** ($6,500) - 12 pages, ads setup, 14 days
+### NYC Hero H1
+```html
+<h1>New York Web Development & Local Growth — Fast, Reliable, Results-driven</h1>
+```
 
-### Features Included:
-- Mobile responsive design
-- Contact forms
-- SEO optimization
-- Hosting setup
-- SSL certificates
-- Support periods
+### NYC Intro Paragraph
+```html
+<p>SigmasoftAI is a New York–headquartered web development and digital marketing team helping NYC small businesses grow. We design fast, mobile-first websites optimized for local search (New York web development, NYC web design, local SEO New York). From 7-day 5-page launches to AI chatbots and RCM automation, we deliver measurable results for clinics, retailers, and professional services.</p>
+```
 
-## Animation & UX
+### NYC Neighborhoods (Local SEO)
+```html
+<p>Serving businesses throughout Manhattan, Brooklyn, Queens, the Bronx, and Staten Island — we localize content for neighborhood keywords (SoHo, Williamsburg, Upper East Side, Park Slope).</p>
+```
 
-### Implemented Features:
-- CSS entrance animations with `fadeInUp`
-- Hover effects on cards and buttons
-- Reduced motion support for accessibility
-- Smooth transitions and micro-interactions
-- Gradient text effects
-- Enhanced shadows and depth
+## Performance & QA
 
-### Performance Optimizations:
-- Lazy loading for images
-- Optimized CSS animations
-- Mobile-first responsive design
-- Accessibility compliance (WCAG AA)
+### Mobile Testing
+- Test at 375px/768px/1024px breakpoints
+- Verify no overflow, readable text, CTAs visible
+- Check sticky call button functionality
 
-## TODO Items Requiring Owner Input
+### Accessibility
+- Skip-to-main link at top
+- All images have alt text
+- Respects `prefers-reduced-motion`
+- WCAG AA color contrast compliance
 
-1. **Calendar Link**: Replace `calendar_link` with actual Calendly or booking system URL
-2. **Intake Form**: Replace `intake_form` with actual Google Forms or form system URL
-3. **Phone Number**: Update `phone` with actual US business phone number
-4. **GA4 ID**: Add Google Analytics 4 tracking ID if desired
-5. **Local Images**: Replace placeholder images with actual local business photos
-6. **Case Study Images**: Add before/after images for case studies (especially Smile Enhancer)
-7. **Client Permissions**: Obtain permission to use real client names/images in case studies
-- Mobile responsiveness
-- Contact form functionality
-- SEO blockers (no issues found)
-
-### ❌ FIXED ITEMS:
-- **Image Alt Attributes**: Added descriptive alt text to all images
-- **Image Optimization**: Added lazy loading to all images
-- **Form Labels**: Improved form accessibility with proper labels
-- **Footer CTA**: Added unobtrusive footer CTA to all main pages
-
-### ⚠️ ITEMS REQUIRING OWNER INPUT:
-1. **Calendar Link**: No calendar booking system found - needs Calendly or similar
-2. **Intake Form**: No dedicated intake form found - needs Google Forms or similar
-3. **GA4 ID**: No Google Analytics found - optional but recommended
-
-### 📊 LIGHTHOUSE PERFORMANCE:
-- Performance: 0.18 (Poor) - Image optimization needed
-- Accessibility: 0.50 (Needs Improvement) - Fixed alt attributes
-- Best Practices: 0.62 (Needs Improvement) - Fixed form labels
-- SEO: 0.39 (Needs Improvement) - Fixed meta tags
-
-## Performance Recommendations
-
-1. **Image Optimization**: Consider compressing large images further
-2. **Lazy Loading**: Already implemented
-3. **Caching**: Implement browser caching for static assets
-4. **CDN**: Consider using a CDN for faster loading
+### SEO Checklist
+- ✅ Canonical URLs set
+- ✅ Open Graph and Twitter Card tags
+- ✅ JSON-LD LocalBusiness schema
+- ✅ FAQ schema markup
+- ✅ Local keywords naturally integrated
+- ✅ Neighborhood mentions for local SEO
 
 ## Maintenance
 
@@ -268,7 +230,15 @@ assets/local-images/
 - Monitor form submissions and analytics
 - Regularly update case studies and testimonials
 - Keep pricing and service details current
+- Replace placeholder images with real NYC business photos
+- Obtain client consent for real testimonials
 
 ## Support
 
-For technical issues or questions about the Craigslist hub, contact the development team. 
+For technical issues or questions about the Craigslist hub, contact the development team.
+
+---
+
+**Last Updated**: January 2025  
+**Branch**: `feature/city-first-nyc`  
+**Status**: NYC implementation complete, ready for image replacements and real testimonials 
