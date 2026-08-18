@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Manager - Sigma Soft AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .testimonial-preview {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            background: #f8f9fa;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .service-tag {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin: 2px;
+            font-size: 12px;
+        }
+        .service-tag .remove {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Testimonial Manager</h1>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Add New Testimonial</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="testimonialForm">
+                            <div class="form-group">
+                                <label>Name:</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Title/Company:</label>
+                                <input type="text" class="form-control" id="title" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Quote:</label>
+                                <textarea class="form-control" id="quote" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Avatar Image Path:</label>
+                                <input type="text" class="form-control" id="avatar" placeholder="assets/images/client-name.jpg">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Rating (1-5):</label>
+                                <select class="form-control" id="rating">
+                                    <option value="5">5 Stars</option>
+                                    <option value="4">4 Stars</option>
+                                    <option value="3">3 Stars</option>
+                                    <option value="2">2 Stars</option>
+                                    <option value="1">1 Star</option>
+                                </select>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Stat Number:</label>
+                                        <input type="text" class="form-control" id="statNumber" placeholder="300%">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Stat Label:</label>
+                                        <input type="text" class="form-control" id="statLabel" placeholder="Growth">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Stat Type:</label>
+                                <select class="form-control" id="statType">
+                                    <option value="success">Success (Green)</option>
+                                    <option value="info">Info (Blue)</option>
+                                    <option value="warning">Warning (Orange)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Services (comma-separated):</label>
+                                <input type="text" class="form-control" id="services" placeholder="Website, SEO, AI Chatbot">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Location:</label>
+                                <select class="form-control" id="location">
+                                    <option value="Manhattan">Manhattan</option>
+                                    <option value="Brooklyn">Brooklyn</option>
+                                    <option value="Queens">Queens</option>
+                                    <option value="Bronx">Bronx</option>
+                                    <option value="Staten Island">Staten Island</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Generate JSON</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Preview & JSON Output</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="preview" class="testimonial-preview">
+                            <p class="text-muted">Fill out the form to see a preview...</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>JSON Output:</label>
+                            <textarea class="form-control" id="jsonOutput" rows="10" readonly></textarea>
+                        </div>
+                        
+                        <button class="btn btn-success" onclick="copyToClipboard()">
+                            <i class="fa fa-copy"></i> Copy JSON
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Instructions</h5>
+                    </div>
+                    <div class="card-body">
+                        <ol>
+                            <li>Fill out the form on the left with the testimonial details</li>
+                            <li>Review the preview and JSON output on the right</li>
+                            <li>Copy the JSON and add it to your <code>assets/data/testimonials.json</code> file</li>
+                            <li>Make sure to add a comma after the previous testimonial and before the new one</li>
+                            <li>For images, upload them to <code>assets/images/</code> and reference them in the avatar field</li>
+                        </ol>
+                        
+                        <h6>JSON Structure:</h6>
+                        <pre><code>{
+  "id": 9,
+  "name": "Client Name",
+  "title": "Company Name",
+  "quote": "Testimonial quote...",
+  "avatar": "assets/images/client-image.jpg",
+  "rating": 5,
+  "statNumber": "300%",
+  "statLabel": "Growth",
+  "statType": "success",
+  "services": ["Service 1", "Service 2"],
+  "location": "Manhattan"
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('testimonialForm').addEventListener('input', updatePreview);
+        document.getElementById('testimonialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            updatePreview();
+        });
+
+        function updatePreview() {
+            const name = document.getElementById('name').value;
+            const title = document.getElementById('title').value;
+            const quote = document.getElementById('quote').value;
+            const rating = document.getElementById('rating').value;
+            const services = document.getElementById('services').value.split(',').map(s => s.trim()).filter(s => s);
+            
+            // Update preview
+            const preview = document.getElementById('preview');
+            if (name && title && quote) {
+                const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+                const serviceTags = services.map(service => 
+                    `<span class="service-tag">${service}</span>`
+                ).join('');
+                
+                preview.innerHTML = `
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="me-3">
+                            <img src="${document.getElementById('avatar').value || 'assets/images/default-avatar.jpg'}" 
+                                 alt="${name}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h6 class="mb-1">${name}</h6>
+                            <p class="text-muted mb-1">${title}</p>
+                            <div class="text-warning">${stars}</div>
+                        </div>
+                    </div>
+                    <blockquote class="mb-3">
+                        <p>"${quote}"</p>
+                    </blockquote>
+                    <div>${serviceTags}</div>
+                `;
+            }
+            
+            // Generate JSON
+            const testimonial = {
+                id: Date.now(), // Generate unique ID
+                name: name,
+                title: title,
+                quote: quote,
+                avatar: document.getElementById('avatar').value || 'assets/images/default-avatar.jpg',
+                rating: parseInt(rating),
+                statNumber: document.getElementById('statNumber').value,
+                statLabel: document.getElementById('statLabel').value,
+                statType: document.getElementById('statType').value,
+                services: services,
+                location: document.getElementById('location').value
+            };
+            
+            document.getElementById('jsonOutput').value = JSON.stringify(testimonial, null, 2);
+        }
+
+        function copyToClipboard() {
+            const jsonOutput = document.getElementById('jsonOutput');
+            jsonOutput.select();
+            document.execCommand('copy');
+            
+            // Show feedback
+            const button = event.target;
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fa fa-check"></i> Copied!';
+            setTimeout(() => {
+                button.innerHTML = originalText;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

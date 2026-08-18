@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8A65 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .test-box {
+            background: #3AA6A4;
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minimal Test Page</h1>
+    
+    <div class="test-box">
+        <h2>Test 1: Basic Styling</h2>
+        <p>This box should be teal colored.</p>
+    </div>
+    
+    <div class="test-box">
+        <h2>Test 2: Gradient Text</h2>
+        <span class="gradient-text">This should be gradient text</span>
+    </div>
+    
+    <div class="test-box">
+        <h2>Test 3: Inline Styles</h2>
+        <span style="background: linear-gradient(135deg, #FF6B35 0%, #FF8A65 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; font-size: 2rem; font-weight: bold;">This should also be gradient text</span>
+    </div>
+    
+    <script>
+        console.log('Minimal test page loaded successfully');
+        alert('If you see this alert, JavaScript is working!');
+    </script>
+</body>
+</html>
+
+
+
+
+

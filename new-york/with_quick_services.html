@@ -1,0 +1,3083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>New York Software Development | Sigma Soft AI - Custom Software Developers</title>
+    <meta name="description" content="Sigma Soft AI provides expert software development services in New York. Custom AI solutions, web development, mobile apps, and business automation for NYC businesses.">
+    <meta name="keywords" content="New York software development, NYC custom software, AI solutions New York, web development NYC, mobile app development New York, business automation NYC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link href="../img/favicon64.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    
+    <!-- FAQ Dedicated Stylesheet -->
+    <link href="faq.css" rel="stylesheet">
+    
+    <!-- Config -->
+    <script src="../craigslist/config.js"></script>
+    
+    <style>
+        /* Enhanced Header Styles */
+        .header-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border: 2px solid var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .header-cta:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(58, 166, 164, 0.3);
+        }
+        
+        .header-cta i {
+            font-size: 16px;
+        }
+        
+        .header-hours {
+            font-size: 12px;
+            color: #adb5bd;
+            margin-top: 2px;
+        }
+        
+        /* Hero CTA Styles */
+        .hero-cta-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border: none;
+            color: white;
+            font-weight: 700;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(58, 166, 164, 0.3);
+        }
+        
+        .hero-cta-primary:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(58, 166, 164, 0.4);
+        }
+        
+        .hero-cta-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            font-weight: 600;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .hero-cta-secondary:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        .hero-cta-tertiary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .hero-cta-tertiary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .cta-microcopy {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        /* Sticky Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(58, 166, 164, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .floating-cta:hover {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(58, 166, 164, 0.5);
+        }
+        
+        .floating-cta i {
+            font-size: 24px;
+        }
+        
+        /* Mobile Bottom Bar */
+        .mobile-cta-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+        
+        .mobile-cta-bar .btn {
+            flex: 1;
+            margin: 0 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-cta-bar {
+                display: flex;
+            }
+            
+            .floating-cta {
+                display: none;
+            }
+        }
+        
+        /* Enhanced Navbar */
+        .navbar-brand img {
+            max-height: 50px;
+            width: auto;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary) !important;
+        }
+        
+        /* Service Cards Hover Effects */
+        .service-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(58, 166, 164, 0.08) 0%, rgba(58, 166, 164, 0.04) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(45deg, rgba(61, 175, 172, 0.95) 0%, rgba(61, 175, 172, 0.8) 25%, rgba(61, 175, 172, 0.6) 50%, rgba(61, 175, 172, 0.8) 75%, rgba(61, 175, 172, 0.95) 100%) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+            box-shadow: 0 6px 20px rgba(58, 166, 164, 0.3);
+        }
+        
+        .service-icon {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .service-card:hover h6 {
+            color: #ffffff !important;
+            transform: translateY(-1px);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .service-card:hover p {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        
+        .service-card:hover .service-icon i {
+            color: #ffffff !important;
+        }
+        
+        .service-card h6 {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .service-icon i {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card p {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* HOW WE WORK styles - Compact Grid Layout */
+        .how-we-work { 
+            padding: 40px 0; 
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .how-we-work h2 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .how-we-work h2 .process-flow {
+            font-size: 0.7em;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .how-we-work::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(58, 166, 164, 0.2), transparent);
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+        
+        .process-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .process-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(58, 166, 164, 0.12);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(58, 166, 164, 0.25);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .process-card:hover .step-icon {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(58, 166, 164, 0.4);
+        }
+        
+        /* Animated GIF Icons */
+        .step-icon img {
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+        }
+        
+        .process-card:hover .step-icon img {
+            transform: scale(1.1);
+        }
+        
+        .process-title {
+            color: var(--dark);
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+        }
+        
+        .step-number {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 12px;
+            box-shadow: 0 2px 8px rgba(58, 166, 164, 0.3);
+            z-index: 2;
+        }
+        
+        .process-card p {
+            color: #6c757d;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .deliverables {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .deliverables strong {
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        .deliverables ul {
+            margin: 0;
+            padding-left: 12px;
+        }
+        
+        .deliverables li {
+            color: #6c757d;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            font-size: 14px;
+        }
+        
+        .deliverables li:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .how-we-work {
+                padding: 30px 0;
+            }
+            
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 15px 0;
+            }
+            
+            .process-card {
+                padding: 20px;
+            }
+        }
+        
+        /* Compact Mobile Services Styles */
+        .mobile-services-compact {
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.3) !important;
+            border-radius: 12px;
+            margin: 0 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .services-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .services-header h4 {
+            color: white !important;
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            margin: 0 !important;
+        }
+        
+        .services-count {
+            background: var(--primary);
+            color: white !important;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 10px;
+            min-width: 20px;
+            text-align: center;
+        }
+        
+        .services-list {
+            padding: 0 10px;
+        }
+        
+        .service-row {
+            display: flex;
+            align-items: center;
+            padding: 12px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .service-row:last-child {
+            border-bottom: none;
+        }
+        
+        .service-row:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .service-row:active {
+            background: rgba(255, 255, 255, 0.12);
+            transform: scale(0.98);
+        }
+        
+        .service-icon-mini {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .service-icon-mini i {
+            color: white !important;
+            font-size: 14px;
+        }
+        
+        .service-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+        
+        .service-name {
+            color: white !important;
+            font-size: 0.85rem !important;
+            font-weight: 500 !important;
+            line-height: 1.2 !important;
+            margin-bottom: 2px !important;
+            display: block !important;
+        }
+        
+        .service-desc {
+            color: rgba(255, 255, 255, 0.6) !important;
+            font-size: 0.7rem !important;
+            line-height: 1.2 !important;
+            display: block !important;
+        }
+        
+        .service-arrow {
+            color: rgba(255, 255, 255, 0.4) !important;
+            font-size: 0.7rem;
+            margin-left: 8px;
+            flex-shrink: 0;
+        }
+        
+        .service-arrow i {
+            color: rgba(255, 255, 255, 0.4) !important;
+        }
+        
+        .services-cta {
+            padding: 15px 20px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 10px;
+        }
+        
+        .compact-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+        
+        .compact-cta:hover {
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(58, 166, 164, 0.3);
+        }
+        
+        .compact-cta i {
+            margin-right: 6px;
+            font-size: 0.7rem;
+        }
+        
+        /* Interactive Q&A Styles */
+        .interactive-qa {
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+        
+        .qa-container {
+            background: rgba(0, 0, 0, 0.4) !important;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .qa-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .question-scrambler {
+            margin-bottom: 15px;
+        }
+        
+        .scrambled-text {
+            color: white !important;
+            font-size: 1rem !important;
+            font-weight: 600 !important;
+            line-height: 1.3 !important;
+            display: block !important;
+        }
+        
+        .answer-typer {
+            margin-bottom: 15px;
+            min-height: 20px;
+        }
+        
+        .typed-text {
+            color: var(--primary) !important;
+            font-size: 0.9rem !important;
+            line-height: 1.3 !important;
+            display: block !important;
+        }
+        
+        .cursor {
+            color: var(--primary) !important;
+            font-weight: bold !important;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .qa-controls {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .qa-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(58, 166, 164, 0.3);
+        }
+        
+        .qa-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(58, 166, 164, 0.4);
+        }
+        
+        .qa-btn i {
+            font-size: 14px;
+        }
+        
+        /* Ultra-compact for very small screens */
+        @media (max-width: 360px) {
+            .mobile-services-compact {
+                margin: 0 5px;
+            }
+            
+            .services-header {
+                padding: 0 15px 12px 15px;
+            }
+            
+            .service-row {
+                padding: 10px 8px;
+            }
+            
+            .service-icon-mini {
+                width: 28px;
+                height: 28px;
+                margin-right: 10px;
+            }
+            
+            .service-icon-mini i {
+                font-size: 12px;
+            }
+            
+            .service-name {
+                font-size: 0.8rem;
+            }
+            
+            .service-desc {
+                font-size: 0.65rem;
+            }
+            
+            .services-cta {
+                padding: 12px 15px 0 15px;
+            }
+            
+            .interactive-qa {
+                padding: 0 5px;
+            }
+            
+            .qa-container {
+                padding: 15px;
+            }
+            
+            .scrambled-text {
+                font-size: 0.9rem;
+            }
+            
+            .typed-text {
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Modern Success Stories & Testimonials Styles */
+        .testimonial-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-header {
+            background: white;
+            border-bottom: 1px solid rgba(58, 166, 164, 0.1);
+        }
+        
+        .section-badge .badge {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .testimonial-carousel-modern {
+            width: 100%;
+            position: relative;
+            padding: 40px 0;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+        
+        /* Auto-scrolling carousel */
+        .auto-scroll-carousel {
+            display: flex;
+            gap: 30px;
+            animation: scroll 30s linear infinite;
+            width: max-content;
+        }
+        
+        .auto-scroll-carousel:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Modern Testimonial Cards */
+        .testimonial-card-modern {
+            flex: 0 0 400px;
+            max-width: 400px;
+        }
+        
+        .testimonial-card-inner {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(58, 166, 164, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card-inner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .testimonial-card-inner:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(58, 166, 164, 0.15);
+            border-color: rgba(58, 166, 164, 0.2);
+        }
+        
+        .testimonial-card-inner:hover::before {
+            opacity: 1;
+        }
+        
+        /* Header Card */
+        .testimonial-header-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+        
+        .testimonial-avatar {
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        .avatar-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(58, 166, 164, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card-inner:hover .avatar-image {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .avatar-badge {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            border: 2px solid white;
+        }
+        
+        .testimonial-meta {
+            flex: 1;
+        }
+        
+        .testimonial-meta h5 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-meta p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .rating-stars {
+            color: #ffc107;
+            font-size: 14px;
+        }
+        
+        .rating-stars i {
+            margin-right: 2px;
+        }
+        
+        /* Stats Badge */
+        .testimonial-stats {
+            flex-shrink: 0;
+        }
+        
+        .stat-badge {
+            padding: 8px 12px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .testimonial-card-inner:hover .stat-badge::before {
+            transform: translateX(100%);
+        }
+        
+        .stat-badge.success {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+        }
+        
+        .stat-badge.info {
+            background: linear-gradient(135deg, #17a2b8, #6f42c1);
+            color: white;
+        }
+        
+        .stat-badge.warning {
+            background: linear-gradient(135deg, #ffc107, #fd7e14);
+            color: white;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+        
+        /* Content */
+        .testimonial-content {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .quote-mark {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        
+        .testimonial-content blockquote {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .testimonial-content blockquote p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            font-style: italic;
+            margin: 0;
+        }
+        
+        /* Footer */
+        .testimonial-footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 20px;
+        }
+        
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: rgba(58, 166, 164, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card-inner:hover .tag {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        /* Modern CTA */
+        .testimonial-cta-modern {
+            background: white;
+            border-top: 1px solid rgba(58, 166, 164, 0.1);
+        }
+        
+        .cta-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .cta-content h3 {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .cta-buttons .btn {
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-buttons .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-decoration {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .decoration-circle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+        
+        .decoration-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, transparent 2px);
+            background-size: 8px 8px;
+        }
+        
+        /* Carousel navigation dots */
+        .owl-dots {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .owl-dot {
+            display: inline-block;
+            margin: 0 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(58, 166, 164, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .owl-dot.active {
+            background: var(--primary);
+            transform: scale(1.3);
+            box-shadow: 0 2px 8px rgba(58, 166, 164, 0.4);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .testimonial-card-modern {
+                flex: 0 0 320px;
+                max-width: 320px;
+            }
+            
+            .testimonial-card-inner {
+                padding: 25px 20px;
+            }
+            
+            .testimonial-header-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .testimonial-content blockquote p {
+                font-size: 1rem;
+            }
+            
+            .cta-card {
+                padding: 30px 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .auto-scroll-carousel {
+                gap: 20px;
+                animation-duration: 25s;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .testimonial-card-modern {
+                flex: 0 0 280px;
+                max-width: 280px;
+            }
+            
+            .auto-scroll-carousel {
+                gap: 15px;
+                animation-duration: 20s;
+            }
+        }
+        
+        /* Mobile Hero Section Styles */
+        .mobile-hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #091E3E 0%, #1a2f5a 50%, #3AA6A4 100%);
+            overflow: hidden;
+        }
+        
+        .mobile-hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/images/nyc-hero.jpg') center center/cover no-repeat;
+            z-index: 1;
+        }
+        
+        .mobile-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(9, 30, 62, 0.85) 0%, rgba(26, 47, 90, 0.8) 50%, rgba(58, 166, 164, 0.7) 100%);
+            z-index: 2;
+        }
+        
+        .mobile-hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 60px 20px;
+            width: 100%;
+        }
+        
+        .mobile-hero-badge {
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .mobile-hero-badge .badge {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(58, 166, 164, 0.3);
+        }
+        
+        .mobile-hero-title {
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .mobile-hero-main {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        
+        .mobile-hero-subtitle {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mobile-hero-description {
+            animation: fadeInUp 1s ease-out 0.4s both;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .mobile-hero-stats {
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .stat-number {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+        
+        .mobile-hero-ctas {
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+        
+        .mobile-cta-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border: none;
+            color: white;
+            font-weight: 700;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(58, 166, 164, 0.3);
+        }
+        
+        .mobile-cta-primary:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(58, 166, 164, 0.4);
+        }
+        
+        .mobile-cta-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            font-weight: 600;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-cta-secondary:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-cta-tertiary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-weight: 500;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-cta-tertiary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .mobile-hero-trust {
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+        
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hide desktop hero on mobile */
+        @media (max-width: 991px) {
+            #header-carousel {
+                display: none !important;
+            }
+        }
+        
+        /* Show desktop hero on larger screens */
+        @media (min-width: 992px) {
+            .mobile-hero-section {
+                display: none !important;
+            }
+        }
+        
+        /* Hide navbar on mobile */
+        @media (max-width: 991px) {
+            .navbar {
+                display: none !important;
+            }
+        }
+        
+        /* Animation keyframes */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    
+    <!-- FAQ JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How fast can you launch a site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard 5-page sites typically launch in ~7 business days after deposit and approved content."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are your prices and payment terms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We publish \"starting at\" prices on the Plans section. Typical milestone split: 30% deposit → 40% on staging approval → 30% on launch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I pay? Do you support installments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept Stripe, PayPal and bank transfers. We invoice by milestone; payment plans are available for larger projects on request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What post-launch support do you provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All launches include a 14-day bug warranty. Optional monthly maintenance and marketing retainers are available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you work with healthcare clients (HIPAA)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are HIPAA-aware and follow data protection best practices. For regulated systems we coordinate with partners who can sign BAAs when required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many revisions are included?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Starter plans include one revision round for visual design and content tweaks. Growth/Premium plans include additional review rounds—details are in the plan description."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I delay providing content?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If content is delayed we use stock placeholders and mark items as TODO in staging. Timelines are adjusted and communicated—final delivery depends on content turnaround."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you run ads and manage campaigns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes—we offer ad setup and management as a standalone or bundled service. Ad spend is billed separately; we provide reporting and optimization as part of retainers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get started?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Book a free 15-minute consult or call us. We'll send a one-page Project Summary and a short checklist of assets to move forward quickly."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="bi bi-whatsapp me-2"></i>+1-212-555-0123</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>contact@sigmasoftai.com</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/company/sigma-soft-tech" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://twitter.com/SigmaSoftAI" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/profile.php?id=100094257815011" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/sigmasoftai" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://youtube.com/@SigmaSoftAI" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0 title-font">
+            <a href="../index.html" class="navbar-brand p-0">
+                <h1 class="m-0 title-font">
+                    <img src="../img/logonbg.png" alt="Sigma Soft AI Logo" height="50" width="auto">
+                </h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="../index.html" class="nav-item nav-link">Home</a>
+                    <a href="../about.html" class="nav-item nav-link">About</a>
+                    <a href="../service.html" class="nav-item nav-link">Services</a>
+                    <a href="../blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="../contact.html" class="nav-item nav-link">Contact</a>
+                    <div class="nav-item d-flex align-items-center ms-3">
+                        <a href="tel:+1-212-555-0123" class="header-cta" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                            <i class="fa fa-phone"></i>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="assets/images/nyc-hero.jpg" alt="New York Software Development" loading="lazy">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px; margin-top: -20vh;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Your Business Growth Partner in <span class="text-primary fw-bold" style="text-shadow: 0 0 10px rgba(58, 166, 164, 0.5);">New York</span></h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn title-font">Sigma Soft AI</h1>
+                            <p class="text-white mb-4 animated slideInUp">AI solutions, web development, design and business automation</p>
+                            
+                            <!-- Primary CTA Group -->
+                            <div class="d-flex flex-column flex-md-row gap-3 mb-3 animated slideInLeft">
+                                <a href="tel:+1-212-555-0123" class="hero-cta-primary" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                                    <i class="fa fa-phone"></i>
+                                    Call Now — +1-212-555-0123
+                                </a>
+                                <a href="#contact" class="hero-cta-secondary">
+                                    <i class="fa fa-calendar-check"></i>
+                                    Book Free 15-Min Consult
+                                </a>
+                            </div>
+                            
+                            <!-- Secondary CTA -->
+                            <div class="mb-3 animated slideInRight">
+                                <a href="#callback-form" class="hero-cta-tertiary">
+                                    <i class="fa fa-clock"></i>
+                                    Request Callback (30–60 min)
+                                </a>
+                            </div>
+                            
+                            <!-- Microcopy -->
+                            <div class="cta-microcopy animated slideInUp">
+                                <p class="mb-1">No automated menu — you'll talk to a real senior engineer.</p>
+                                <p class="mb-0">Free 15-minute consultation. We'll review your site and provide actionable insights.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Carousel End -->
+
+    <!-- Mobile Hero Section -->
+    <div class="mobile-hero-section d-block d-lg-none">
+        <div class="mobile-hero-background">
+            <div class="mobile-hero-overlay"></div>
+            <div class="mobile-hero-content">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center">
+                            <!-- Mobile Hero Badge -->
+                            <div class="mobile-hero-badge mb-3">
+                                <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+                                    <i class="fa fa-star me-1"></i>NYC's First Choice
+                                </span>
+                            </div>
+                            
+                            <!-- Mobile Hero Title -->
+                            <h1 class="mobile-hero-title mb-3">
+                                <span class="mobile-hero-main">Sigma Soft AI</span>
+                                <span class="mobile-hero-subtitle">Your Business Growth Partner</span>
+                            </h1>
+                            
+                            <!-- Mobile Hero Description -->
+                            <p class="mobile-hero-description mb-4">
+                                AI solutions, web development, design and business automation for NYC businesses
+                            </p>
+                            
+                            <!-- Mobile Hero Stats -->
+                            <div class="mobile-hero-stats mb-4">
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <div class="stat-item">
+                                            <div class="stat-number">500+</div>
+                                            <div class="stat-label">Projects</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="stat-item">
+                                            <div class="stat-number">7 Days</div>
+                                            <div class="stat-label">Launch Time</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="stat-item">
+                                            <div class="stat-number">24/7</div>
+                                            <div class="stat-label">Support</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Mobile Hero CTAs -->
+                            <div class="mobile-hero-ctas">
+                                <div class="d-grid gap-3">
+                                    <a href="tel:+1-212-555-0123" class="mobile-cta-primary" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                                        <i class="fa fa-phone me-2"></i>
+                                        Call Now — +1-212-555-0123
+                                    </a>
+                                    <a href="#contact" class="mobile-cta-secondary">
+                                        <i class="fa fa-calendar-check me-2"></i>
+                                        Book Free 15-Min Consult
+                                    </a>
+                                    <a href="#callback-form" class="mobile-cta-tertiary">
+                                        <i class="fa fa-clock me-2"></i>
+                                        Request Callback (30–60 min)
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Mobile Hero Trust Indicators -->
+                            <div class="mobile-hero-trust mt-4">
+                                <div class="trust-badges">
+                                    <span class="trust-badge">
+                                        <i class="fa fa-shield-alt me-1"></i>HIPAA Compliant
+                                    </span>
+                                    <span class="trust-badge">
+                                        <i class="fa fa-certificate me-1"></i>Certified
+                                    </span>
+                                    <span class="trust-badge">
+                                        <i class="fa fa-clock me-1"></i>24/7 Support
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Floating CTA -->
+    <a href="tel:+1-212-555-0123" class="floating-cta" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+        <i class="fa fa-phone"></i>
+    </a>
+
+    <!-- Mobile CTA Bar -->
+    <div class="mobile-cta-bar">
+        <a href="tel:+1-212-555-0123" class="btn btn-primary" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+            <i class="fa fa-phone me-2"></i>Call Now
+        </a>
+        <a href="#contact" class="btn btn-outline-primary">
+            <i class="fa fa-calendar me-2"></i>Book Consult
+        </a>
+    </div>
+
+    <!-- Services Showcase Start -->
+    <div class="container-fluid facts py-5 pt-lg-0">
+        <!-- Desktop Version -->
+        <div class="container py-5 pt-lg-0 d-none d-md-block">
+            <div class="row gx-0">
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-globe text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">Website Development</h6>
+                        <p class="text-white-50 mb-0 small">Let people know you exist</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-search text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">SEO</h6>
+                        <p class="text-white-50 mb-0 small">Drives footfall & calls</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-palette text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">Logo Design</h6>
+                        <p class="text-white-50 mb-0 small">Face of your brand</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-paint-brush text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">Brand Identity</h6>
+                        <p class="text-white-50 mb-0 small">Your visual identity</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.5s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-chart-line text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">Digital Marketing</h6>
+                        <p class="text-white-50 mb-0 small">Scale revenue</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-robot text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">AI Solutions</h6>
+                        <p class="text-white-50 mb-0 small">Smart automation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Version -->
+        <div class="container d-block d-md-none">
+            <div class="mobile-services-compact">
+                <div class="services-header">
+                    <h4 class="text-white mb-0" style="font-size: 1.1rem; font-weight: 600;">Services</h4>
+                    <span class="services-count">6</span>
+                </div>
+                
+                <div class="services-list">
+                    <div class="service-row">
+                        <div class="service-icon-mini">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <div class="service-info">
+                            <span class="service-name">Website Development</span>
+                            <span class="service-desc">Let people know you exist</span>
+                        </div>
+                        <div class="service-arrow">
+                            <i class="fa fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-row">
+                        <div class="service-icon-mini">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <div class="service-info">
+                            <span class="service-name">SEO</span>
+                            <span class="service-desc">Drives footfall & calls</span>
+                        </div>
+                        <div class="service-arrow">
+                            <i class="fa fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-row">
+                        <div class="service-icon-mini">
+                            <i class="fa fa-palette"></i>
+                        </div>
+                        <div class="service-info">
+                            <span class="service-name">Logo Design</span>
+                            <span class="service-desc">Face of your brand</span>
+                        </div>
+                        <div class="service-arrow">
+                            <i class="fa fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-row">
+                        <div class="service-icon-mini">
+                            <i class="fa fa-paint-brush"></i>
+                        </div>
+                        <div class="service-info">
+                            <span class="service-name">Brand Identity</span>
+                            <span class="service-desc">Your visual identity</span>
+                        </div>
+                        <div class="service-arrow">
+                            <i class="fa fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-row">
+                        <div class="service-icon-mini">
+                            <i class="fa fa-chart-line"></i>
+                        </div>
+                        <div class="service-info">
+                            <span class="service-name">Digital Marketing</span>
+                            <span class="service-desc">Scale revenue</span>
+                        </div>
+                        <div class="service-arrow">
+                            <i class="fa fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-row">
+                        <div class="service-icon-mini">
+                            <i class="fa fa-robot"></i>
+                        </div>
+                        <div class="service-info">
+                            <span class="service-name">AI Solutions</span>
+                            <span class="service-desc">Smart automation</span>
+                        </div>
+                        <div class="service-arrow">
+                            <i class="fa fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="services-cta">
+                    <a href="#contact" class="compact-cta">
+                        <i class="fa fa-phone"></i>
+                        Get Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Q&A Element -->
+        <div class="container d-block d-md-none">
+            <div class="interactive-qa">
+                <div class="qa-container">
+                    <div class="question-scrambler">
+                        <span class="scrambled-text" id="scrambledText">Need more footfall and calls?</span>
+                    </div>
+                    <div class="answer-typer">
+                        <span class="typed-text" id="typedText"></span>
+                        <span class="cursor">|</span>
+                    </div>
+                    <div class="qa-controls">
+                        <button class="qa-btn" onclick="nextQuestion()">
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services Showcase End -->
+
+    <!-- HOW WE WORK — service-agnostic (inserted by automation) -->
+    <section id="how-we-work" aria-labelledby="how-we-work-title" class="how-we-work">
+      <div class="container">
+        <div class="text-center position-relative pb-2 mb-3 mx-auto" style="max-width: 600px;">
+          <h5 class="fw-bold text-primary text-uppercase">Our Process</h5>
+                           <h2 id="how-we-work-title" class="mb-2">How We Work — <span class="process-flow">Plan → Build → Launch</span></h2>
+                 <p class="text-muted fs-5 mb-0">Fast. Predictable. Reliable.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card" id="plan">
+            <div class="card-header">
+              <div class="step-icon">
+                <img src="assets/icons/idea.gif" alt="Plan - Discovery & Strategy" width="50" height="50">
+              </div>
+              <h3 class="process-title">Plan — Discovery & Strategy</h3>
+            </div>
+            <p>Initial consultation, 15-min discovery call, project brief with scope, requirements and timeline.</p>
+            <div class="deliverables">
+              <strong>Deliverables:</strong>
+              <ul>
+                <li>Project brief & milestones</li>
+                <li>Requirements document</li>
+                <li>Timeline & deliverables</li>
+              </ul>
+            </div>
+            <div class="step-number">01</div>
+          </div>
+
+          <div class="process-card" id="build">
+            <div class="card-header">
+              <div class="step-icon">
+                <img src="assets/icons/gears.gif" alt="Build - Create & Refine" width="50" height="50">
+              </div>
+              <h3 class="process-title">Build — Create & Refine</h3>
+            </div>
+            <p>Design, development, content creation, and quality assurance. Milestone review and feedback integration.</p>
+            <div class="deliverables">
+              <strong>Deliverables:</strong>
+              <ul>
+                <li>Preview / staging version</li>
+                <li>Progress updates</li>
+                <li>Review & feedback</li>
+              </ul>
+            </div>
+            <div class="step-number">02</div>
+          </div>
+
+          <div class="process-card" id="launch">
+            <div class="card-header">
+              <div class="step-icon">
+                <img src="assets/icons/rocket.gif" alt="Launch - Deploy & Support" width="40" height="40">
+              </div>
+              <h3 class="process-title">Launch — Deploy & Support</h3>
+            </div>
+            <p>Final delivery, setup, training, and post-launch support to ensure everything works perfectly.</p>
+            <div class="deliverables">
+              <strong>Deliverables:</strong>
+              <ul>
+                <li>Final deliverables</li>
+                <li>Setup & training</li>
+                <li>Post-launch support</li>
+              </ul>
+            </div>
+            <div class="step-number">03</div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Modern Success Stories & Testimonials Start -->
+    <section id="success-stories" class="testimonial-section wow fadeInUp" data-wow-delay="0.1s">
+        <div class="testimonial-header text-center py-4">
+            <div class="container">
+                <div class="section-badge mb-3">
+                    <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+                        <i class="fa fa-star me-1"></i>Success Stories
+                    </span>
+                </div>
+                <h2 class="mb-3 fw-bold">Trusted by Top Businesses</h2>
+                <p class="text-muted mb-0 lead">See how we've transformed businesses with our innovative solutions</p>
+            </div>
+        </div>
+
+        <!-- Auto-Scrolling Testimonials Carousel -->
+        <div class="testimonial-carousel-modern">
+            <div class="auto-scroll-carousel">
+                <!-- Testimonials will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Modern CTA -->
+        <div class="testimonial-cta-modern py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="cta-card">
+                            <div class="cta-content">
+                                <h3 class="mb-3" style="background: linear-gradient(90deg, #091E3E 0%, #1a2f5a 50%, #2a4076 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700;">Ready to Transform Your Business?</h3>
+                                <p class="mb-4" style="color: #d1d5db;">Join hundreds of NYC businesses that trust us with their digital transformation</p>
+                                <div class="cta-buttons">
+                                    <a href="tel:+1-212-555-0123" class="btn btn-primary btn-lg me-3" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                                        <i class="fa fa-phone me-2"></i>Call Now
+                                    </a>
+                                    <a href="#contact" class="hero-cta-secondary" style="font-size: 18px; padding: 15px 30px;">
+                                        <i class="fa fa-calendar me-2"></i>Book Free Consult
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cta-decoration">
+                                <div class="decoration-circle"></div>
+                                <div class="decoration-dots"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modern Success Stories & Testimonials End -->
+
+    <!-- Plans & Pricing Start -->
+    <section id="pricing" class="pricing-modern" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 50px 0; color: #f9fafb; transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="container-fluid">
+        <!-- Modern Header -->
+        <div class="pricing-intro" style="text-align: center; margin-bottom: 30px;">
+          <h2 style="font-size: 2.5rem; font-weight: 800; color: #f9fafb; margin-bottom: 12px; letter-spacing: -0.02em;">Choose Your Plan</h2>
+          <p style="font-size: 1.1rem; color: #d1d5db; font-weight: 400;">Comprehensive solutions for every business stage</p>
+        </div>
+
+        <!-- Category Selector -->
+        <div class="category-selector" style="max-width: 800px; margin: 0 auto 25px auto;">
+          <div class="segmented-control" style="background: #1f2937; border-radius: 50px; padding: 4px; border: 2px solid #374151; display: flex; position: relative; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); gap: 0;">
+            <!-- Sliding background element -->
+            <div class="slider-bg" style="position: absolute; top: 2px; left: 4px; width: calc(33.333% - 4px); height: calc(100% - 4px); background: #3AA6A4; border-radius: 50px; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1;"></div>
+            
+            <button class="segment-btn active" data-category="new-businesses" data-index="0" style="flex: 1; background: transparent; color: white; border: none; border-radius: 50px; padding: 8px 12px; cursor: pointer; transition: color 0.3s ease; text-align: center; font-weight: 700; font-size: 1rem; position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <div style="font-size: 1rem; font-weight: 700; margin-bottom: 2px;">New Businesses</div>
+              <div style="font-size: 0.75rem; font-weight: 400; opacity: 0.9; line-height: 1.2;">Perfect launch & be found</div>
+            </button>
+            
+            <button class="segment-btn" data-category="growth" data-index="1" style="flex: 1; background: transparent; color: #d1d5db; border: none; border-radius: 50px; padding: 8px 12px; cursor: pointer; transition: color 0.3s ease; text-align: center; font-weight: 700; font-size: 1rem; position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <div style="font-size: 1rem; font-weight: 700; margin-bottom: 2px;">Grow & Scale</div>
+              <div style="font-size: 0.75rem; font-weight: 400; opacity: 0.9; line-height: 1.2;">More customers & conversion</div>
+            </button>
+            
+            <button class="segment-btn" data-category="advanced" data-index="2" style="flex: 1; background: transparent; color: #d1d5db; border: none; border-radius: 50px; padding: 8px 12px; cursor: pointer; transition: color 0.3s ease; text-align: center; font-weight: 700; font-size: 1rem; position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <div style="font-size: 1rem; font-weight: 700; margin-bottom: 2px;">Enterprise</div>
+              <div style="font-size: 0.75rem; font-weight: 400; opacity: 0.9; line-height: 1.2;">Integrations & automation</div>
+            </button>
+          </div>
+        </div>
+
+                         <!-- Pricing Carousel Container -->
+         <div class="pricing-carousel" style="position: relative; overflow: hidden;">
+          <!-- Category Headers -->
+          <div class="category-header new-businesses-header" data-category="new-businesses" style="text-align: center; margin-bottom: 25px; padding: 20px 20px 15px 20px; position: relative; z-index: 1; opacity: 1; transition: opacity 0.3s ease;">
+            <p style="font-size: 1.1rem; color: #d1d5db; margin: 0;">Everything you need to launch and grow</p>
+          </div>
+          <div class="category-header growth-header" data-category="growth" style="text-align: center; margin-bottom: 25px; padding: 20px 20px 15px 20px; position: absolute; top: 0; left: 0; right: 0; z-index: 1; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
+            <p style="font-size: 1.1rem; color: #d1d5db; margin: 0;">Scale your existing business with proven strategies</p>
+          </div>
+          <div class="category-header advanced-header" data-category="advanced" style="text-align: center; margin-bottom: 25px; padding: 20px 20px 15px 20px; position: absolute; top: 0; left: 0; right: 0; z-index: 1; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
+            <p style="font-size: 1.1rem; color: #d1d5db; margin: 0;">Deep automations, e-commerce, and complex integrations</p>
+          </div>
+          
+          <!-- Carousel Slides Container -->
+          <div class="carousel-slides" style="display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); width: 300%;">
+            <!-- Slide 1: New Businesses -->
+            <div class="carousel-slide" data-category="new-businesses" style="width: 33.333%; flex-shrink: 0;">
+              <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+                <!-- Card 1 -->
+                <div class="price-card featured" style="background: linear-gradient(135deg, #374151 0%, #4b5563 100%); border-radius: 20px; padding: 30px; border: 2px solid #3AA6A4; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); position: relative; display: flex; flex-direction: column; height: 100%;">
+                  <div class="popular-badge" style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #3AA6A4 0%, #297474 100%); color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(58, 166, 164, 0.3); z-index: 10;">Most Popular</div>
+                  <div style="flex-grow: 1;">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #f9fafb; margin-bottom: 10px; text-align: center;">Starter Launch</h3>
+                    <div style="text-align: center; margin-bottom: 8px;">
+                      <span style="font-size: 2.5rem; font-weight: 800; color: #f9fafb;">$2,250</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 20px; text-align: center; font-style: italic;">"Everything to start"</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ 5-page responsive website</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Basic logo refresh</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Google Business Profile</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Contact & booking form</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Basic on-page SEO</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ 30 days support</li>
+                    </ul>
+                  </div>
+                  <button onclick="trackCTA('plan_call','starter_launch'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Launch in 7 Days</button>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="price-card" style="background: #374151; border-radius: 20px; padding: 30px; border: 1px solid #4b5563; display: flex; flex-direction: column; height: 100%;">
+                  <div style="flex-grow: 1;">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #f9fafb; margin-bottom: 10px; text-align: center;">Startup Growth</h3>
+                    <div style="text-align: center; margin-bottom: 8px;">
+                      <span style="font-size: 2.5rem; font-weight: 800; color: #f9fafb;">$3,800</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 20px; text-align: center; font-style: italic;">"Launch + local traction"</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Everything in Starter Launch</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ 3 neighborhood landing pages</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Social profiles setup</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Reputation/review setup</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Minor brand assets</li>
+                    </ul>
+                  </div>
+                  <button onclick="trackCTA('plan_call','startup_growth'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Book Free Consult</button>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="price-card" style="background: #374151; border-radius: 20px; padding: 30px; border: 1px solid #4b5563; display: flex; flex-direction: column; height: 100%;">
+                  <div style="flex-grow: 1;">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #f9fafb; margin-bottom: 10px; text-align: center;">Launch & Ads</h3>
+                    <div style="text-align: center; margin-bottom: 8px;">
+                      <span style="font-size: 2.5rem; font-weight: 800; color: #f9fafb;">$6,500</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 20px; text-align: center; font-style: italic;">"Launch with lead volume"</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Startup Growth + ad setup</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ First-month campaign management</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Call-tracking setup</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ $500 ad setup credit</li>
+                    </ul>
+                  </div>
+                  <button onclick="trackCTA('plan_call','launch_ads'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Call to Discuss</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 2: Growth -->
+            <div class="carousel-slide" data-category="growth" style="width: 33.333%; flex-shrink: 0;">
+              <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+                <!-- Card 1 -->
+                <div class="price-card featured" style="background: linear-gradient(135deg, #374151 0%, #4b5563 100%); border-radius: 20px; padding: 30px; border: 2px solid #3AA6A4; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); position: relative; display: flex; flex-direction: column; height: 100%;">
+                  <div class="popular-badge" style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #3AA6A4 0%, #297474 100%); color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(58, 166, 164, 0.3); z-index: 10;">Most Popular</div>
+                  <div style="flex-grow: 1;">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #f9fafb; margin-bottom: 10px; text-align: center;">Local Visibility</h3>
+                    <div style="text-align: center; margin-bottom: 8px;">
+                      <span style="font-size: 2.5rem; font-weight: 800; color: #f9fafb;">$1,000</span>
+                      <span style="font-size: 1rem; color: #d1d5db;">/mo</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 20px; text-align: center; font-style: italic;">"Rank & get found"</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ GMB optimization</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ 2-4 landing pages/month</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ On-page SEO</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Review acquisition</li>
+                    </ul>
+                  </div>
+                  <button onclick="trackCTA('plan_call','local_visibility'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Get Found Locally</button>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="price-card" style="background: #374151; border-radius: 20px; padding: 30px; border: 1px solid #4b5563; display: flex; flex-direction: column; height: 100%;">
+                  <div style="flex-grow: 1;">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #f9fafb; margin-bottom: 10px; text-align: center;">Conversion Booster</h3>
+                    <div style="text-align: center; margin-bottom: 8px;">
+                      <span style="font-size: 2.5rem; font-weight: 800; color: #f9fafb;">$1,500</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 20px; text-align: center; font-style: italic;">"Turn visitors into customers"</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Hero/CTA redesign</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Speed optimization</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Booking improvements</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Heatmap analysis</li>
+                    </ul>
+                  </div>
+                  <button onclick="trackCTA('plan_call','conversion_booster'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Boost Conversions</button>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="price-card" style="background: #374151; border-radius: 20px; padding: 30px; border: 1px solid #4b5563; display: flex; flex-direction: column; height: 100%;">
+                  <div style="flex-grow: 1;">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #f9fafb; margin-bottom: 10px; text-align: center;">Performance & Automation</h3>
+                    <div style="text-align: center; margin-bottom: 8px;">
+                      <span style="font-size: 2.5rem; font-weight: 800; color: #f9fafb;">$2,500</span>
+                      <span style="font-size: 1rem; color: #d1d5db;">+/mo</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 20px; text-align: center; font-style: italic;">"Scale predictably"</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Paid ads management</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ AI chatbot integration</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Monthly reporting</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ A/B testing</li>
+                    </ul>
+                  </div>
+                  <button onclick="trackCTA('plan_call','performance_automation'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Scale Reliably</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 3: Enterprise -->
+            <div class="carousel-slide" data-category="advanced" style="width: 33.333%; flex-shrink: 0;">
+              <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+                <!-- Card 1 -->
+                <div class="price-card featured" style="background: linear-gradient(135deg, #374151 0%, #4b5563 100%); border-radius: 20px; padding: 30px; border: 2px solid #3AA6A4; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); position: relative; display: flex; flex-direction: column; height: 100%;">
+                  <div class="popular-badge" style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #3AA6A4 0%, #297474 100%); color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(58, 166, 164, 0.3); z-index: 10;">Most Popular</div>
+                  <div style="flex-grow: 1;">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #f9fafb; margin-bottom: 10px; text-align: center;">Automation Audit</h3>
+                    <div style="text-align: center; margin-bottom: 8px;">
+                      <span style="font-size: 2.5rem; font-weight: 800; color: #f9fafb;">$1,200</span>
+                      <span style="font-size: 1rem; color: #d1d5db;">-3,000</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 20px; text-align: center; font-style: italic;">"Find the low-hanging ROI"</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Audit of ops & revenue</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ 3 automation recommendations</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Proof-of-concept</li>
+                    </ul>
+                  </div>
+                  <button onclick="trackCTA('plan_call','automation_audit'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Automate Revenue</button>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="price-card" style="background: #374151; border-radius: 20px; padding: 30px; border: 1px solid #4b5563; display: flex; flex-direction: column; height: 100%;">
+                  <div style="flex-grow: 1;">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #f9fafb; margin-bottom: 10px; text-align: center;">RCM & Ops Automation</h3>
+                    <div style="text-align: center; margin-bottom: 8px;">
+                      <span style="font-size: 2.5rem; font-weight: 800; color: #f9fafb;">$6,000</span>
+                      <span style="font-size: 1rem; color: #d1d5db;">+</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 20px; text-align: center; font-style: italic;">"Reduce manual hours & errors"</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Custom workflows</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Billing/EMR integrations</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Training & documentation</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ 30-day monitoring</li>
+                    </ul>
+                  </div>
+                  <button onclick="trackCTA('plan_call','rcm_automation'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Cut Billing Overhead</button>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="price-card" style="background: #374151; border-radius: 20px; padding: 30px; border: 1px solid #4b5563; display: flex; flex-direction: column; height: 100%;">
+                  <div style="flex-grow: 1;">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #f9fafb; margin-bottom: 10px; text-align: center;">E-commerce & Custom Platforms</h3>
+                    <div style="text-align: center; margin-bottom: 8px;">
+                      <span style="font-size: 2.5rem; font-weight: 800; color: #f9fafb;">$5,000</span>
+                      <span style="font-size: 1rem; color: #d1d5db;">-15,000+</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 20px; text-align: center; font-style: italic;">"Product & scale"</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Shopify/Woo setup</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ 10 product listings</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Payment & shipping</li>
+                      <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Marketing integration</li>
+                    </ul>
+                  </div>
+                  <button onclick="trackCTA('plan_call','ecommerce_platforms'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Launch Your Shop</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+          <!-- Modern CTA -->
+        <div class="pricing-cta" style="text-align: center; padding: 40px; background: #374151; border-radius: 20px; border: 1px solid #4b5563; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);">
+          <p style="font-size: 1.125rem; color: #f9fafb; margin: 0;">Need help choosing? <a href="tel:+1-212-555-0123" onclick="trackCTA('plan_call','consultation')" style="color: #3AA6A4; text-decoration: none; font-weight: 600; transition: color 0.3s ease;">Call us</a> for a free consultation.</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Segmented control functionality with sliding animation
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('Segmented control script loaded');
+        
+        const sliderBg = document.querySelector('.slider-bg');
+        const container = document.querySelector('.segmented-control');
+        
+        document.querySelectorAll('.segment-btn').forEach(button => {
+          button.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            const index = parseInt(this.getAttribute('data-index'));
+            console.log('Segment clicked:', category, 'Index:', index);
+            
+            // Calculate the exact position for the slider
+            const containerWidth = container.offsetWidth - 12; // Subtract padding
+            const segmentWidth = containerWidth / 3;
+            const translateX = index * segmentWidth;
+            
+            // Animate the sliding background
+            sliderBg.style.transform = `translateX(${translateX}px)`;
+            
+            // Update segment button styles
+            document.querySelectorAll('.segment-btn').forEach(btn => {
+              btn.classList.remove('active');
+              btn.style.color = '#d1d5db';
+            });
+            
+            // Set active segment styles
+            this.classList.add('active');
+            this.style.color = 'white';
+            
+                         // Change main section background based on category
+             const pricingSection = document.querySelector('#pricing');
+             if (pricingSection) {
+               switch(category) {
+                 case 'new-businesses':
+                   pricingSection.style.background = 'linear-gradient(135deg, #111827 0%, #1f2937 100%)';
+                   break;
+                 case 'growth':
+                   pricingSection.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%)';
+                   break;
+                 case 'advanced':
+                   pricingSection.style.background = 'linear-gradient(135deg, #020617 0%, #0f172a 25%, #1e293b 50%, #334155 75%, #475569 100%)';
+                   break;
+                 default:
+                   pricingSection.style.background = 'linear-gradient(135deg, #111827 0%, #1f2937 100%)';
+               }
+             }
+             
+             // Carousel slide animation
+             
+             // Update category headers
+             document.querySelectorAll('.category-header').forEach(header => {
+               if (header.getAttribute('data-category') === category) {
+                 header.style.opacity = '1';
+                 header.style.pointerEvents = 'auto';
+               } else {
+                 header.style.opacity = '0';
+                 header.style.pointerEvents = 'none';
+               }
+             });
+             
+             // Move carousel to show the selected slide
+             const carouselSlides = document.querySelector('.carousel-slides');
+             if (carouselSlides) {
+               const slideIndex = index; // 0, 1, or 2
+               const translateX = -(slideIndex * 33.333); // Move left by slide width
+               carouselSlides.style.transform = `translateX(${translateX}%)`;
+               console.log('Carousel moved to slide:', slideIndex, 'translateX:', translateX + '%');
+             }
+             
+
+          });
+        });
+        
+        // Initialize with first category active
+        console.log('Initializing with NEW BUSINESSES category');
+      });
+    </script>
+    <!-- Plans & Pricing End -->
+
+    <!-- FAQ — Compact, accessible accordion (inserted by automation) -->
+    <section id="faq" aria-labelledby="faq-title" class="faq-compact">
+      <div class="container">
+        <h2 id="faq-title" class="mb-3 fw-bold">Frequently Asked Questions</h2>
+        <p class="text-muted mb-4 lead">Get answers to common questions about our services and process</p>
+        <div class="faq-layout">
+          <!-- FAQ Sidebar -->
+          <aside class="faq-sidebar">
+            <h3 style="display: none;">Categories</h3>
+            <ul class="faq-categories">
+              <li class="faq-category-item">
+                <button class="faq-category-btn active" data-category="all">
+                  All Questions
+                  <span class="faq-category-count">9</span>
+                </button>
+              </li>
+              <li class="faq-category-item">
+                <button class="faq-category-btn" data-category="pricing">
+                  Pricing & Process
+                  <span class="faq-category-count">5</span>
+                </button>
+              </li>
+              <li class="faq-category-item">
+                <button class="faq-category-btn" data-category="services">
+                  Services & Support
+                  <span class="faq-category-count">4</span>
+                </button>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- FAQ Content Area -->
+          <main class="faq-content">
+            <!-- All Questions Category -->
+            <div class="faq-category active" data-category="all">
+              <div class="faq-items-grid">
+                <!-- 1 -->
+                <article class="faq-item-modern" data-qa="faq-launch" data-category="pricing">
+                  <button class="faq-question-btn" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">
+                    <span>How fast can you launch a site?</span>
+                    <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div id="faq-1" role="region" aria-labelledby="faq-1-btn" class="faq-answer" aria-hidden="true" hidden>
+                    <p>Standard 5-page sites typically launch in ~7 business days after deposit and approved content.</p>
+                  </div>
+                </article>
+
+                <!-- 2 -->
+                <article class="faq-item-modern" data-qa="faq-pricing" data-category="pricing">
+                  <button class="faq-question-btn" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">
+                    <span>What are your prices and payment terms?</span>
+                    <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div id="faq-2" role="region" aria-labelledby="faq-2-btn" class="faq-answer" aria-hidden="true" hidden>
+                    <p>We publish "starting at" prices on the Plans section. Typical milestone split: 30% deposit → 40% on staging approval → 30% on launch.</p>
+                  </div>
+                </article>
+
+                <!-- 3 -->
+                <article class="faq-item-modern" data-qa="faq-payments" data-category="pricing">
+                  <button class="faq-question-btn" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">
+                    <span>How can I pay? Do you support installments?</span>
+                    <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div id="faq-3" role="region" aria-labelledby="faq-3-btn" class="faq-answer" aria-hidden="true" hidden>
+                    <p>We accept Stripe, PayPal and bank transfers. We invoice by milestone; payment plans are available for larger projects on request.</p>
+                  </div>
+                </article>
+
+                <!-- 4 -->
+                <article class="faq-item-modern" data-qa="faq-support" data-category="services">
+                  <button class="faq-question-btn" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">
+                    <span>What post-launch support do you provide?</span>
+                    <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div id="faq-4" role="region" aria-labelledby="faq-4-btn" class="faq-answer" aria-hidden="true" hidden>
+                    <p>All launches include a 14-day bug warranty. Optional monthly maintenance and marketing retainers are available.</p>
+                  </div>
+                </article>
+
+                <!-- 5 -->
+                <article class="faq-item-modern" data-qa="faq-hipaa" data-category="services">
+                  <button class="faq-question-btn" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">
+                    <span>Can you work with healthcare clients (HIPAA)?</span>
+                    <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div id="faq-5" role="region" aria-labelledby="faq-5-btn" class="faq-answer" aria-hidden="true" hidden>
+                    <p>We are HIPAA-aware and follow data protection best practices. For regulated systems we coordinate with partners who can sign BAAs when required.</p>
+                  </div>
+                </article>
+
+                <!-- 6 -->
+                <article class="faq-item-modern" data-qa="faq-revisions" data-category="pricing">
+                  <button class="faq-question-btn" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn">
+                    <span>How many revisions are included?</span>
+                    <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div id="faq-6" role="region" aria-labelledby="faq-6-btn" class="faq-answer" aria-hidden="true" hidden>
+                    <p>Starter plans include one revision round for visual design and content tweaks. Growth/Premium plans include additional review rounds—details are in the plan description.</p>
+                  </div>
+                </article>
+
+                <!-- 7 -->
+                <article class="faq-item-modern" data-qa="faq-content-delay" data-category="services">
+                  <button class="faq-question-btn" aria-expanded="false" aria-controls="faq-7" id="faq-7-btn">
+                    <span>What happens if I delay providing content?</span>
+                    <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div id="faq-7" role="region" aria-labelledby="faq-7-btn" class="faq-answer" aria-hidden="true" hidden>
+                    <p>If content is delayed we use stock placeholders and mark items as TODO in staging. Timelines are adjusted and communicated—final delivery depends on content turnaround.</p>
+                  </div>
+                </article>
+
+                <!-- 8 -->
+                <article class="faq-item-modern" data-qa="faq-ads" data-category="services">
+                  <button class="faq-question-btn" aria-expanded="false" aria-controls="faq-8" id="faq-8-btn">
+                    <span>Do you run ads and manage campaigns?</span>
+                    <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div id="faq-8" role="region" aria-labelledby="faq-8-btn" class="faq-answer" aria-hidden="true" hidden>
+                    <p>Yes—we offer ad setup and management as a standalone or bundled service. Ad spend is billed separately; we provide reporting and optimization as part of retainers.</p>
+                  </div>
+                </article>
+
+                <!-- 9 -->
+                <article class="faq-item-modern" data-qa="faq-start" data-category="pricing">
+                  <button class="faq-question-btn" aria-expanded="false" aria-controls="faq-9" id="faq-9-btn">
+                    <span>How do I get started?</span>
+                    <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div id="faq-9" role="region" aria-labelledby="faq-9-btn" class="faq-answer" aria-hidden="true" hidden>
+                    <p>Book a free 15-minute consult or call us. We'll send a one-page Project Summary and a short checklist of assets to move forward quickly.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Pricing & Process Category -->
+            <div class="faq-category" data-category="pricing" style="display: none;">
+              <div class="faq-items-grid">
+                <!-- Questions 1, 2, 3, 6, 9 will be shown here when this category is active -->
+              </div>
+            </div>
+
+            <!-- Services & Support Category -->
+            <div class="faq-category" data-category="services" style="display: none;">
+              <div class="faq-items-grid">
+                <!-- Questions 4, 5, 7, 8 will be shown here when this category is active -->
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
+                        <h1 class="mb-0">Leading Software Development in New York City</h1>
+                    </div>
+                    <p class="mb-4">Sigma Soft AI is your trusted technology partner in New York City, delivering innovative software solutions that drive business growth. We specialize in custom AI applications, web development, mobile apps, and business automation tailored for NYC's dynamic business environment.</p>
+                    <div class="row g-0 mb-3">
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Custom AI Solutions</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Web Development</h5>
+                        </div>
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Mobile Applications</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Business Automation</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-2">Call to ask any question</h5>
+                            <h4 class="text-primary mb-0">+1-212-555-0123</h4>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="tel:+1-212-555-0123" class="btn btn-primary py-3 px-5 wow zoomIn" data-wow-delay="0.9s" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                            <i class="fa fa-phone me-2"></i>Call Now
+                        </a>
+                        <a href="#contact" class="btn btn-outline-primary py-3 px-5 wow zoomIn" data-wow-delay="0.9s">
+                            <i class="fa fa-calendar me-2"></i>Book Consult
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="assets/images/nyc-office.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Services Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
+                <h1 class="mb-0">Comprehensive Software Solutions for NYC Businesses</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-code text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Custom Software Development</h4>
+                        <p class="m-0">Tailored software solutions designed specifically for your business needs and workflow</p>
+                        <a class="btn btn-lg btn-primary rounded" href="web-development/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-robot text-white"></i>
+                        </div>
+                        <h4 class="mb-3">AI & Machine Learning</h4>
+                        <p class="m-0">Intelligent automation and AI solutions to streamline your business processes</p>
+                        <a class="btn btn-lg btn-primary rounded" href="ai-solutions/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-mobile text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Mobile App Development</h4>
+                        <p class="m-0">Native and cross-platform mobile applications for iOS and Android</p>
+                        <a class="btn btn-lg btn-primary rounded" href="software-solutions/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-globe text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Web Development</h4>
+                        <p class="m-0">Responsive websites and web applications built with modern technologies</p>
+                        <a class="btn btn-lg btn-primary rounded" href="web-development/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-palette text-white"></i>
+                        </div>
+                        <h4 class="mb-3">UI/UX Design</h4>
+                        <p class="m-0">Beautiful, intuitive user interfaces that enhance user experience and engagement</p>
+                        <a class="btn btn-lg btn-primary rounded" href="brand-identity/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-chart-line text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Digital Marketing</h4>
+                        <p class="m-0">Strategic digital marketing solutions to grow your online presence and reach</p>
+                        <a class="btn btn-lg btn-primary rounded" href="digital-marketing/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+    <!-- Contact Start -->
+    <div id="contact" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Contact Us</h5>
+                <h1 class="mb-0">Ready to Start Your Project?</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="5" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <!-- Callback Form -->
+                    <div id="callback-form" class="mt-4 p-4 bg-light rounded">
+                        <h6 class="text-primary mb-3">Prefer a callback? Request it here</h6>
+                        <form>
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" style="height: 45px;">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" placeholder="Phone Number" style="height: 45px;">
+                                </div>
+                                <div class="col-12">
+                                    <select class="form-control" style="height: 45px;">
+                                        <option>Best time to call</option>
+                                        <option>Morning (9am-12pm)</option>
+                                        <option>Afternoon (12pm-3pm)</option>
+                                        <option>Evening (3pm-6pm)</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-outline-primary w-100" type="submit">Request Callback (30–60 min)</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
+                        <div class="bg-white d-flex flex-shrink-0 align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <h5 class="text-white">Call to ask any question</h5>
+                            <h1 class="text-white mb-0">+1-212-555-0123</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                        <a href="../index.html" class="navbar-brand">
+                            <h1 class="m-0 text-white">
+                                <img src="../img/logonbg.png" alt="Sigma Soft AI Logo" height="100vw" width="100vw">
+                            </h1>
+                        </a>
+                        <p class="mt-3 mb-4">Leading software development company in New York City, delivering innovative AI solutions and custom software for businesses.</p>
+                        <form class="row g-2">
+                            <div class="col-8">
+                                <input type="email" class="form-control border-0" placeholder="Your Email Address" style="height: 55px;">
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-dark border-0 w-100" style="height: 55px;">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-map-marker-alt text-primary me-2"></i>
+                                <p class="mb-0">New York, NY, USA</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-phone-alt text-primary me-2"></i>
+                                <p class="mb-0">+1-212-555-0123</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">contact@sigmasoftai.com</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 col-xl-8 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Quick Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="../index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-light mb-2" href="../about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-light mb-2" href="../service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light mb-2" href="web-development/"><i class="bi bi-arrow-right text-primary me-2"></i>Web Development</a>
+                                <a class="text-light mb-2" href="software-solutions/"><i class="bi bi-arrow-right text-primary me-2"></i>Software Solutions</a>
+                                <a class="text-light" href="../contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Sigma Soft AI</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="../index.html">Home</a>
+                            <a href="../about.html">About</a>
+                            <a href="../service.html">Services</a>
+                            <a href="../contact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+    
+    <!-- Testimonials Dynamic Loader -->
+    <script src="assets/js/testimonials.js"></script>
+    
+    <!-- FAQ Accordion Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ Accordion functionality
+        const faqButtons = document.querySelectorAll('.faq-question-btn');
+        const categoryButtons = document.querySelectorAll('.faq-category-btn');
+        
+        // FAQ Question Toggle
+        faqButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                const answerId = this.getAttribute('aria-controls');
+                const answer = document.getElementById(answerId);
+                
+                // Close all other FAQ items
+                faqButtons.forEach(otherButton => {
+                    if (otherButton !== this) {
+                        otherButton.setAttribute('aria-expanded', 'false');
+                        const otherAnswer = document.getElementById(otherButton.getAttribute('aria-controls'));
+                        const otherItem = otherButton.closest('.faq-item-modern');
+                        otherAnswer.setAttribute('aria-hidden', 'true');
+                        otherAnswer.hidden = true;
+                        otherItem.classList.remove('expanded');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                this.setAttribute('aria-expanded', !isExpanded);
+                answer.setAttribute('aria-hidden', isExpanded);
+                answer.hidden = isExpanded;
+                
+                // Toggle expanded class for full-width display
+                const currentItem = this.closest('.faq-item-modern');
+                if (!isExpanded) {
+                    currentItem.classList.add('expanded');
+                } else {
+                    currentItem.classList.remove('expanded');
+                }
+            });
+            
+            // Keyboard support
+            button.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+        
+        // Category filtering (simplified for compact design)
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                
+                // Update active category button
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show/hide FAQ items based on category
+                const faqItems = document.querySelectorAll('.faq-item-modern');
+                faqItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (category === 'all' || itemCategory === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                        // Close any open answers when hiding
+                        const button = item.querySelector('.faq-question-btn');
+                        const answer = item.querySelector('.faq-answer');
+                        button.setAttribute('aria-expanded', 'false');
+                        answer.setAttribute('aria-hidden', 'true');
+                        answer.hidden = true;
+                        item.classList.remove('expanded');
+                    }
+                });
+            });
+        });
+        
+        // Compact Mobile Services Click Handlers
+        const serviceRows = document.querySelectorAll('.service-row');
+        serviceRows.forEach(row => {
+            row.addEventListener('click', function() {
+                // Get the service name for potential navigation
+                const serviceName = this.querySelector('.service-name').textContent;
+                console.log('Service clicked:', serviceName);
+                
+                // Add a subtle click effect
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+                
+                // You can add navigation logic here if needed
+                // For example, scroll to the main services section
+                const servicesSection = document.querySelector('#services');
+                if (servicesSection) {
+                    servicesSection.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Interactive Q&A System
+        const qaData = [
+            {
+                question: "Need more footfall and calls?",
+                answer: "Our SEO services can do that."
+            },
+            {
+                question: "Want to look more professional?",
+                answer: "Our logo design will make you stand out."
+            },
+            {
+                question: "Need a website that converts?",
+                answer: "Our web development creates results."
+            },
+            {
+                question: "Want to scale your revenue?",
+                answer: "Our digital marketing drives growth."
+            },
+            {
+                question: "Need smart automation?",
+                answer: "Our AI solutions streamline everything."
+            },
+            {
+                question: "Want a complete brand identity?",
+                answer: "Our branding package covers it all."
+            }
+        ];
+        
+        let currentQaIndex = 0;
+        let isTyping = false;
+        
+        // Text scrambling effect
+        function scrambleText(element, targetText, duration = 1000) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+            const originalText = element.textContent;
+            const targetLength = targetText.length;
+            let iterations = 0;
+            const maxIterations = 20;
+            
+            const interval = setInterval(() => {
+                let scrambled = '';
+                for (let i = 0; i < targetLength; i++) {
+                    if (iterations > maxIterations * (i / targetLength)) {
+                        scrambled += targetText[i];
+                    } else {
+                        scrambled += chars[Math.floor(Math.random() * chars.length)];
+                    }
+                }
+                element.textContent = scrambled;
+                
+                iterations++;
+                if (iterations >= maxIterations) {
+                    element.textContent = targetText;
+                    clearInterval(interval);
+                }
+            }, duration / maxIterations);
+        }
+        
+        // Typewriter effect
+        function typeText(element, text, speed = 50) {
+            return new Promise((resolve) => {
+                element.textContent = '';
+                let i = 0;
+                
+                function type() {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        resolve();
+                    }
+                }
+                
+                type();
+            });
+        }
+        
+        // Next question function
+        function nextQuestion() {
+            if (isTyping) return;
+            
+            isTyping = true;
+            const scrambledElement = document.getElementById('scrambledText');
+            const typedElement = document.getElementById('typedText');
+            
+            // Clear previous answer
+            typedElement.textContent = '';
+            
+            // Scramble to new question
+            const newQuestion = qaData[currentQaIndex].question;
+            scrambleText(scrambledElement, newQuestion, 800);
+            
+            // Wait for scramble to complete, then type answer
+            setTimeout(async () => {
+                const answer = qaData[currentQaIndex].answer;
+                await typeText(typedElement, answer, 60);
+                isTyping = false;
+            }, 1000);
+            
+            // Move to next question
+            currentQaIndex = (currentQaIndex + 1) % qaData.length;
+        }
+        
+        // Initialize first question
+        document.addEventListener('DOMContentLoaded', function() {
+            const typedElement = document.getElementById('typedText');
+            if (typedElement) {
+                setTimeout(async () => {
+                    const answer = qaData[0].answer;
+                    await typeText(typedElement, answer, 60);
+                }, 1000);
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Component Test</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Navbar Component CSS -->
+    <link href="navbar.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+        }
+        
+        .test-content {
+            padding: 100px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .test-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .test-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .test-section p {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+    
+    <!-- Test Content -->
+    <div class="test-content">
+        <div class="test-section">
+            <h2>Navbar Component Test</h2>
+            <p>This is a test page to verify that the navbar component loads and functions correctly. The navbar should appear at the top of this page with all navigation links and dropdown functionality.</p>
+        </div>
+        
+        <div class="test-section">
+            <h2>Features to Test</h2>
+            <ul>
+                <li>✅ Navbar loads correctly</li>
+                <li>✅ Logo displays properly</li>
+                <li>✅ Navigation links work</li>
+                <li>✅ Services dropdown opens on hover (desktop)</li>
+                <li>✅ Services dropdown opens on click (mobile)</li>
+                <li>✅ Mobile hamburger menu works</li>
+                <li>✅ Call Now button is functional</li>
+                <li>✅ Social media links work</li>
+                <li>✅ Responsive design adapts to screen size</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h2>Testing Instructions</h2>
+            <p>
+                <strong>Desktop Testing:</strong><br>
+                1. Hover over "Services" to see the mega dropdown<br>
+                2. Check that all links in the dropdown work<br>
+                3. Verify hover effects on navigation items<br>
+                4. Test the "Call Now" button<br>
+            </p>
+            <p>
+                <strong>Mobile Testing:</strong><br>
+                1. Resize browser to mobile width<br>
+                2. Click the hamburger menu to open navigation<br>
+                3. Click "Services" to expand the dropdown<br>
+                4. Test all mobile navigation links<br>
+            </p>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Navbar Component JS -->
+    <script src="navbar.js"></script>
+    
+    <!-- Load Navbar -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    
+                    // Initialize navbar after loading
+                    if (window.NavbarComponent) {
+                        window.NavbarComponent.updateActiveNavItem('test');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading navbar:', error);
+                    document.getElementById('navbar-container').innerHTML = '<div style="padding: 20px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px; margin: 20px;">Error loading navbar component. Please check the file paths.</div>';
+                });
+        });
+    </script>
+</body>
+</html>
+

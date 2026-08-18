@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>New York Software Development | Sigma Soft AI - Custom Software Developers</title>
+    <meta name="description" content="Sigma Soft AI provides expert software development services in New York. Custom AI solutions, web development, mobile apps, and business automation for NYC businesses.">
+    <meta name="keywords" content="New York software development, NYC custom software, AI solutions New York, web development NYC, mobile app development New York, business automation NYC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link href="../img/favicon64.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    
+    <!-- Config -->
+    <script src="../craigslist/config.js"></script>
+    
+    <style>
+        /* Enhanced Header Styles */
+        .header-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border: 2px solid var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .header-cta:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(58, 166, 164, 0.3);
+        }
+        
+        .header-cta i {
+            font-size: 16px;
+        }
+        
+        .header-hours {
+            font-size: 12px;
+            color: #adb5bd;
+            margin-top: 2px;
+        }
+        
+        /* Hero CTA Styles */
+        .hero-cta-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border: none;
+            color: white;
+            font-weight: 700;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(58, 166, 164, 0.3);
+        }
+        
+        .hero-cta-primary:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(58, 166, 164, 0.4);
+        }
+        
+        .hero-cta-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            font-weight: 600;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .hero-cta-secondary:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        .hero-cta-tertiary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .hero-cta-tertiary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .cta-microcopy {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        /* Sticky Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(58, 166, 164, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .floating-cta:hover {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(58, 166, 164, 0.5);
+        }
+        
+        .floating-cta i {
+            font-size: 24px;
+        }
+        
+        /* Mobile Bottom Bar */
+        .mobile-cta-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+        
+        .mobile-cta-bar .btn {
+            flex: 1;
+            margin: 0 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-cta-bar {
+                display: flex;
+            }
+            
+            .floating-cta {
+                display: none;
+            }
+        }
+        
+        /* Enhanced Navbar */
+        .navbar-brand img {
+            max-height: 50px;
+            width: auto;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary) !important;
+        }
+        
+        /* Service Cards Hover Effects */
+        .service-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(58, 166, 164, 0.08) 0%, rgba(58, 166, 164, 0.04) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(45deg, rgba(61, 175, 172, 0.95) 0%, rgba(61, 175, 172, 0.8) 25%, rgba(61, 175, 172, 0.6) 50%, rgba(61, 175, 172, 0.8) 75%, rgba(61, 175, 172, 0.95) 100%) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+            box-shadow: 0 6px 20px rgba(58, 166, 164, 0.3);
+        }
+        
+        .service-icon {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .service-card:hover h6 {
+            color: #ffffff !important;
+            transform: translateY(-1px);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .service-card:hover p {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        
+        .service-card:hover .service-icon i {
+            color: #ffffff !important;
+        }
+        
+        .service-card h6 {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .service-icon i {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card p {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* HOW WE WORK styles - Compact Grid Layout */
+        .how-we-work { 
+            padding: 40px 0; 
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .how-we-work h2 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .how-we-work h2 .process-flow {
+            font-size: 0.7em;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .how-we-work::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(58, 166, 164, 0.2), transparent);
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+        
+        .process-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .process-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(58, 166, 164, 0.12);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(58, 166, 164, 0.25);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .process-card:hover .step-icon {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(58, 166, 164, 0.4);
+        }
+        
+        /* Animated GIF Icons */
+        .step-icon img {
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+        }
+        
+        .process-card:hover .step-icon img {
+            transform: scale(1.1);
+        }
+        
+        .process-title {
+            color: var(--dark);
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+        }
+        
+        .step-number {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 12px;
+            box-shadow: 0 2px 8px rgba(58, 166, 164, 0.3);
+            z-index: 2;
+        }
+        
+        .process-card p {
+            color: #6c757d;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .deliverables {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .deliverables strong {
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        .deliverables ul {
+            margin: 0;
+            padding-left: 12px;
+        }
+        
+        .deliverables li {
+            color: #6c757d;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            font-size: 14px;
+        }
+        
+        .deliverables li:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .how-we-work {
+                padding: 30px 0;
+            }
+            
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 15px 0;
+            }
+            
+            .process-card {
+                padding: 20px;
+            }
+        }
+        
+        /* Modern Success Stories & Testimonials Styles */
+        .testimonial-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-header {
+            background: white;
+            border-bottom: 1px solid rgba(58, 166, 164, 0.1);
+        }
+        
+        .section-badge .badge {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .testimonial-carousel-modern {
+            width: 100%;
+            position: relative;
+            padding: 40px 0;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+        
+        /* Auto-scrolling carousel */
+        .auto-scroll-carousel {
+            display: flex;
+            gap: 30px;
+            animation: scroll 30s linear infinite;
+            width: max-content;
+        }
+        
+        .auto-scroll-carousel:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Modern Testimonial Cards */
+        .testimonial-card-modern {
+            flex: 0 0 400px;
+            max-width: 400px;
+        }
+        
+        .testimonial-card-inner {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(58, 166, 164, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card-inner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .testimonial-card-inner:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(58, 166, 164, 0.15);
+            border-color: rgba(58, 166, 164, 0.2);
+        }
+        
+        .testimonial-card-inner:hover::before {
+            opacity: 1;
+        }
+        
+        /* Header Card */
+        .testimonial-header-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+        
+        .testimonial-avatar {
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        .avatar-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(58, 166, 164, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card-inner:hover .avatar-image {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .avatar-badge {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            border: 2px solid white;
+        }
+        
+        .testimonial-meta {
+            flex: 1;
+        }
+        
+        .testimonial-meta h5 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-meta p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .rating-stars {
+            color: #ffc107;
+            font-size: 14px;
+        }
+        
+        .rating-stars i {
+            margin-right: 2px;
+        }
+        
+        /* Stats Badge */
+        .testimonial-stats {
+            flex-shrink: 0;
+        }
+        
+        .stat-badge {
+            padding: 8px 12px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .testimonial-card-inner:hover .stat-badge::before {
+            transform: translateX(100%);
+        }
+        
+        .stat-badge.success {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+        }
+        
+        .stat-badge.info {
+            background: linear-gradient(135deg, #17a2b8, #6f42c1);
+            color: white;
+        }
+        
+        .stat-badge.warning {
+            background: linear-gradient(135deg, #ffc107, #fd7e14);
+            color: white;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+        
+        /* Content */
+        .testimonial-content {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .quote-mark {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        
+        .testimonial-content blockquote {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .testimonial-content blockquote p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            font-style: italic;
+            margin: 0;
+        }
+        
+        /* Footer */
+        .testimonial-footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 20px;
+        }
+        
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: rgba(58, 166, 164, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card-inner:hover .tag {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        /* Modern CTA */
+        .testimonial-cta-modern {
+            background: white;
+            border-top: 1px solid rgba(58, 166, 164, 0.1);
+        }
+        
+        .cta-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .cta-content h3 {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .cta-buttons .btn {
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-buttons .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-decoration {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .decoration-circle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+        
+        .decoration-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, transparent 2px);
+            background-size: 8px 8px;
+        }
+        
+        /* Carousel navigation dots */
+        .owl-dots {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .owl-dot {
+            display: inline-block;
+            margin: 0 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(58, 166, 164, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .owl-dot.active {
+            background: var(--primary);
+            transform: scale(1.3);
+            box-shadow: 0 2px 8px rgba(58, 166, 164, 0.4);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .testimonial-card-modern {
+                flex: 0 0 320px;
+                max-width: 320px;
+            }
+            
+            .testimonial-card-inner {
+                padding: 25px 20px;
+            }
+            
+            .testimonial-header-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .testimonial-content blockquote p {
+                font-size: 1rem;
+            }
+            
+            .cta-card {
+                padding: 30px 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .auto-scroll-carousel {
+                gap: 20px;
+                animation-duration: 25s;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .testimonial-card-modern {
+                flex: 0 0 280px;
+                max-width: 280px;
+            }
+            
+            .auto-scroll-carousel {
+                gap: 15px;
+                animation-duration: 20s;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="bi bi-whatsapp me-2"></i>+1-212-555-0123</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>contact@sigmasoftai.com</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/company/sigma-soft-tech" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://twitter.com/SigmaSoftAI" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/profile.php?id=100094257815011" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/sigmasoftai" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://youtube.com/@SigmaSoftAI" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0 title-font">
+            <a href="../index.html" class="navbar-brand p-0">
+                <h1 class="m-0 title-font">
+                    <img src="../img/logonbg.png" alt="Sigma Soft AI Logo" height="50" width="auto">
+                </h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="../index.html" class="nav-item nav-link">Home</a>
+                    <a href="../about.html" class="nav-item nav-link">About</a>
+                    <a href="../service.html" class="nav-item nav-link">Services</a>
+                    <a href="../blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="../contact.html" class="nav-item nav-link">Contact</a>
+                    <div class="nav-item d-flex align-items-center ms-3">
+                        <a href="tel:+1-212-555-0123" class="header-cta" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                            <i class="fa fa-phone"></i>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="assets/images/nyc-hero.jpg" alt="New York Software Development" loading="lazy">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Your Business Growth Partner in <span class="text-primary fw-bold" style="text-shadow: 0 0 10px rgba(58, 166, 164, 0.5);">New York</span></h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn title-font">Sigma Soft AI</h1>
+                            <p class="text-white mb-4 animated slideInUp">AI solutions, web development, design and business automation</p>
+                            
+                            <!-- Primary CTA Group -->
+                            <div class="d-flex flex-column flex-md-row gap-3 mb-3 animated slideInLeft">
+                                <a href="tel:+1-212-555-0123" class="hero-cta-primary" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                                    <i class="fa fa-phone"></i>
+                                    Call Now — +1-212-555-0123
+                                </a>
+                                <a href="#contact" class="hero-cta-secondary">
+                                    <i class="fa fa-calendar-check"></i>
+                                    Book Free 15-Min Consult
+                                </a>
+                            </div>
+                            
+                            <!-- Secondary CTA -->
+                            <div class="mb-3 animated slideInRight">
+                                <a href="#callback-form" class="hero-cta-tertiary">
+                                    <i class="fa fa-clock"></i>
+                                    Request Callback (30–60 min)
+                                </a>
+                            </div>
+                            
+                            <!-- Microcopy -->
+                            <div class="cta-microcopy animated slideInUp">
+                                <p class="mb-1">No automated menu — you'll talk to a real senior engineer.</p>
+                                <p class="mb-0">Free 15-minute consultation. We'll review your site and provide actionable insights.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Carousel End -->
+
+    <!-- Sticky Floating CTA -->
+    <a href="tel:+1-212-555-0123" class="floating-cta" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+        <i class="fa fa-phone"></i>
+    </a>
+
+    <!-- Mobile CTA Bar -->
+    <div class="mobile-cta-bar">
+        <a href="tel:+1-212-555-0123" class="btn btn-primary" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+            <i class="fa fa-phone me-2"></i>Call Now
+        </a>
+        <a href="#contact" class="btn btn-outline-primary">
+            <i class="fa fa-calendar me-2"></i>Book Consult
+        </a>
+    </div>
+
+    <!-- Services Showcase Start -->
+    <div class="container-fluid facts py-5 pt-lg-0">
+        <div class="container py-5 pt-lg-0">
+            <div class="row gx-0">
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-globe text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">Website Development</h6>
+                        <p class="text-white-50 mb-0 small">Let people know you exist</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-search text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">SEO</h6>
+                        <p class="text-white-50 mb-0 small">Drives footfall & calls</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-palette text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">Logo Design</h6>
+                        <p class="text-white-50 mb-0 small">Face of your brand</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-paint-brush text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">Brand Identity</h6>
+                        <p class="text-white-50 mb-0 small">Your visual identity</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.5s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-chart-line text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">Digital Marketing</h6>
+                        <p class="text-white-50 mb-0 small">Scale revenue</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="service-card d-flex flex-column align-items-center justify-content-center text-center bg-custom-dark" style="height: 180px; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="service-icon d-flex align-items-center justify-content-center rounded mb-3 bg-primary-custom" style="width: 50px; height: 50px;">
+                            <i class="fa fa-robot text-custom-dark"></i>
+                        </div>
+                        <h6 class="text-white mb-2">AI Solutions</h6>
+                        <p class="text-white-50 mb-0 small">Smart automation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services Showcase End -->
+
+    <!-- HOW WE WORK — service-agnostic (inserted by automation) -->
+    <section id="how-we-work" aria-labelledby="how-we-work-title" class="how-we-work">
+      <div class="container">
+        <div class="text-center position-relative pb-2 mb-3 mx-auto" style="max-width: 600px;">
+          <h5 class="fw-bold text-primary text-uppercase">Our Process</h5>
+                           <h2 id="how-we-work-title" class="mb-2">How We Work — <span class="process-flow">Plan → Build → Launch</span></h2>
+                 <p class="text-muted fs-5 mb-0">Fast. Predictable. Reliable.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card" id="plan">
+            <div class="card-header">
+              <div class="step-icon">
+                <img src="assets/icons/idea.gif" alt="Plan - Discovery & Strategy" width="50" height="50">
+              </div>
+              <h3 class="process-title">Plan — Discovery & Strategy</h3>
+            </div>
+            <p>Initial consultation, 15-min discovery call, project brief with scope, requirements and timeline.</p>
+            <div class="deliverables">
+              <strong>Deliverables:</strong>
+              <ul>
+                <li>Project brief & milestones</li>
+                <li>Requirements document</li>
+                <li>Timeline & deliverables</li>
+              </ul>
+            </div>
+            <div class="step-number">01</div>
+          </div>
+
+          <div class="process-card" id="build">
+            <div class="card-header">
+              <div class="step-icon">
+                <img src="assets/icons/gears.gif" alt="Build - Create & Refine" width="50" height="50">
+              </div>
+              <h3 class="process-title">Build — Create & Refine</h3>
+            </div>
+            <p>Design, development, content creation, and quality assurance. Milestone review and feedback integration.</p>
+            <div class="deliverables">
+              <strong>Deliverables:</strong>
+              <ul>
+                <li>Preview / staging version</li>
+                <li>Progress updates</li>
+                <li>Review & feedback</li>
+              </ul>
+            </div>
+            <div class="step-number">02</div>
+          </div>
+
+          <div class="process-card" id="launch">
+            <div class="card-header">
+              <div class="step-icon">
+                <img src="assets/icons/rocket.gif" alt="Launch - Deploy & Support" width="40" height="40">
+              </div>
+              <h3 class="process-title">Launch — Deploy & Support</h3>
+            </div>
+            <p>Final delivery, setup, training, and post-launch support to ensure everything works perfectly.</p>
+            <div class="deliverables">
+              <strong>Deliverables:</strong>
+              <ul>
+                <li>Final deliverables</li>
+                <li>Setup & training</li>
+                <li>Post-launch support</li>
+              </ul>
+            </div>
+            <div class="step-number">03</div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Modern Success Stories & Testimonials Start -->
+    <section id="success-stories" class="testimonial-section wow fadeInUp" data-wow-delay="0.1s">
+        <div class="testimonial-header text-center py-4">
+            <div class="container">
+                <div class="section-badge mb-3">
+                    <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+                        <i class="fa fa-star me-1"></i>Success Stories
+                    </span>
+                </div>
+                <h2 class="mb-3 fw-bold">Trusted by Top Businesses</h2>
+                <p class="text-muted mb-0 lead">See how we've transformed businesses with our innovative solutions</p>
+            </div>
+        </div>
+
+        <!-- Auto-Scrolling Testimonials Carousel -->
+        <div class="testimonial-carousel-modern">
+            <div class="auto-scroll-carousel">
+                <!-- Testimonials will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Modern CTA -->
+        <div class="testimonial-cta-modern py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="cta-card">
+                            <div class="cta-content">
+                                <h3 class="mb-3">Ready to Transform Your Business?</h3>
+                                <p class="mb-4">Join hundreds of NYC businesses that trust us with their digital transformation</p>
+                                <div class="cta-buttons">
+                                    <a href="tel:+1-212-555-0123" class="btn btn-primary btn-lg me-3" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                                        <i class="fa fa-phone me-2"></i>Call Now
+                                    </a>
+                                    <a href="#contact" class="btn btn-outline-primary btn-lg">
+                                        <i class="fa fa-calendar me-2"></i>Book Free Consult
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cta-decoration">
+                                <div class="decoration-circle"></div>
+                                <div class="decoration-dots"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modern Success Stories & Testimonials End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
+                        <h1 class="mb-0">Leading Software Development in New York City</h1>
+                    </div>
+                    <p class="mb-4">Sigma Soft AI is your trusted technology partner in New York City, delivering innovative software solutions that drive business growth. We specialize in custom AI applications, web development, mobile apps, and business automation tailored for NYC's dynamic business environment.</p>
+                    <div class="row g-0 mb-3">
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Custom AI Solutions</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Web Development</h5>
+                        </div>
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Mobile Applications</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Business Automation</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-2">Call to ask any question</h5>
+                            <h4 class="text-primary mb-0">+1-212-555-0123</h4>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="tel:+1-212-555-0123" class="btn btn-primary py-3 px-5 wow zoomIn" data-wow-delay="0.9s" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                            <i class="fa fa-phone me-2"></i>Call Now
+                        </a>
+                        <a href="#contact" class="btn btn-outline-primary py-3 px-5 wow zoomIn" data-wow-delay="0.9s">
+                            <i class="fa fa-calendar me-2"></i>Book Consult
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="assets/images/nyc-office.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Services Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
+                <h1 class="mb-0">Comprehensive Software Solutions for NYC Businesses</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-code text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Custom Software Development</h4>
+                        <p class="m-0">Tailored software solutions designed specifically for your business needs and workflow</p>
+                        <a class="btn btn-lg btn-primary rounded" href="web-development/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-robot text-white"></i>
+                        </div>
+                        <h4 class="mb-3">AI & Machine Learning</h4>
+                        <p class="m-0">Intelligent automation and AI solutions to streamline your business processes</p>
+                        <a class="btn btn-lg btn-primary rounded" href="ai-solutions/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-mobile text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Mobile App Development</h4>
+                        <p class="m-0">Native and cross-platform mobile applications for iOS and Android</p>
+                        <a class="btn btn-lg btn-primary rounded" href="software-solutions/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-globe text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Web Development</h4>
+                        <p class="m-0">Responsive websites and web applications built with modern technologies</p>
+                        <a class="btn btn-lg btn-primary rounded" href="web-development/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-palette text-white"></i>
+                        </div>
+                        <h4 class="mb-3">UI/UX Design</h4>
+                        <p class="m-0">Beautiful, intuitive user interfaces that enhance user experience and engagement</p>
+                        <a class="btn btn-lg btn-primary rounded" href="brand-identity/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-chart-line text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Digital Marketing</h4>
+                        <p class="m-0">Strategic digital marketing solutions to grow your online presence and reach</p>
+                        <a class="btn btn-lg btn-primary rounded" href="digital-marketing/">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+    <!-- Contact Start -->
+    <div id="contact" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Contact Us</h5>
+                <h1 class="mb-0">Ready to Start Your Project?</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="5" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <!-- Callback Form -->
+                    <div id="callback-form" class="mt-4 p-4 bg-light rounded">
+                        <h6 class="text-primary mb-3">Prefer a callback? Request it here</h6>
+                        <form>
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" style="height: 45px;">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" placeholder="Phone Number" style="height: 45px;">
+                                </div>
+                                <div class="col-12">
+                                    <select class="form-control" style="height: 45px;">
+                                        <option>Best time to call</option>
+                                        <option>Morning (9am-12pm)</option>
+                                        <option>Afternoon (12pm-3pm)</option>
+                                        <option>Evening (3pm-6pm)</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-outline-primary w-100" type="submit">Request Callback (30–60 min)</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
+                        <div class="bg-white d-flex flex-shrink-0 align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <h5 class="text-white">Call to ask any question</h5>
+                            <h1 class="text-white mb-0">+1-212-555-0123</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                        <a href="../index.html" class="navbar-brand">
+                            <h1 class="m-0 text-white">
+                                <img src="../img/logonbg.png" alt="Sigma Soft AI Logo" height="100vw" width="100vw">
+                            </h1>
+                        </a>
+                        <p class="mt-3 mb-4">Leading software development company in New York City, delivering innovative AI solutions and custom software for businesses.</p>
+                        <form class="row g-2">
+                            <div class="col-8">
+                                <input type="email" class="form-control border-0" placeholder="Your Email Address" style="height: 55px;">
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-dark border-0 w-100" style="height: 55px;">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-map-marker-alt text-primary me-2"></i>
+                                <p class="mb-0">New York, NY, USA</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-phone-alt text-primary me-2"></i>
+                                <p class="mb-0">+1-212-555-0123</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">contact@sigmasoftai.com</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 col-xl-8 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Quick Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="../index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-light mb-2" href="../about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-light mb-2" href="../service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light mb-2" href="web-development/"><i class="bi bi-arrow-right text-primary me-2"></i>Web Development</a>
+                                <a class="text-light mb-2" href="software-solutions/"><i class="bi bi-arrow-right text-primary me-2"></i>Software Solutions</a>
+                                <a class="text-light" href="../contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Sigma Soft AI</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="../index.html">Home</a>
+                            <a href="../about.html">About</a>
+                            <a href="../service.html">Services</a>
+                            <a href="../contact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+    
+    <!-- Testimonials Dynamic Loader -->
+    <script src="assets/js/testimonials.js"></script>
+</body>
+
+</html>
+

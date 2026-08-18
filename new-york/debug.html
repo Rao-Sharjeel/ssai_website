@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Debug - NYC Page</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+    
+    <style>
+        .debug-info {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        .css-status {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 3px;
+        }
+        .css-loaded { background: #d4edda; color: #155724; }
+        .css-error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Debug Information</h1>
+        
+        <div class="debug-info">
+            <h3>CSS Loading Status</h3>
+            <div id="css-status"></div>
+        </div>
+        
+        <div class="debug-info">
+            <h3>Bootstrap Grid Test</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div style="background: var(--primary); color: white; padding: 1rem; margin: 0.5rem 0; border-radius: 5px;">
+                        Left Column - Primary Color
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="background: var(--accent); color: white; padding: 1rem; margin: 0.5rem 0; border-radius: 5px;">
+                        Right Column - Accent Color
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="debug-info">
+            <h3>Button Test</h3>
+            <button class="btn btn-primary">Primary Button</button>
+            <button class="btn btn-outline-primary">Outline Button</button>
+        </div>
+        
+        <div class="debug-info">
+            <h3>Form Test</h3>
+            <input type="text" class="form-control" placeholder="Test input" style="margin-bottom: 1rem;">
+            <select class="form-control">
+                <option>Test select</option>
+            </select>
+        </div>
+        
+        <div class="debug-info">
+            <h3>Color Variables Test</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <div style="background: var(--primary); color: white; padding: 1rem; border-radius: 5px;">
+                    Primary: var(--primary)
+                </div>
+                <div style="background: var(--secondary); color: white; padding: 1rem; border-radius: 5px;">
+                    Secondary: var(--secondary)
+                </div>
+                <div style="background: var(--accent); color: white; padding: 1rem; border-radius: 5px;">
+                    Accent: var(--accent)
+                </div>
+                <div style="background: var(--dark); color: white; padding: 1rem; border-radius: 5px;">
+                    Dark: var(--dark)
+                </div>
+            </div>
+        </div>
+        
+        <div class="debug-info">
+            <h3>Gradient Text Test</h3>
+            <h1 style="font-size: 2rem; margin-bottom: 1rem;">
+                <span class="gradient-text">This should be gradient text</span>
+            </h1>
+            <p>If you see the HTML tags above, the gradient CSS is not working.</p>
+            <p>If you see orange gradient text, it's working correctly.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusDiv = document.getElementById('css-status');
+            const rootStyles = getComputedStyle(document.documentElement);
+            
+            // Check CSS variables
+            const primaryColor = rootStyles.getPropertyValue('--primary').trim();
+            const secondaryColor = rootStyles.getPropertyValue('--secondary').trim();
+            const accentColor = rootStyles.getPropertyValue('--accent').trim();
+            
+            let statusHTML = '';
+            
+            // Check if CSS variables are loaded
+            if (primaryColor === '#3AA6A4') {
+                statusHTML += '<div class="css-status css-loaded">✅ CSS Variables loaded correctly</div>';
+            } else {
+                statusHTML += '<div class="css-status css-error">❌ CSS Variables not loaded. Primary color: ' + primaryColor + '</div>';
+            }
+            
+            // Check Bootstrap
+            const container = document.querySelector('.container');
+            if (container && getComputedStyle(container).maxWidth !== 'none') {
+                statusHTML += '<div class="css-status css-loaded">✅ Bootstrap CSS loaded</div>';
+            } else {
+                statusHTML += '<div class="css-status css-error">❌ Bootstrap CSS not loaded</div>';
+            }
+            
+            // Check custom CSS
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                statusHTML += '<div class="css-status css-loaded">✅ Custom CSS loaded</div>';
+            } else {
+                statusHTML += '<div class="css-status css-error">❌ Custom CSS not loaded</div>';
+            }
+            
+            statusHTML += '<div class="css-status">Primary: ' + primaryColor + '</div>';
+            statusHTML += '<div class="css-status">Secondary: ' + secondaryColor + '</div>';
+            statusHTML += '<div class="css-status">Accent: ' + accentColor + '</div>';
+            
+            statusDiv.innerHTML = statusHTML;
+            
+            console.log('Debug Info:', {
+                primaryColor,
+                secondaryColor,
+                accentColor,
+                containerMaxWidth: getComputedStyle(container).maxWidth,
+                navbarExists: !!navbar
+            });
+        });
+    </script>
+</body>
+</html>

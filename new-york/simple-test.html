@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Test</title>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8A65 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Test Page</h1>
+    
+    <h2>Test 1: Basic HTML</h2>
+    <p>This is a basic paragraph.</p>
+    
+    <h2>Test 2: Gradient Text</h2>
+    <h1><span class="gradient-text">This should be gradient text</span></h1>
+    
+    <h2>Test 3: Inline Styles</h2>
+    <h1><span style="background: linear-gradient(135deg, #FF6B35 0%, #FF8A65 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block;">This should also be gradient text</span></h1>
+    
+    <h2>Test 4: Raw HTML</h2>
+    <p>If you see this, HTML is working.</p>
+    
+    <script>
+        console.log('Simple test page loaded');
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded');
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
