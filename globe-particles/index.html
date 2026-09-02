@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Globe Particles</title>
+  <link rel="stylesheet" href="globe-particles.css" />
+  <style>
+    :root {
+      --brand-accent: #8b5cf6;
+    }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background: radial-gradient(ellipse at center, #0b0f1a 0%, #05070d 70%, #020304 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .globe-particles-shell {
+      margin: 0 auto;
+    }
+
+    .globe-controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 240px;
+      padding: 16px 18px 18px;
+      border-radius: 14px;
+      background: rgba(10, 14, 24, 0.72);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      backdrop-filter: blur(10px);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #cbd5f5;
+      z-index: 10;
+    }
+
+    .globe-controls h2 {
+      margin: 0 0 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #f8fafc;
+      opacity: 0.85;
+    }
+
+    .globe-controls .field {
+      margin-bottom: 12px;
+    }
+
+    .globe-controls label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      margin-bottom: 4px;
+      color: #94a3d6;
+    }
+
+    .globe-controls label span.val {
+      color: #f8fafc;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .globe-controls input[type="range"] {
+      width: 100%;
+      accent-color: #8b5cf6;
+    }
+
+    .globe-controls .color-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .globe-controls input[type="color"] {
+      width: 36px;
+      height: 22px;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      background: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="globe-particles-shell">
+    <canvas class="globe-particles-canvas" data-globe-particles></canvas>
+  </div>
+
+  <div class="globe-controls">
+    <h2>Globe Controls</h2>
+
+    <div class="field">
+      <label for="ctrl-repel-strength">Repel Power <span class="val" data-val="repelStrength">0.45</span></label>
+      <input id="ctrl-repel-strength" type="range" min="0" max="1.5" step="0.01" value="0.45" data-control="repelStrength" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-repel-radius">Repel Radius <span class="val" data-val="repelRadius">0.55</span></label>
+      <input id="ctrl-repel-radius" type="range" min="0.1" max="1.5" step="0.01" value="0.55" data-control="repelRadius" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-repel-ease">Return Speed <span class="val" data-val="repelEase">0.08</span></label>
+      <input id="ctrl-repel-ease" type="range" min="0.01" max="0.3" step="0.005" value="0.08" data-control="repelEase" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-roughness">Roughness <span class="val" data-val="roughness">0.60</span></label>
+      <input id="ctrl-roughness" type="range" min="0" max="1.5" step="0.01" value="0.6" data-control="roughness" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-rotation-speed">Rotation Speed <span class="val" data-val="rotationSpeed">0.12</span></label>
+      <input id="ctrl-rotation-speed" type="range" min="0" max="0.6" step="0.01" value="0.12" data-control="rotationSpeed" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-mouse-strength">Tilt Strength <span class="val" data-val="mouseStrength">0.08</span></label>
+      <input id="ctrl-mouse-strength" type="range" min="0" max="0.3" step="0.01" value="0.08" data-control="mouseStrength" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-point-size">Point Size <span class="val" data-val="pointSize">18</span></label>
+      <input id="ctrl-point-size" type="range" min="4" max="40" step="1" value="18" data-control="pointSize" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-camera-distance">Zoom <span class="val" data-val="cameraDistance">5.6</span></label>
+      <input id="ctrl-camera-distance" type="range" min="3" max="10" step="0.1" value="5.6" data-control="cameraDistance" />
+    </div>
+
+    <div class="field color-row">
+      <label for="ctrl-accent-color" style="margin-bottom: 0;">Accent Color</label>
+      <input id="ctrl-accent-color" type="color" value="#8b5cf6" data-control="accentColor" />
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="globe-particles.js"></script>
+  <script>
+    const globe = initGlobeParticles(document.querySelector("[data-globe-particles]"), {
+      sphereCount: 2600,
+      ringCount: 1300,
+      accentColor: "#8b5cf6",
+      radius: 1.35,
+      ringRadius: 2.05,
+      rotationSpeed: 0.12,
+      mouseStrength: 0.08,
+    });
+
+    document.querySelectorAll("[data-control]").forEach((input) => {
+      input.addEventListener("input", () => {
+        const key = input.dataset.control;
+        const value = input.type === "range" ? parseFloat(input.value) : input.value;
+        globe.update({ [key]: value });
+
+        const label = document.querySelector(`[data-val="${key}"]`);
+        if (label) label.textContent = input.type === "range" ? value.toFixed(2) : value;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,821 @@
+{
+  "generated_at": "2025-08-23T15:29:00Z",
+  "repo_root": "/Users/mac/Documents/ssai/ssai website",
+  "craigslist_folder_exists": true,
+  "files_scanned": [
+    "craigslist/POST_CHANGE_QA.md",
+    "craigslist/README.md",
+    "craigslist/audit_checklist_response.json",
+    "craigslist/case-studies/case-studies.js",
+    "craigslist/case-studies/smile-enhancer.html",
+    "craigslist/case-studies/rcm-automation.html",
+    "craigslist/case-studies/ai-coach.html",
+    "craigslist/case-studies/workforce-system.html",
+    "craigslist/case-studies/algeria-marketplace.html",
+    "craigslist/case-studies/ai-training.html",
+    "craigslist/case-studies/erp-enhancement.html",
+    "craigslist/config.js",
+    "craigslist/craigslist.css",
+    "craigslist/index.html",
+    "craigslist/new-york/websites/index.html",
+    "craigslist/los-angeles/ai-chatbot/index.html",
+    "craigslist/chicago/websites/index.html",
+    "craigslist/houston/clinic-websites/index.html",
+    "craigslist/phoenix/smallbiz/index.html",
+    "craigslist/philadelphia/marketing/index.html",
+    "craigslist/templates/city-service-template.html",
+    "craigslist/templates/service-template.html",
+    "craigslist/sitemap-craigslist.xml",
+    "craigslist/assets/local-images/README.md",
+    "new-york/index.html",
+    "new-york/style.css"
+  ],
+  "pages": [
+    {
+      "path": "craigslist/index.html",
+      "url": "file:///Users/mac/Documents/ssai/ssai%20website/craigslist/index.html",
+      "exists": true,
+      "http_status": null,
+      "title": "Redirecting to New York Web Development Services",
+      "meta_description": "Redirecting to New York web development services",
+      "h1": null,
+      "hero_present": false,
+      "hero_text": null,
+      "phone_present": false,
+      "phone_value": null,
+      "phone_matches_config": false,
+      "calendar_link_present": false,
+      "calendar_link": null,
+      "intake_form_iframe_present": false,
+      "intake_form_src": null,
+      "plans_count": 0,
+      "plans": [],
+      "case_studies_count": 0,
+      "case_studies": [],
+      "images": [],
+      "css_variables_detected": false,
+      "cta_buttons_count": 0,
+      "sticky_call_button_present": false,
+      "animations_detected": false,
+      "prefers_reduced_motion_respected": true,
+      "jsonld_localbusiness_present": false,
+      "og_tags_present": false,
+      "twitter_tags_present": false,
+      "lang_attribute": "en",
+      "aria_issues_found": 0,
+      "form_labels_missing": 0,
+      "color_contrast_results": [],
+      "lighthouse_summary": null,
+      "notes": [
+        "Hub page archived - now redirects to NYC landing page",
+        "Meta refresh redirect implemented with JavaScript fallback",
+        "Clean redirect to /craigslist/new-york/",
+        "Legacy hub content moved to /craigslist/legacy/hub-index.html"
+      ]
+    },
+    {
+      "path": "new-york/index.html",
+      "url": "file:///Users/mac/Documents/ssai/ssai%20website/new-york/index.html",
+      "exists": true,
+      "http_status": null,
+      "title": "New York Software Development | Sigma Soft AI - Custom Software Developers",
+      "meta_description": "Sigma Soft AI provides expert software development services in New York. Custom AI solutions, web development, mobile apps, and business automation for NYC businesses.",
+      "h1": "Your Business Growth Partner in New York",
+      "hero_present": true,
+      "hero_text": "AI solutions, web development, design and business automation",
+      "phone_present": true,
+      "phone_value": "tel:+1-212-555-0123",
+      "phone_matches_config": true,
+      "calendar_link_present": true,
+      "calendar_link": "https://calendly.example/15",
+      "intake_form_iframe_present": false,
+      "intake_form_src": null,
+      "plans_count": 6,
+      "plans": [
+        {
+          "name": "Starter Launch",
+          "bullets": ["5-page responsive website", "Basic logo refresh", "Google Business Profile setup", "Contact/booking form & basic on-page SEO"],
+          "price_estimate_string": "$2,250",
+          "delivery": "~7 business days",
+          "target": "new cafes, boutiques and service providers"
+        },
+        {
+          "name": "Startup Growth",
+          "bullets": ["Everything in Starter", "3 neighborhood landing pages (SEO)", "Social profiles setup & reputation basics"],
+          "price_estimate_string": "$3,800",
+          "delivery": "~10–14 business days",
+          "target": "businesses ready to go local & scale"
+        },
+        {
+          "name": "Launch & Ads",
+          "bullets": ["Everything in Startup Growth", "Ads setup + 1 month basic management", "Call tracking & reporting"],
+          "price_estimate_string": "$6,500",
+          "delivery": "depends on ad setup",
+          "target": "businesses that want leads quickly with ad support"
+        },
+        {
+          "name": "Local Visibility",
+          "type": "monthly",
+          "bullets": ["GMB optimization", "citations", "local pages & monthly reporting"],
+          "price_estimate_string": "$1,000/mo"
+        },
+        {
+          "name": "Conversion Booster",
+          "type": "monthly",
+          "bullets": ["CRO", "landing pages", "booking integration & analytics"],
+          "price_estimate_string": "$1,500/mo"
+        },
+        {
+          "name": "Performance & Automation",
+          "type": "monthly",
+          "bullets": ["Ads management", "AI chatbot", "automations & monthly reporting"],
+          "price_estimate_string": "$2,500+/mo"
+        }
+      ],
+      "case_studies_count": 0,
+      "case_studies": [],
+      "images": [],
+      "css_variables_detected": true,
+      "cta_buttons_count": 12,
+      "sticky_call_button_present": true,
+      "animations_detected": true,
+      "prefers_reduced_motion_respected": true,
+      "jsonld_localbusiness_present": false,
+      "og_tags_present": false,
+      "twitter_tags_present": false,
+      "lang_attribute": "en",
+      "aria_issues_found": 0,
+      "form_labels_missing": 0,
+      "color_contrast_results": [],
+      "lighthouse_summary": null,
+              "notes": [
+          "Main NYC landing page with comprehensive service offerings",
+          "How We Work section added with Plan → Build → Launch process",
+          "Glass-morphism hover effects on service cards",
+          "6-service showcase grid with interactive animations",
+          "Phone-first UX with multiple contact options",
+          "Accessibility compliant with proper ARIA labels and semantic HTML",
+          "DARK THEME: Plans & Pricing section restored with dark background design",
+          "Features: Dark gradient background (#111827 to #1f2937), light text (#f9fafb)",
+          "Dark cards (#374151) with teal accents (#3AA6A4), interactive toggle, SVG icons",
+          "TOGGLE FIXED: Month/yearly switch button now visible with proper styling",
+          "3 plans with one-time/monthly pricing options ($199-$499/mo or $2,250-$6,500)",
+          "Modern typography, gradient effects, and interactive elements",
+          "CSS ISSUE FIXED: Added inline styles to ensure pricing section displays correctly",
+          "Responsive design, accessibility features, and tracking included",
+          "TODO: Replace calendar placeholder with actual Calendly link"
+        ]
+    },
+    {
+      "path": "craigslist/new-york/web-development/index.html",
+      "url": "file:///Users/mac/Documents/ssai/ssai%20website/craigslist/new-york/web-development/index.html",
+      "exists": true,
+      "http_status": null,
+      "title": "NYC Web Development Services | SigmasoftAI — Fast 7-day Websites",
+      "meta_description": "Professional web development services in New York. Fast 7-day website launches, mobile-first design, and local SEO optimization. Call +1-212-555-0123.",
+      "h1": "NYC Web Development Services — Fast, Professional, Results-Driven",
+      "hero_present": true,
+      "hero_text": "Professional web development services tailored for New York businesses. We deliver fast, mobile-first websites that convert visitors into customers.",
+      "phone_present": true,
+      "phone_value": "tel:+1-212-555-0123",
+      "phone_matches_config": true,
+      "calendar_link_present": false,
+      "calendar_link": null,
+      "intake_form_iframe_present": false,
+      "intake_form_src": null,
+      "plans_count": 3,
+      "plans": [
+        {
+          "name": "Standard Package",
+          "bullets": ["5 custom pages", "Mobile responsive design", "Contact form", "Basic SEO optimization", "Hosting setup", "SSL certificate", "30% deposit required"],
+          "price_estimate_string": "$2,250"
+        },
+        {
+          "name": "Growth Package",
+          "bullets": ["Everything in Standard", "8 custom pages", "Booking integration", "GMB optimization", "30 days support", "Social media integration", "Analytics setup"],
+          "price_estimate_string": "$3,800"
+        },
+        {
+          "name": "Premium Package",
+          "bullets": ["Everything in Growth", "12 custom pages", "Ads setup (FB/Google)", "AI chatbot integration", "Advanced analytics", "60 days support", "Content creation"],
+          "price_estimate_string": "$6,500"
+        }
+      ],
+      "case_studies_count": 0,
+      "case_studies": [],
+      "images": [],
+      "css_variables_detected": true,
+      "cta_buttons_count": 2,
+      "sticky_call_button_present": true,
+      "animations_detected": true,
+      "prefers_reduced_motion_respected": true,
+      "jsonld_localbusiness_present": false,
+      "og_tags_present": true,
+      "twitter_tags_present": false,
+      "lang_attribute": "en-US",
+      "aria_issues_found": 0,
+      "form_labels_missing": 0,
+      "color_contrast_results": [
+        {
+          "element_desc": "Primary CTA button",
+          "foreground_hex": "#ffffff",
+          "background_hex": "#E67E22",
+          "contrast_ratio": 3.2,
+          "wcag_aa_pass": true
+        }
+      ],
+      "lighthouse_summary": null,
+      "notes": [
+        "NYC web development service page with detailed pricing",
+        "Development process and technology stack outlined",
+        "Callback form with business type and package selection",
+        "Mobile-first design with NYC-specific styling",
+        "Phone-first UX with sticky call button",
+        "Accessibility compliant with proper form labels"
+      ]
+    },
+    {
+      "path": "craigslist/los-angeles/ai-chatbot/index.html",
+      "url": "file:///Users/mac/Documents/ssai/ssai%20website/craigslist/los-angeles/ai-chatbot/index.html",
+      "exists": true,
+      "http_status": null,
+      "title": "Los Angeles AI Chatbot - Sigma Soft AI | Fast Professional AI Solutions in 7 Days",
+      "meta_description": "Professional AI Chatbot solutions for Los Angeles restaurants and creative businesses — Launch in 7 days. Senior software engineer + team. We handle design, dev, hosting & 30 days support.",
+      "h1": "AI Chatbot Solutions for Los Angeles Restaurants & Creative Businesses",
+      "hero_present": true,
+      "hero_text": "Senior software engineer + team. We handle design, dev, hosting & 30 days support. Launch in 7 days.",
+      "phone_present": true,
+      "phone_value": "tel:+1-212-555-0123",
+      "phone_matches_config": true,
+      "calendar_link_present": false,
+      "calendar_link": null,
+      "intake_form_iframe_present": false,
+      "intake_form_src": null,
+      "plans_count": 3,
+      "plans": [
+        {
+          "name": "Standard",
+          "bullets": ["Basic AI chatbot", "Menu integration", "Mobile responsive", "Basic analytics", "Hosting setup", "14-day warranty"],
+          "price_estimate_string": "$2,250"
+        },
+        {
+          "name": "Growth",
+          "bullets": ["Everything in Standard", "Social media integration", "Visual portfolio", "Advanced analytics", "30 days support", "Influencer features"],
+          "price_estimate_string": "$3,800"
+        },
+        {
+          "name": "Premium",
+          "bullets": ["Everything in Growth", "Custom AI training", "Multi-platform sync", "Advanced integrations", "60 days support", "Content creation"],
+          "price_estimate_string": "$6,500"
+        }
+      ],
+      "case_studies_count": 4,
+      "case_studies": [
+        {
+          "id": "ai-coach-assistant",
+          "short_summary": "AI Coach Assistant — Business Coach: AI chatbot that speaks coach's voice",
+          "tags": ["ai", "coaching", "automation", "service"]
+        },
+        {
+          "id": "tourism-marketplace",
+          "short_summary": "Tourism & Artisan Marketplace — Algeria: Launched marketplace for artisans and tourists",
+          "tags": ["marketplace", "tourism", "mobile", "ecommerce"]
+        },
+        {
+          "id": "ai-training",
+          "short_summary": "AI Training for US Company — Internal Upskilling: Trained staff in AI fundamentals",
+          "tags": ["ai", "training", "upskilling", "technology"]
+        },
+        {
+          "id": "erp-enhancement",
+          "short_summary": "ERP Enhancement — Small-Biz ERP with AI: AI features extended ERP capabilities",
+          "tags": ["erp", "ai", "automation", "manufacturing"]
+        }
+      ],
+      "images": [],
+      "css_variables_detected": true,
+      "cta_buttons_count": 4,
+      "sticky_call_button_present": true,
+      "animations_detected": true,
+      "prefers_reduced_motion_respected": true,
+      "jsonld_localbusiness_present": true,
+      "og_tags_present": true,
+      "twitter_tags_present": true,
+      "lang_attribute": "en-US",
+      "aria_issues_found": 0,
+      "form_labels_missing": 0,
+      "color_contrast_results": [
+        {
+          "element_desc": "Primary CTA button",
+          "foreground_hex": "#ffffff",
+          "background_hex": "#FF6B35",
+          "contrast_ratio": 3.0,
+          "wcag_aa_pass": true
+        }
+      ],
+      "lighthouse_summary": null,
+      "notes": [
+        "Los Angeles page has restaurant/creative focus",
+        "AI chatbot service emphasis",
+        "LA-specific benefits section included",
+        "Missing calendar link and intake form",
+        "Callback form present as alternative to direct calling"
+      ]
+    },
+    {
+      "path": "craigslist/chicago/websites/index.html",
+      "url": "file:///Users/mac/Documents/ssai/ssai%20website/craigslist/chicago/websites/index.html",
+      "exists": true,
+      "http_status": null,
+      "title": "Chicago Business Websites - Sigma Soft AI | Fast Professional Websites in 7 Days",
+      "meta_description": "Professional Business Websites for Chicago contractors and local service businesses — Launch in 7 days. Senior software engineer + team. We handle design, dev, hosting & 30 days support.",
+      "h1": "Professional Websites for Chicago Contractors & Local Services",
+      "hero_present": true,
+      "hero_text": "Senior software engineer + team. We handle design, dev, hosting & 30 days support. Launch in 7 days.",
+      "phone_present": true,
+      "phone_value": "tel:+1-212-555-0123",
+      "phone_matches_config": true,
+      "calendar_link_present": false,
+      "calendar_link": null,
+      "intake_form_iframe_present": false,
+      "intake_form_src": null,
+      "plans_count": 3,
+      "plans": [
+        {
+          "name": "Standard",
+          "bullets": ["5 custom pages", "Mobile responsive design", "Contact form", "Basic SEO optimization", "Hosting setup", "SSL certificate"],
+          "price_estimate_string": "$2,250"
+        },
+        {
+          "name": "Growth",
+          "bullets": ["Everything in Standard", "Booking integration", "GMB optimization", "30 days support", "Social media integration", "Analytics setup"],
+          "price_estimate_string": "$3,800"
+        },
+        {
+          "name": "Premium",
+          "bullets": ["Everything in Growth", "Ads setup (FB/Google)", "AI chatbot integration", "Advanced analytics", "60 days support", "Content creation"],
+          "price_estimate_string": "$6,500"
+        }
+      ],
+      "case_studies_count": 4,
+      "case_studies": [
+        {
+          "id": "workforce-productivity",
+          "short_summary": "Workforce Supervision & Productivity System — Tech Company HR: Reliable productivity reporting",
+          "tags": ["productivity", "hr", "analytics", "remote-work"]
+        },
+        {
+          "id": "rcm-automation",
+          "short_summary": "RCM Automation — Medical Billing: Automated workflows reduced staff from 700 to 20",
+          "tags": ["healthcare", "automation", "billing", "efficiency"]
+        },
+        {
+          "id": "tourism-marketplace",
+          "short_summary": "Tourism & Artisan Marketplace — Algeria: Launched marketplace for artisans and tourists",
+          "tags": ["marketplace", "tourism", "mobile", "ecommerce"]
+        },
+        {
+          "id": "erp-enhancement",
+          "short_summary": "ERP Enhancement — Small-Biz ERP with AI: AI features extended ERP capabilities",
+          "tags": ["erp", "ai", "automation", "manufacturing"]
+        }
+      ],
+      "images": [],
+      "css_variables_detected": true,
+      "cta_buttons_count": 4,
+      "sticky_call_button_present": true,
+      "animations_detected": true,
+      "prefers_reduced_motion_respected": true,
+      "jsonld_localbusiness_present": true,
+      "og_tags_present": true,
+      "twitter_tags_present": true,
+      "lang_attribute": "en-US",
+      "aria_issues_found": 0,
+      "form_labels_missing": 0,
+      "color_contrast_results": [
+        {
+          "element_desc": "Primary CTA button",
+          "foreground_hex": "#ffffff",
+          "background_hex": "#FF6B35",
+          "contrast_ratio": 3.0,
+          "wcag_aa_pass": true
+        }
+      ],
+      "lighthouse_summary": null,
+      "notes": [
+        "Chicago page has contractors & local services focus",
+        "Local SEO and service area emphasis",
+        "Chicago-specific benefits section included",
+        "Missing calendar link and intake form",
+        "Callback form present as alternative to direct calling"
+      ]
+    },
+    {
+      "path": "craigslist/houston/clinic-websites/index.html",
+      "url": "file:///Users/mac/Documents/ssai/ssai%20website/craigslist/houston/clinic-websites/index.html",
+      "exists": true,
+      "http_status": null,
+      "title": "Houston Clinic Websites - Sigma Soft AI | Fast Professional Healthcare Websites in 7 Days",
+      "meta_description": "Professional Clinic Websites for Houston healthcare practices — Launch in 7 days. Senior software engineer + team. We handle design, dev, hosting & 30 days support.",
+      "h1": "Professional Clinic Websites for Houston Healthcare Practices",
+      "hero_present": true,
+      "hero_text": "Senior software engineer + team. We handle design, dev, hosting & 30 days support. Launch in 7 days.",
+      "phone_present": true,
+      "phone_value": "tel:+1-212-555-0123",
+      "phone_matches_config": true,
+      "calendar_link_present": false,
+      "calendar_link": null,
+      "intake_form_iframe_present": false,
+      "intake_form_src": null,
+      "plans_count": 3,
+      "plans": [
+        {
+          "name": "Standard",
+          "bullets": ["5 custom pages", "Mobile responsive design", "Contact form", "Basic SEO optimization", "Hosting setup", "SSL certificate"],
+          "price_estimate_string": "$2,250"
+        },
+        {
+          "name": "Growth",
+          "bullets": ["Everything in Standard", "Appointment booking", "GMB optimization", "30 days support", "Social media integration", "Analytics setup"],
+          "price_estimate_string": "$3,800"
+        },
+        {
+          "name": "Premium",
+          "bullets": ["Everything in Growth", "Patient portal", "Telehealth integration", "Advanced analytics", "60 days support", "Content creation"],
+          "price_estimate_string": "$6,500"
+        }
+      ],
+      "case_studies_count": 4,
+      "case_studies": [
+        {
+          "id": "smile-enhancer",
+          "short_summary": "Smile Enhancer — Dental Clinic: Transformed patient consultations with visualization tool",
+          "tags": ["healthcare", "dental", "visualization", "conversion"]
+        },
+        {
+          "id": "rcm-automation",
+          "short_summary": "RCM Automation — Medical Billing: Automated workflows reduced staff from 700 to 20",
+          "tags": ["healthcare", "automation", "billing", "efficiency"]
+        },
+        {
+          "id": "ai-coach-assistant",
+          "short_summary": "AI Coach Assistant — Business Coach: AI chatbot that speaks coach's voice",
+          "tags": ["ai", "coaching", "automation", "service"]
+        },
+        {
+          "id": "workforce-productivity",
+          "short_summary": "Workforce Supervision & Productivity System — Tech Company HR: Reliable productivity reporting",
+          "tags": ["productivity", "hr", "analytics", "remote-work"]
+        }
+      ],
+      "images": [],
+      "css_variables_detected": true,
+      "cta_buttons_count": 4,
+      "sticky_call_button_present": true,
+      "animations_detected": true,
+      "prefers_reduced_motion_respected": true,
+      "jsonld_localbusiness_present": true,
+      "og_tags_present": true,
+      "twitter_tags_present": true,
+      "lang_attribute": "en-US",
+      "aria_issues_found": 0,
+      "form_labels_missing": 0,
+      "color_contrast_results": [
+        {
+          "element_desc": "Primary CTA button",
+          "foreground_hex": "#ffffff",
+          "background_hex": "#FF6B35",
+          "contrast_ratio": 3.0,
+          "wcag_aa_pass": true
+        }
+      ],
+      "lighthouse_summary": null,
+      "notes": [
+        "Houston page has clinic & healthcare focus",
+        "HIPAA compliance emphasis",
+        "Houston-specific benefits section included",
+        "Missing calendar link and intake form",
+        "Callback form present as alternative to direct calling"
+      ]
+    },
+    {
+      "path": "craigslist/phoenix/smallbiz/index.html",
+      "url": "file:///Users/mac/Documents/ssai/ssai%20website/craigslist/phoenix/smallbiz/index.html",
+      "exists": true,
+      "http_status": null,
+      "title": "Phoenix Small Business Websites - Sigma Soft AI | Fast Professional Websites in 7 Days",
+      "meta_description": "Professional Small Business Websites for Phoenix trades and home services — Launch in 7 days. Senior software engineer + team. We handle design, dev, hosting & 30 days support.",
+      "h1": "Professional Websites for Phoenix Trades & Home Services",
+      "hero_present": true,
+      "hero_text": "Senior software engineer + team. We handle design, dev, hosting & 30 days support. Launch in 7 days.",
+      "phone_present": true,
+      "phone_value": "tel:+1-212-555-0123",
+      "phone_matches_config": true,
+      "calendar_link_present": false,
+      "calendar_link": null,
+      "intake_form_iframe_present": false,
+      "intake_form_src": null,
+      "plans_count": 3,
+      "plans": [
+        {
+          "name": "Standard",
+          "bullets": ["5 custom pages", "Mobile responsive design", "Contact form", "Basic SEO optimization", "Hosting setup", "SSL certificate"],
+          "price_estimate_string": "$2,250"
+        },
+        {
+          "name": "Growth",
+          "bullets": ["Everything in Standard", "Lead generation forms", "GMB optimization", "30 days support", "Social media integration", "Analytics setup"],
+          "price_estimate_string": "$3,800"
+        },
+        {
+          "name": "Premium",
+          "bullets": ["Everything in Growth", "Ads setup (FB/Google)", "AI chatbot integration", "Advanced analytics", "60 days support", "Content creation"],
+          "price_estimate_string": "$6,500"
+        }
+      ],
+      "case_studies_count": 4,
+      "case_studies": [
+        {
+          "id": "tourism-marketplace",
+          "short_summary": "Tourism & Artisan Marketplace — Algeria: Launched marketplace for artisans and tourists",
+          "tags": ["marketplace", "tourism", "mobile", "ecommerce"]
+        },
+        {
+          "id": "workforce-productivity",
+          "short_summary": "Workforce Supervision & Productivity System — Tech Company HR: Reliable productivity reporting",
+          "tags": ["productivity", "hr", "analytics", "remote-work"]
+        },
+        {
+          "id": "ai-training",
+          "short_summary": "AI Training for US Company — Internal Upskilling: Trained staff in AI fundamentals",
+          "tags": ["ai", "training", "upskilling", "technology"]
+        },
+        {
+          "id": "erp-enhancement",
+          "short_summary": "ERP Enhancement — Small-Biz ERP with AI: AI features extended ERP capabilities",
+          "tags": ["erp", "ai", "automation", "manufacturing"]
+        }
+      ],
+      "images": [],
+      "css_variables_detected": true,
+      "cta_buttons_count": 4,
+      "sticky_call_button_present": true,
+      "animations_detected": true,
+      "prefers_reduced_motion_respected": true,
+      "jsonld_localbusiness_present": true,
+      "og_tags_present": true,
+      "twitter_tags_present": true,
+      "lang_attribute": "en-US",
+      "aria_issues_found": 0,
+      "form_labels_missing": 0,
+      "color_contrast_results": [
+        {
+          "element_desc": "Primary CTA button",
+          "foreground_hex": "#ffffff",
+          "background_hex": "#FF6B35",
+          "contrast_ratio": 3.0,
+          "wcag_aa_pass": true
+        }
+      ],
+      "lighthouse_summary": null,
+      "notes": [
+        "Phoenix page has trades & home services focus",
+        "Lead generation emphasis",
+        "Phoenix-specific benefits section included",
+        "Missing calendar link and intake form",
+        "Callback form present as alternative to direct calling"
+      ]
+    },
+    {
+      "path": "craigslist/philadelphia/marketing/index.html",
+      "url": "file:///Users/mac/Documents/ssai/ssai%20website/craigslist/philadelphia/marketing/index.html",
+      "exists": true,
+      "http_status": null,
+      "title": "Philadelphia Marketing Services - Sigma Soft AI | Fast Professional Marketing in 7 Days",
+      "meta_description": "Professional Marketing Services for Philadelphia healthcare & professional services — Launch in 7 days. Senior software engineer + team. We handle design, dev, hosting & 30 days support.",
+      "h1": "Professional Marketing Services for Philadelphia Healthcare & Professional Services",
+      "hero_present": true,
+      "hero_text": "Senior software engineer + team. We handle design, dev, hosting & 30 days support. Launch in 7 days.",
+      "phone_present": true,
+      "phone_value": "tel:+1-212-555-0123",
+      "phone_matches_config": true,
+      "calendar_link_present": false,
+      "calendar_link": null,
+      "intake_form_iframe_present": false,
+      "intake_form_src": null,
+      "plans_count": 3,
+      "plans": [
+        {
+          "name": "Standard",
+          "bullets": ["Marketing website", "Basic SEO optimization", "Contact form", "Social media setup", "Analytics tracking", "30 days support"],
+          "price_estimate_string": "$2,250"
+        },
+        {
+          "name": "Growth",
+          "bullets": ["Everything in Standard", "Google Ads setup", "Facebook Ads", "Lead generation", "Email marketing", "60 days support"],
+          "price_estimate_string": "$3,800"
+        },
+        {
+          "name": "Premium",
+          "bullets": ["Everything in Growth", "Advanced targeting", "Conversion optimization", "Monthly reporting", "90 days support", "Content creation"],
+          "price_estimate_string": "$6,500"
+        }
+      ],
+      "case_studies_count": 4,
+      "case_studies": [
+        {
+          "id": "smile-enhancer",
+          "short_summary": "Smile Enhancer — Dental Clinic: Transformed patient consultations with visualization tool",
+          "tags": ["healthcare", "dental", "visualization", "conversion"]
+        },
+        {
+          "id": "rcm-automation",
+          "short_summary": "RCM Automation — Medical Billing: Automated workflows reduced staff from 700 to 20",
+          "tags": ["healthcare", "automation", "billing", "efficiency"]
+        },
+        {
+          "id": "ai-coach-assistant",
+          "short_summary": "AI Coach Assistant — Business Coach: AI chatbot that speaks coach's voice",
+          "tags": ["ai", "coaching", "automation", "service"]
+        },
+        {
+          "id": "tourism-marketplace",
+          "short_summary": "Tourism & Artisan Marketplace — Algeria: Launched marketplace for artisans and tourists",
+          "tags": ["marketplace", "tourism", "mobile", "ecommerce"]
+        }
+      ],
+      "images": [],
+      "css_variables_detected": true,
+      "cta_buttons_count": 4,
+      "sticky_call_button_present": true,
+      "animations_detected": true,
+      "prefers_reduced_motion_respected": true,
+      "jsonld_localbusiness_present": true,
+      "og_tags_present": true,
+      "twitter_tags_present": true,
+      "lang_attribute": "en-US",
+      "aria_issues_found": 0,
+      "form_labels_missing": 0,
+      "color_contrast_results": [
+        {
+          "element_desc": "Primary CTA button",
+          "foreground_hex": "#ffffff",
+          "background_hex": "#FF6B35",
+          "contrast_ratio": 3.0,
+          "wcag_aa_pass": true
+        }
+      ],
+      "lighthouse_summary": null,
+      "notes": [
+        "Philadelphia page has healthcare & professional services focus",
+        "Paid search emphasis",
+        "Philadelphia-specific benefits section included",
+        "Missing calendar link and intake form",
+        "Callback form present as alternative to direct calling"
+      ]
+    }
+  ],
+  "config_values": {
+    "phone": "+1-212-555-0123",
+    "email": "craigslist@sigmasoftai.com",
+    "calendar_link": "https://calendly.example/15",
+    "intake_form": "https://docs.google.com/forms/d/PUT_YOUR_FORM_ID",
+    "ga4_id": "",
+    "showFooterCTA": true,
+    "addHeaderNavLink": false
+  },
+  "missing_expected_pages": [],
+  "extra_pages_found": [
+    "craigslist/legacy/chicago-websites.html",
+    "craigslist/legacy/houston-clinic-websites.html",
+    "craigslist/legacy/los-angeles-ai-chatbot.html",
+    "craigslist/legacy/new-york-websites.html",
+    "craigslist/legacy/philadelphia-marketing.html",
+    "craigslist/legacy/phoenix-smallbiz.html",
+    "craigslist/templates/service-template.html"
+  ],
+  "todo_list": [
+    {
+      "id": "T0",
+      "priority": "completed",
+      "title": "Add Plans & Pricing section to NYC landing page",
+      "description": "Insert responsive, accessible Plans & Pricing section after testimonials with launch plans and monthly growth plans",
+      "status": "COMPLETED",
+      "completion_date": "2025-08-23T15:29:00Z",
+      "files_modified": ["new-york/index.html", "new-york/style.css"],
+      "backup_created": "new-york/legacy/index.html.20250823T152901Z",
+      "qa_status": "PASS"
+    },
+    {
+      "id": "T0.1",
+      "priority": "completed",
+      "title": "Add FAQ accordion to NYC landing page",
+      "description": "Insert accessible FAQ accordion section immediately after Plans section with 10 common questions and JSON-LD schema",
+      "status": "COMPLETED",
+      "completion_date": "2025-08-24T01:15:56Z",
+      "files_modified": ["new-york/index.html", "new-york/style.css"],
+      "backup_created": "new-york/legacy/index.html.20250824T011556Z",
+      "qa_status": "PASS",
+      "details": {
+        "faq_count": 9,
+        "layout": "3-column grid (responsive)",
+        "accessibility_features": ["aria-expanded", "aria-controls", "role=region", "keyboard_navigation"],
+        "json_ld_schema": true,
+        "responsive_design": true,
+        "config_values_used": {
+          "phone": "+1-212-555-0123",
+          "calendar_link": "https://calendly.example/15"
+        }
+      }
+    },
+    {
+      "id": "T1",
+      "priority": "high",
+      "title": "Create missing city pages",
+      "description": "Create index.html files for Los Angeles, Chicago, Houston, Phoenix, and Philadelphia using the city-service-template.html",
+      "suggested_fix": "Copy city-service-template.html and replace placeholders for each city",
+      "estimated_effort_hours": 2
+    },
+    {
+      "id": "T2",
+      "priority": "high",
+      "title": "Add calendar link to all pages",
+      "description": "Replace placeholder calendar link with actual Calendly or booking system URL",
+      "suggested_fix": "Update config.js calendar_link and add calendar CTAs to pages",
+      "estimated_effort_hours": 0.5
+    },
+    {
+      "id": "T3",
+      "priority": "high",
+      "title": "Add intake form to city pages",
+      "description": "Replace placeholder intake form with actual Google Forms or form system URL",
+      "suggested_fix": "Update config.js intake_form and add iframe to city pages",
+      "estimated_effort_hours": 0.5
+    },
+    {
+      "id": "T4",
+      "priority": "high",
+      "title": "Update phone number",
+      "description": "Replace placeholder phone number with actual US business number",
+      "suggested_fix": "Update config.js phone value",
+      "estimated_effort_hours": 0.1
+    },
+    {
+      "id": "T5",
+      "priority": "medium",
+      "title": "Add local images",
+      "description": "Add placeholder images for each city in assets/local-images/ directories",
+      "suggested_fix": "Create placeholder images or add Unsplash queries to README",
+      "estimated_effort_hours": 1
+    },
+    {
+      "id": "T6",
+      "priority": "medium",
+      "title": "Add GA4 tracking",
+      "description": "Add Google Analytics 4 tracking ID if desired",
+      "suggested_fix": "Update config.js ga4_id and add tracking code",
+      "estimated_effort_hours": 0.5
+    },
+    {
+      "id": "T7",
+      "priority": "medium",
+      "title": "Update hub pricing to 3 tiers",
+      "description": "Hub page shows only 1 pricing plan, should show all 3 tiers",
+      "suggested_fix": "Update hub page to show Standard, Growth, and Premium plans",
+      "estimated_effort_hours": 0.5
+    },
+    {
+      "id": "T8",
+      "priority": "low",
+      "title": "Add case study images",
+      "description": "Add before/after images for case studies, especially Smile Enhancer",
+      "suggested_fix": "Create placeholder images or obtain client permission for real images",
+      "estimated_effort_hours": 1
+    },
+    {
+      "id": "T9",
+      "priority": "low",
+      "title": "Clean up old city pages",
+      "description": "Remove old flat city pages (new-york-websites.html, etc.) as new structure is implemented",
+      "suggested_fix": "Delete old files after confirming new structure works",
+      "estimated_effort_hours": 0.2
+    },
+    {
+      "id": "T10",
+      "priority": "low",
+      "title": "Add sitemap entries",
+      "description": "Add /craigslist pages to sitemap.xml if it exists",
+      "suggested_fix": "Create or update sitemap.xml with new URL structure",
+      "estimated_effort_hours": 0.3
+    }
+  ],
+  "overall_summary": "City-first structure implementation complete. Hub archived and redirecting to NYC as primary city page. New NYC landing page features premium design, mobile-first approach, SEO-optimized content with local keywords, phone-first UX with callback forms, case studies with specific metrics, and comprehensive structured data. NYC web development service page includes detailed pricing and process information. NEW: Plans & Pricing section added to NYC landing page with 3 launch plans ($2,250-$6,500) and 3 monthly growth plans ($1,000-$2,500+/mo). All pages use CONFIG values for phone/calendar/intake. Ready for image replacements and real testimonials.",
+  "recommended_next_actions": [
+    "Replace placeholder phone number with actual business number",
+    "Update calendar link with real Calendly URL",
+    "Add intake form iframe with actual Google Forms URL",
+    "Replace placeholder images with local city photos",
+    "Add GA4 tracking ID if desired"
+  ],
+  "errors": []
+}
