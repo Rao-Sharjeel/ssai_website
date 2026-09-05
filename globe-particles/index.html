@@ -121,6 +121,16 @@
     </div>
 
     <div class="field">
+      <label for="ctrl-glow-intensity">Glow Intensity <span class="val" data-val="glowIntensity">1.40</span></label>
+      <input id="ctrl-glow-intensity" type="range" min="0" max="3" step="0.05" value="1.4" data-control="glowIntensity" />
+    </div>
+
+    <div class="field color-row">
+      <label for="ctrl-glow-color" style="margin-bottom: 0;">Glow Color</label>
+      <input id="ctrl-glow-color" type="color" value="#ffffff" data-control="glowColor" />
+    </div>
+
+    <div class="field">
       <label for="ctrl-rotation-speed">Rotation Speed <span class="val" data-val="rotationSpeed">0.12</span></label>
       <input id="ctrl-rotation-speed" type="range" min="0" max="0.6" step="0.01" value="0.12" data-control="rotationSpeed" />
     </div>
@@ -131,8 +141,8 @@
     </div>
 
     <div class="field">
-      <label for="ctrl-point-size">Point Size <span class="val" data-val="pointSize">18</span></label>
-      <input id="ctrl-point-size" type="range" min="4" max="40" step="1" value="18" data-control="pointSize" />
+      <label for="ctrl-point-size">Point Size <span class="val" data-val="pointSize">12</span></label>
+      <input id="ctrl-point-size" type="range" min="4" max="40" step="1" value="12" data-control="pointSize" />
     </div>
 
     <div class="field">
@@ -140,8 +150,98 @@
       <input id="ctrl-camera-distance" type="range" min="3" max="10" step="0.1" value="5.6" data-control="cameraDistance" />
     </div>
 
+    <div class="field">
+      <label for="ctrl-building-height">Skyscraper Height <span class="val" data-val="buildingHeightScale">1.00</span></label>
+      <input id="ctrl-building-height" type="range" min="0" max="2.5" step="0.05" value="1" data-control="buildingHeightScale" />
+    </div>
+
     <div class="field color-row">
-      <label for="ctrl-accent-color" style="margin-bottom: 0;">Accent Color</label>
+      <label for="ctrl-building-color" style="margin-bottom: 0;">Skyscraper Color</label>
+      <input id="ctrl-building-color" type="color" value="#bfe9ff" data-control="buildingColor" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-connection-opacity">Connection Opacity <span class="val" data-val="connectionOpacity">0.80</span></label>
+      <input id="ctrl-connection-opacity" type="range" min="0" max="1" step="0.01" value="0.8" data-control="connectionOpacity" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-network-radius">Network Reveal Radius <span class="val" data-val="networkRadius">0.75</span></label>
+      <input id="ctrl-network-radius" type="range" min="0.1" max="2" step="0.01" value="0.75" data-control="networkRadius" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-network-ease">Network Reveal Speed <span class="val" data-val="networkEase">0.12</span></label>
+      <input id="ctrl-network-ease" type="range" min="0.01" max="0.4" step="0.01" value="0.12" data-control="networkEase" />
+    </div>
+
+    <div class="field color-row">
+      <label for="ctrl-connection-color" style="margin-bottom: 0;">Connection Color</label>
+      <input id="ctrl-connection-color" type="color" value="#8fe9ff" data-control="connectionColor" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-depth-dim">Far Brightness <span class="val" data-val="depthDim">0.32</span></label>
+      <input id="ctrl-depth-dim" type="range" min="0" max="1" step="0.01" value="0.32" data-control="depthDim" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-land-threshold">Land Threshold <span class="val" data-val="landThreshold">0.08</span></label>
+      <input id="ctrl-land-threshold" type="range" min="-0.5" max="0.5" step="0.01" value="0.08" data-control="landThreshold" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-land-softness">Coastline Softness <span class="val" data-val="landSoftness">0.15</span></label>
+      <input id="ctrl-land-softness" type="range" min="0.02" max="0.4" step="0.01" value="0.15" data-control="landSoftness" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-land-elevation">Land Elevation <span class="val" data-val="landElevation">0.02</span></label>
+      <input id="ctrl-land-elevation" type="range" min="0" max="0.1" step="0.005" value="0.02" data-control="landElevation" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-land-gradient-range">Land Gradient Range <span class="val" data-val="landGradientRange">0.35</span></label>
+      <input id="ctrl-land-gradient-range" type="range" min="0.05" max="0.8" step="0.01" value="0.35" data-control="landGradientRange" />
+    </div>
+
+    <div class="field">
+      <label for="ctrl-ocean-gradient-range">Ocean Gradient Range <span class="val" data-val="oceanGradientRange">0.35</span></label>
+      <input id="ctrl-ocean-gradient-range" type="range" min="0.05" max="0.8" step="0.01" value="0.35" data-control="oceanGradientRange" />
+    </div>
+
+    <div class="field color-row">
+      <label for="ctrl-land-low" style="margin-bottom: 0;">Land: Coast</label>
+      <input id="ctrl-land-low" type="color" value="#e8c99b" data-control="landColorLow" />
+    </div>
+
+    <div class="field color-row" style="margin-top: 8px;">
+      <label for="ctrl-land-mid" style="margin-bottom: 0;">Land: Mid</label>
+      <input id="ctrl-land-mid" type="color" value="#8a9a4b" data-control="landColorMid" />
+    </div>
+
+    <div class="field color-row" style="margin-top: 8px;">
+      <label for="ctrl-land-high" style="margin-bottom: 0;">Land: High</label>
+      <input id="ctrl-land-high" type="color" value="#5c4326" data-control="landColorHigh" />
+    </div>
+
+    <div class="field color-row" style="margin-top: 14px;">
+      <label for="ctrl-ocean-shallow" style="margin-bottom: 0;">Ocean: Shallow</label>
+      <input id="ctrl-ocean-shallow" type="color" value="#3fb8c4" data-control="oceanColorShallow" />
+    </div>
+
+    <div class="field color-row" style="margin-top: 8px;">
+      <label for="ctrl-ocean-mid" style="margin-bottom: 0;">Ocean: Mid</label>
+      <input id="ctrl-ocean-mid" type="color" value="#2166ac" data-control="oceanColorMid" />
+    </div>
+
+    <div class="field color-row" style="margin-top: 8px;">
+      <label for="ctrl-ocean-deep" style="margin-bottom: 0;">Ocean: Deep</label>
+      <input id="ctrl-ocean-deep" type="color" value="#0d1f3d" data-control="oceanColorDeep" />
+    </div>
+
+    <div class="field color-row" style="margin-top: 14px;">
+      <label for="ctrl-accent-color" style="margin-bottom: 0;">Ring Color</label>
       <input id="ctrl-accent-color" type="color" value="#8b5cf6" data-control="accentColor" />
     </div>
   </div>
@@ -150,8 +250,8 @@
   <script src="globe-particles.js"></script>
   <script>
     const globe = initGlobeParticles(document.querySelector("[data-globe-particles]"), {
-      sphereCount: 2600,
-      ringCount: 1300,
+      sphereCount: 4200,
+      ringCount: 1800,
       accentColor: "#8b5cf6",
       radius: 1.35,
       ringRadius: 2.05,
