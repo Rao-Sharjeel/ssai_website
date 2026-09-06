@@ -227,6 +227,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         .globe-hero-stage .globe-particles-shell {
@@ -236,6 +237,36 @@
 
         .globe-hero-stage .globe-particles-canvas {
             pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Code-rain backdrop: stays exactly within the globe's own square
+           shell (no expansion — zero risk of spilling into the copy column
+           at any viewport width) and the mask hides the center where the
+           sphere sits, so text only peeks through the square's corners,
+           right at the globe's edge. Wrapped in a plain div because a bare
+           <canvas> is a replaced element and won't stretch via inset +
+           width:auto — it just falls back to its intrinsic 300x150 default. */
+        .code-rain-wrap {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+            mask-image: radial-gradient(circle at center, transparent 0%, transparent 60%, black 74%, black 90%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle at center, transparent 0%, transparent 60%, black 74%, black 90%, transparent 100%);
+        }
+
+        .code-rain-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .globe-particles-shell.is-hovering .code-rain-wrap {
+            opacity: 0.4;
         }
 
         .globe-hero-hint {
@@ -314,9 +345,9 @@
                     </p>
 
                     <div class="globe-hero-ctas">
-                        <a href="tel:+1-212-555-0123" class="hero-cta-primary" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                        <a href="tel:+92-305-4094188" class="hero-cta-primary" aria-label="Call SigmasoftAI — Head Office (New York) +92 305 4094188">
                             <i class="fa fa-phone"></i>
-                            Call Now — +1-212-555-0123
+                            Call Now — +92 305 4094188
                         </a>
                     </div>
 
@@ -328,7 +359,10 @@
 
                 <!-- Globe -->
                 <div class="globe-hero-stage">
-                    <div class="globe-particles-shell">
+                    <div class="globe-particles-shell" data-globe-shell>
+                        <div class="code-rain-wrap">
+                            <canvas class="code-rain-canvas" data-code-rain></canvas>
+                        </div>
                         <canvas class="globe-particles-canvas" data-globe-particles></canvas>
                     </div>
                     <!-- <div class="globe-hero-hint">Hover the globe — the surface scatters</div> -->
@@ -367,6 +401,151 @@
             landColorMid: '#3AA6A4',
             landColorHigh: '#297474',
         });
+    </script>
+
+    <!-- Code-rain backdrop: random lines from several languages, scrolling
+         down behind the globe, only while the globe is hovered. -->
+    <script>
+        (function () {
+            const CODE_LINES = [
+                "function debounce(fn, wait) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), wait); }; }",
+                "const sum = arr.reduce((a, b) => a + b, 0);",
+                "async function handleRequest(req, res) { const data = await db.query(sql); res.json(data); }",
+                "export default function App() { return <Globe spin />; }",
+                "npm install --save-dev vitest @testing-library/react",
+                "def average(numbers): return sum(numbers) / len(numbers)",
+                "class Node:  def __init__(self, val): self.val = val",
+                "for i in range(len(data)): total += data[i]",
+                "import secrets; key = secrets.token_hex(16)",
+                "@app.route('/api/health')  def health(): return {'status': 'ok'}",
+                "func Fibonacci(n int) int { if n < 2 { return n }; return Fibonacci(n-1) + Fibonacci(n-2) }",
+                "package main; import \"fmt\"; func main() { fmt.Println(\"ready\") }",
+                "go func() { results <- worker(job) }()",
+                "type Server struct { Addr string; Timeout time.Duration }",
+                "fn fib(n: u64) -> u64 { if n < 2 { n } else { fib(n - 1) + fib(n - 2) } }",
+                "let mut v: Vec<i32> = Vec::new();",
+                "struct Point { x: f64, y: f64 }",
+                "impl Shape for Circle { fn area(&self) -> f64 { PI * self.r * self.r } }",
+                "SELECT id, name FROM users WHERE active = true ORDER BY created_at DESC;",
+                "SELECT * FROM inventory WHERE stock < threshold;",
+                "CREATE INDEX idx_orders_user_id ON orders(user_id);",
+                "UPDATE sessions SET expires_at = NOW() + INTERVAL '1 hour';",
+                "public class Order implements Comparable<Order> { private double total; }",
+                "System.out.println(\"deploy complete\");",
+                "#include <stdio.h>  int main() { printf(\"hello\\n\"); return 0; }",
+                "SELECT COUNT(*) FROM sessions WHERE expires_at > now();",
+                "git commit -m \"fix: race condition in worker pool\"",
+                "kubectl rollout restart deployment/api",
+                "docker build -t sigmasoft/api:latest .",
+                "cargo build --release",
+                "go test ./... -race -v",
+                "curl -s https://api.sigmasoftai.com/v1/status",
+                "let response = await fetch('/api/orders', { method: 'POST', body });",
+                "assert response.status_code == 200, \"unexpected status\"",
+                "with open('data.json') as f: config = json.load(f)",
+                "module.exports = { plugins: [require('tailwindcss')] };",
+                "interface Task { id: string; done: boolean; dueDate?: Date; }",
+                "trait Repository<T> { fn find(&self, id: u64) -> Option<T>; }",
+                "# 计算平均值(数据): return sum(数据) / len(数据列表)",
+                "结构体 Point { x: f64, y: f64 }  // 二维坐标点",
+                "函数 debounce(fn, wait) { ... } // 防抖动",
+                "SELECT 名前, 年齢 FROM 用户 WHERE 状态 = '活动';",
+                "// 生成随机密钥  import secrets",
+                "echo \"deploy started at $(date)\" >> deploy.log",
+            ];
+
+            const canvas = document.querySelector('[data-code-rain]');
+            const shell = document.querySelector('[data-globe-shell]');
+            if (!canvas || !shell) return;
+
+            const ctx = canvas.getContext('2d');
+            let rows = [];
+            let rafId = 0;
+            let running = false;
+
+            function pickLine() {
+                return CODE_LINES[Math.floor(Math.random() * CODE_LINES.length)];
+            }
+
+            // A sparse handful of code lines scattered at random x/y, each
+            // drifting slowly downward and re-randomizing once it drifts
+            // past the bottom — the corner mask does the rest of the work
+            // of keeping them clear of the globe itself.
+            function buildRows(width, height) {
+                const count = 11;
+                const list = [];
+                for (let i = 0; i < count; i++) {
+                    list.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        speed: 6 + Math.random() * 10,
+                        text: pickLine(),
+                        bright: Math.random() < 0.12,
+                    });
+                }
+                return list;
+            }
+
+            function resize() {
+                const width = Math.max(1, canvas.clientWidth);
+                const height = Math.max(1, canvas.clientHeight);
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+                const fontSize = Math.max(6, Math.min(7.5, width / 85));
+                canvas.dataset.fontSize = fontSize;
+                rows = buildRows(width, height);
+            }
+
+            function draw() {
+                const width = canvas.clientWidth;
+                const height = canvas.clientHeight;
+                const fontSize = parseFloat(canvas.dataset.fontSize) || 7;
+
+                ctx.clearRect(0, 0, width, height);
+                ctx.font = `${fontSize}px "SF Mono", "Fira Code", Menlo, Consolas, monospace`;
+                ctx.textBaseline = 'top';
+
+                for (const row of rows) {
+                    ctx.fillStyle = row.bright
+                        ? 'rgba(172, 255, 255, 0.55)'
+                        : 'rgba(255, 255, 255, 0.14)';
+                    ctx.fillText(row.text, row.x, row.y);
+
+                    row.y += row.speed / 60;
+                    if (row.y > height + fontSize * 2) {
+                        row.y = -fontSize * 2;
+                        row.x = Math.random() * width;
+                        row.text = pickLine();
+                        row.bright = Math.random() < 0.12;
+                    }
+                }
+
+                if (running) rafId = requestAnimationFrame(draw);
+            }
+
+            function start() {
+                if (running) return;
+                running = true;
+                resize();
+                shell.classList.add('is-hovering');
+                rafId = requestAnimationFrame(draw);
+            }
+
+            function stop() {
+                running = false;
+                shell.classList.remove('is-hovering');
+                cancelAnimationFrame(rafId);
+            }
+
+            shell.addEventListener('mouseenter', start);
+            shell.addEventListener('mouseleave', stop);
+            shell.addEventListener('touchstart', start, { passive: true });
+            shell.addEventListener('touchend', stop);
+            window.addEventListener('resize', () => { if (running) resize(); });
+        })();
     </script>
 </body>
 

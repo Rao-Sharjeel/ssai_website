@@ -65,7 +65,10 @@
     
     <!-- FAQ Dedicated Stylesheet -->
     <link href="faq.css" rel="stylesheet">
-    
+
+    <!-- Globe particles component (hero) -->
+    <link href="globe-particles/globe-particles.css" rel="stylesheet">
+
     <!-- Config -->
     <script src="craigslist/config.js"></script>
     
@@ -349,7 +352,185 @@
             margin-top: 10px;
             font-style: italic;
         }
-        
+
+        /* Fixed Header: hidden while the hero is in view, revealed on scroll */
+        @media (min-width: 992px) {
+            #siteHeaderFixed {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                opacity: 0;
+                transform: translateY(-16px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                pointer-events: none;
+            }
+
+            body.header-revealed #siteHeaderFixed {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+                background: #fff;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            #siteHeaderFixed .navbar-dark {
+                position: static !important;
+                background: transparent !important;
+                border-bottom: none !important;
+            }
+
+            #siteHeaderFixed .navbar-brand h1 img {
+                filter: brightness(0);
+            }
+
+            #siteHeaderFixed .navbar-nav .nav-link {
+                color: var(--dark);
+            }
+
+            #siteHeaderFixed .navbar-nav .nav-link:hover,
+            #siteHeaderFixed .navbar-nav .nav-link.active {
+                color: var(--primary);
+            }
+
+            #siteHeaderFixed .navbar-toggler {
+                color: var(--dark) !important;
+                border-color: var(--dark) !important;
+            }
+        }
+
+        /* Particle Globe Hero */
+        .globe-hero {
+            position: relative;
+            min-height: calc(100vh + 80px);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse 80% 60% at 78% 45%, rgba(58, 166, 164, 0.16) 0%, transparent 60%),
+                radial-gradient(ellipse at center, #0b1730 0%, #071022 55%, #030711 100%);
+        }
+
+        .globe-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: radial-gradient(ellipse at 30% 50%, black 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .globe-hero .container-fluid {
+            position: relative;
+            z-index: 2;
+            padding: 0 6vw;
+        }
+
+        .globe-hero-brand {
+            position: absolute;
+            top: 32px;
+            left: 6vw;
+            z-index: 3;
+        }
+
+        .globe-hero-brand img {
+            height: 34px;
+            width: auto;
+            display: block;
+        }
+
+        .globe-hero-row {
+            display: flex;
+            align-items: center;
+            gap: 4vw;
+            flex-wrap: wrap;
+        }
+
+        .globe-hero-copy {
+            flex: 1 1 480px;
+            max-width: 620px;
+            padding: 60px 0;
+        }
+
+        .globe-hero-copy h1 {
+            font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+            line-height: 1.12;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .globe-hero-copy h1 .accent {
+            color: var(--primary);
+        }
+
+        .globe-hero-copy p.lead-copy {
+            font-family: 'Nunito', sans-serif;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+
+        .globe-hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 8px;
+        }
+
+        .globe-hero-stage {
+            position: relative;
+            flex: 1 1 380px;
+            max-width: 620px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .globe-hero-stage .globe-particles-shell {
+            width: min(100%, 620px);
+            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
+        }
+
+        .globe-hero-stage .globe-particles-canvas {
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .code-rain-wrap {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+            mask-image: radial-gradient(circle at center, transparent 0%, transparent 60%, black 74%, black 90%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle at center, transparent 0%, transparent 60%, black 74%, black 90%, transparent 100%);
+        }
+
+        .code-rain-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .globe-particles-shell.is-hovering .code-rain-wrap {
+            opacity: 0.4;
+        }
+
+        @media (max-width: 991px) {
+            .globe-hero-brand {
+                display: none;
+            }
+        }
+
         /* Sticky Floating CTA */
         .floating-cta {
             position: fixed;
@@ -365,10 +546,19 @@
             justify-content: center;
             text-decoration: none;
             box-shadow: 0 4px 20px rgba(58, 166, 164, 0.4);
-            transition: all 0.3s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
             z-index: 1000;
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
         }
-        
+
+        body.header-revealed .floating-cta {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+
         .floating-cta:hover {
             background: var(--secondary);
             color: white;
@@ -1020,6 +1210,11 @@
         }
         
         /* Enhanced Navbar */
+        .navbar-dark .navbar-brand h1 img {
+            height: 34px;
+            max-width: 220px;
+        }
+
         .navbar-brand img {
             max-height: 50px;
             width: auto;
@@ -3045,34 +3240,34 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-3 text-light"><i class="bi bi-whatsapp me-2"></i>+1-212-555-0123</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>contact@sigmasoftai.com</small>
+    <!-- Fixed Header (hidden over hero, revealed on scroll) Start -->
+    <header id="siteHeaderFixed">
+        <!-- Topbar -->
+        <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+            <div class="row gx-0">
+                <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center" style="height: 45px;">
+                        <small class="me-3 text-light"><i class="bi bi-whatsapp me-2"></i>+92 305 4094188</small>
+                        <small class="text-light"><i class="fa fa-envelope-open me-2"></i>contact@sigmasoftai.com</small>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 text-center text-lg-end">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/company/sigma-soft-tech" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://twitter.com/SigmaSoftAI" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/profile.php?id=100094257815011" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/sigmasoftai" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://youtube.com/@SigmaSoftAI" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube fw-normal"></i></a>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-inline-flex align-items-center" style="height: 45px;">
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/company/sigma-soft-tech" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://twitter.com/SigmaSoftAI" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter fw-normal"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/profile.php?id=100094257815011" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f fw-normal"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/sigmasoftai" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fw-normal"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://youtube.com/@SigmaSoftAI" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube fw-normal"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Topbar End -->
 
-    <!-- Navbar & Carousel Start -->
-    <div class="container-fluid position-relative p-0">
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0 title-font">
             <a href="index.html" class="navbar-brand p-0">
                 <h1 class="m-0 title-font">
-                    <img src="img/logonbg.png" alt="Sigma Soft AI Logo" height="50" width="auto">
+                    <img src="new_logos/straight_wordmark_cropped.png" alt="Sigma Soft AI Logo" height="34" width="auto">
                 </h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -3171,7 +3366,7 @@
                     <a href="blog.html" class="nav-item nav-link">Blog</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                     <div class="nav-item d-flex align-items-center ms-3">
-                        <a href="tel:+1-212-555-0123" class="header-cta" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                        <a href="tel:+92-305-4094188" class="header-cta" aria-label="Call SigmasoftAI — Head Office (New York) +92 305 4094188">
                             <i class="fa fa-phone"></i>
                             Call Now
                         </a>
@@ -3179,61 +3374,64 @@
                 </div>
             </div>
         </nav>
+    </header>
+    <!-- Fixed Header End -->
 
-        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="assets/images/nyc-hero.jpg" alt="New York Software Development" loading="lazy">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px; margin-top: -20vh;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Your Business Growth Partner in <span class="text-primary fw-bold" style="text-shadow: 0 0 10px rgba(58, 166, 164, 0.5);">New York</span></h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn title-font">Sigma Soft AI</h1>
-                            <p class="text-white mb-4 animated slideInUp">AI solutions, web development, design and business automation</p>
-                            
-                            <!-- Primary CTA Group -->
-                            <div class="d-flex flex-column flex-md-row gap-3 mb-3 animated slideInLeft">
-                                <a href="tel:+1-212-555-0123" class="hero-cta-primary" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
-                                    <i class="fa fa-phone"></i>
-                                    Call Now — +1-212-555-0123
-                                </a>
-                                <a href="#contact" class="hero-cta-secondary">
-                                    <i class="fa fa-calendar-check"></i>
-                                    Book Free 15-Min Consult
-                                </a>
-                            </div>
-                            
-                            <!-- Secondary CTA -->
-                            <div class="mb-3 animated slideInRight">
-                                <a href="#callback-form" class="hero-cta-tertiary">
-                                    <i class="fa fa-clock"></i>
-                                    Request Callback (30–60 min)
-                                </a>
-                            </div>
-                            
-                            <!-- Microcopy -->
-                            <div class="cta-microcopy animated slideInUp">
-                                <p class="mb-1">No automated menu — you'll talk to a real senior engineer.</p>
-                                <p class="mb-0">Free 15-minute consultation. We'll review your site and provide actionable insights.</p>
-                            </div>
+    <!-- Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <div id="header-carousel" class="globe-hero">
+            <div class="globe-hero-brand">
+                <a href="index.html">
+                    <img src="new_logos/straight_wordmark_cropped.png" alt="Sigma Soft AI">
+                </a>
+            </div>
+            <div class="container-fluid">
+                <div class="globe-hero-row">
+
+                    <!-- Copy -->
+                    <div class="globe-hero-copy">
+                        <h1 class="title-font">Softwares that change your <span class="accent">World</span></h1>
+                        <p class="lead-copy">AI systems, automation, and full-stack platforms — designed and shipped by senior engineers to move your business forward.</p>
+
+                        <div class="globe-hero-ctas">
+                            <a href="tel:+92-305-4094188" class="hero-cta-primary" aria-label="Call SigmasoftAI — Head Office (New York) +92 305 4094188">
+                                <i class="fa fa-phone"></i>
+                                Call Now — +92 305 4094188
+                            </a>
+                        </div>
+
+                        <div class="cta-microcopy">
+                            <p class="mb-0">No automated menu — you'll talk to a real senior engineer.</p>
                         </div>
                     </div>
+
+                    <!-- Globe -->
+                    <div class="globe-hero-stage">
+                        <div class="globe-particles-shell" data-globe-shell>
+                            <div class="code-rain-wrap">
+                                <canvas class="code-rain-canvas" data-code-rain></canvas>
+                            </div>
+                            <canvas class="globe-particles-canvas" data-globe-particles></canvas>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- Navbar & Carousel End -->
+    <!-- Hero End -->
 
     <!-- Mobile Content Container -->
     <div id="mobileContent"></div>
 
     <!-- Sticky Floating CTA -->
-    <a href="tel:+1-212-555-0123" class="floating-cta" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+    <a href="tel:+92-305-4094188" class="floating-cta" aria-label="Call SigmasoftAI — Head Office (New York) +92 305 4094188">
         <i class="fa fa-phone"></i>
     </a>
 
     <!-- Mobile CTA Bar -->
     <div class="mobile-cta-bar">
-        <a href="tel:+1-212-555-0123" class="btn btn-primary" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+        <a href="tel:+92-305-4094188" class="btn btn-primary" aria-label="Call SigmasoftAI — Head Office (New York) +92 305 4094188">
             <i class="fa fa-phone me-2"></i>Call Now
         </a>
         <a href="#contact" class="btn btn-outline-primary">
@@ -3525,7 +3723,7 @@
                                 <h3 class="mb-3" style="background: linear-gradient(90deg, #091E3E 0%, #1a2f5a 50%, #2a4076 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700;">Ready to Transform Your Business?</h3>
                                 <p class="mb-4" style="color: #d1d5db;">Join hundreds of NYC businesses that trust us with their digital transformation</p>
                                 <div class="cta-buttons">
-                                    <a href="tel:+1-212-555-0123" class="btn btn-primary btn-lg me-3" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                                    <a href="tel:+92-305-4094188" class="btn btn-primary btn-lg me-3" aria-label="Call SigmasoftAI — Head Office (New York) +92 305 4094188">
                                         <i class="fa fa-phone me-2"></i>Call Now
                                     </a>
                                     <a href="#contact" class="hero-cta-secondary" style="font-size: 18px; padding: 15px 30px;">
@@ -3613,7 +3811,7 @@
                       <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ 30 days support</li>
                     </ul>
                   </div>
-                  <button onclick="trackCTA('plan_call','starter_launch'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Launch in 7 Days</button>
+                  <button onclick="trackCTA('plan_call','starter_launch'); window.location.href='tel:+92-305-4094188'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Launch in 7 Days</button>
                 </div>
                 
                 <!-- Card 2 -->
@@ -3632,7 +3830,7 @@
                       <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Minor brand assets</li>
                     </ul>
                   </div>
-                  <button onclick="trackCTA('plan_call','startup_growth'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Book Free Consult</button>
+                  <button onclick="trackCTA('plan_call','startup_growth'); window.location.href='tel:+92-305-4094188'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Book Free Consult</button>
                 </div>
                 
                 <!-- Card 3 -->
@@ -3650,7 +3848,7 @@
                       <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ $500 ad setup credit</li>
                     </ul>
                   </div>
-                  <button onclick="trackCTA('plan_call','launch_ads'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Call to Discuss</button>
+                  <button onclick="trackCTA('plan_call','launch_ads'); window.location.href='tel:+92-305-4094188'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Call to Discuss</button>
                 </div>
               </div>
             </div>
@@ -3675,7 +3873,7 @@
                       <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Review acquisition</li>
                     </ul>
                   </div>
-                  <button onclick="trackCTA('plan_call','local_visibility'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Get Found Locally</button>
+                  <button onclick="trackCTA('plan_call','local_visibility'); window.location.href='tel:+92-305-4094188'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Get Found Locally</button>
                 </div>
                 
                 <!-- Card 2 -->
@@ -3693,7 +3891,7 @@
                       <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Heatmap analysis</li>
                     </ul>
                   </div>
-                  <button onclick="trackCTA('plan_call','conversion_booster'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Boost Conversions</button>
+                  <button onclick="trackCTA('plan_call','conversion_booster'); window.location.href='tel:+92-305-4094188'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Boost Conversions</button>
                 </div>
                 
                 <!-- Card 3 -->
@@ -3712,7 +3910,7 @@
                       <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ A/B testing</li>
                     </ul>
                   </div>
-                  <button onclick="trackCTA('plan_call','performance_automation'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Scale Reliably</button>
+                  <button onclick="trackCTA('plan_call','performance_automation'); window.location.href='tel:+92-305-4094188'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Scale Reliably</button>
                 </div>
               </div>
             </div>
@@ -3736,7 +3934,7 @@
                       <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Proof-of-concept</li>
                     </ul>
                   </div>
-                  <button onclick="trackCTA('plan_call','automation_audit'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Automate Revenue</button>
+                  <button onclick="trackCTA('plan_call','automation_audit'); window.location.href='tel:+92-305-4094188'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Automate Revenue</button>
                 </div>
                 
                 <!-- Card 2 -->
@@ -3755,7 +3953,7 @@
                       <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ 30-day monitoring</li>
                     </ul>
                   </div>
-                  <button onclick="trackCTA('plan_call','rcm_automation'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Cut Billing Overhead</button>
+                  <button onclick="trackCTA('plan_call','rcm_automation'); window.location.href='tel:+92-305-4094188'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Cut Billing Overhead</button>
                 </div>
                 
                 <!-- Card 3 -->
@@ -3774,7 +3972,7 @@
                       <li style="color: #d1d5db; margin-bottom: 8px; font-size: 0.9rem;">✓ Marketing integration</li>
                     </ul>
                   </div>
-                  <button onclick="trackCTA('plan_call','ecommerce_platforms'); window.location.href='tel:+1-212-555-0123'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Launch Your Shop</button>
+                  <button onclick="trackCTA('plan_call','ecommerce_platforms'); window.location.href='tel:+92-305-4094188'" style="width: 100%; padding: 12px; background: #3AA6A4; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: auto;">Launch Your Shop</button>
                 </div>
               </div>
             </div>
@@ -3785,7 +3983,7 @@
 
           <!-- Modern CTA -->
         <div class="pricing-cta" style="text-align: center; padding: 40px; background: #374151; border-radius: 20px; border: 1px solid #4b5563; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);">
-          <p style="font-size: 1.125rem; color: #f9fafb; margin: 0;">Need help choosing? <a href="tel:+1-212-555-0123" onclick="trackCTA('plan_call','consultation')" style="color: #3AA6A4; text-decoration: none; font-weight: 600; transition: color 0.3s ease;">Call us</a> for a free consultation.</p>
+          <p style="font-size: 1.125rem; color: #f9fafb; margin: 0;">Need help choosing? <a href="tel:+92-305-4094188" onclick="trackCTA('plan_call','consultation')" style="color: #3AA6A4; text-decoration: none; font-weight: 600; transition: color 0.3s ease;">Call us</a> for a free consultation.</p>
         </div>
       </div>
     </section>
@@ -4083,11 +4281,11 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">+1-212-555-0123</h4>
+                            <h4 class="text-primary mb-0">+92 305 4094188</h4>
                         </div>
                     </div>
                     <div class="d-flex gap-3">
-                        <a href="tel:+1-212-555-0123" class="btn btn-primary py-3 px-5 wow zoomIn" data-wow-delay="0.9s" aria-label="Call SigmasoftAI — Head Office (New York) +1-212-555-0123">
+                        <a href="tel:+92-305-4094188" class="btn btn-primary py-3 px-5 wow zoomIn" data-wow-delay="0.9s" aria-label="Call SigmasoftAI — Head Office (New York) +92 305 4094188">
                             <i class="fa fa-phone me-2"></i>Call Now
                         </a>
                         <a href="#contact" class="btn btn-outline-primary py-3 px-5 wow zoomIn" data-wow-delay="0.9s">
@@ -4252,7 +4450,7 @@
                         </div>
                         <div class="ms-4">
                             <h5 class="text-white">Call to ask any question</h5>
-                            <h1 class="text-white mb-0">+1-212-555-0123</h1>
+                            <h1 class="text-white mb-0">+92 305 4094188</h1>
                         </div>
                     </div>
                 </div>
@@ -4295,7 +4493,7 @@
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="fa fa-phone-alt text-primary me-2"></i>
-                                <p class="mb-0">+1-212-555-0123</p>
+                                <p class="mb-0">+92 305 4094188</p>
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="fa fa-envelope-open text-primary me-2"></i>
@@ -4361,7 +4559,191 @@
     
     <!-- Testimonials Dynamic Loader -->
     <script src="assets/js/testimonials.js"></script>
-    
+
+    <!-- Fixed Header Reveal-on-Scroll -->
+    <script>
+        (function () {
+            const hero = document.getElementById('header-carousel');
+            if (!hero) return;
+
+            function checkHeaderReveal() {
+                const threshold = Math.max(200, hero.offsetHeight - 150);
+                document.body.classList.toggle('header-revealed', window.scrollY > threshold);
+            }
+
+            window.addEventListener('scroll', checkHeaderReveal, { passive: true });
+            window.addEventListener('resize', checkHeaderReveal);
+            checkHeaderReveal();
+        })();
+    </script>
+
+    <!-- Particle Globe Hero -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="globe-particles/globe-particles.js"></script>
+    <script>
+        (function () {
+            const globeCanvas = document.querySelector('[data-globe-particles]');
+            if (!globeCanvas || typeof initGlobeParticles !== 'function') return;
+
+            initGlobeParticles(globeCanvas, {
+                sphereCount: 4200,
+                ringCount: 0,
+                radius: 1.35,
+
+                cameraDistance: 4.4,
+                pointSize: 34,
+                rotationSpeed: 0.1,
+                mouseStrength: 0.045,
+
+                repelStrength: 0.75,
+                repelRadius: 0.85,
+                repelEase: 0.04,
+
+                accentColor: '#3AA6A4',
+                oceanColorShallow: '#f5f7fa',
+                oceanColorMid: '#9aa5b1',
+                oceanColorDeep: '#4b5563',
+                landColorLow: '#acffff',
+                landColorMid: '#3AA6A4',
+                landColorHigh: '#297474',
+            });
+        })();
+    </script>
+
+    <!-- Code-rain backdrop behind the hero globe, active only while hovered -->
+    <script>
+        (function () {
+            const CODE_LINES = [
+                "function debounce(fn, wait) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), wait); }; }",
+                "const sum = arr.reduce((a, b) => a + b, 0);",
+                "async function handleRequest(req, res) { const data = await db.query(sql); res.json(data); }",
+                "export default function App() { return <Globe spin />; }",
+                "npm install --save-dev vitest @testing-library/react",
+                "def average(numbers): return sum(numbers) / len(numbers)",
+                "class Node:  def __init__(self, val): self.val = val",
+                "for i in range(len(data)): total += data[i]",
+                "import secrets; key = secrets.token_hex(16)",
+                "@app.route('/api/health')  def health(): return {'status': 'ok'}",
+                "func Fibonacci(n int) int { if n < 2 { return n }; return Fibonacci(n-1) + Fibonacci(n-2) }",
+                "package main; import \"fmt\"; func main() { fmt.Println(\"ready\") }",
+                "go func() { results <- worker(job) }()",
+                "type Server struct { Addr string; Timeout time.Duration }",
+                "fn fib(n: u64) -> u64 { if n < 2 { n } else { fib(n - 1) + fib(n - 2) } }",
+                "let mut v: Vec<i32> = Vec::new();",
+                "struct Point { x: f64, y: f64 }",
+                "impl Shape for Circle { fn area(&self) -> f64 { PI * self.r * self.r } }",
+                "SELECT id, name FROM users WHERE active = true ORDER BY created_at DESC;",
+                "SELECT * FROM inventory WHERE stock < threshold;",
+                "CREATE INDEX idx_orders_user_id ON orders(user_id);",
+                "UPDATE sessions SET expires_at = NOW() + INTERVAL '1 hour';",
+                "public class Order implements Comparable<Order> { private double total; }",
+                "System.out.println(\"deploy complete\");",
+                "#include <stdio.h>  int main() { printf(\"hello\\n\"); return 0; }",
+                "SELECT COUNT(*) FROM sessions WHERE expires_at > now();",
+                "git commit -m \"fix: race condition in worker pool\"",
+                "kubectl rollout restart deployment/api",
+                "docker build -t sigmasoft/api:latest .",
+                "cargo build --release",
+                "go test ./... -race -v",
+                "curl -s https://api.sigmasoftai.com/v1/status",
+                "let response = await fetch('/api/orders', { method: 'POST', body });",
+                "assert response.status_code == 200, \"unexpected status\"",
+                "with open('data.json') as f: config = json.load(f)",
+                "module.exports = { plugins: [require('tailwindcss')] };",
+                "interface Task { id: string; done: boolean; dueDate?: Date; }",
+                "trait Repository<T> { fn find(&self, id: u64) -> Option<T>; }",
+            ];
+
+            const canvas = document.querySelector('[data-code-rain]');
+            const shell = document.querySelector('[data-globe-shell]');
+            if (!canvas || !shell) return;
+
+            const ctx = canvas.getContext('2d');
+            let rows = [];
+            let rafId = 0;
+            let running = false;
+
+            function pickLine() {
+                return CODE_LINES[Math.floor(Math.random() * CODE_LINES.length)];
+            }
+
+            function buildRows(width, height) {
+                const count = 11;
+                const list = [];
+                for (let i = 0; i < count; i++) {
+                    list.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        speed: 6 + Math.random() * 10,
+                        text: pickLine(),
+                        bright: Math.random() < 0.12,
+                    });
+                }
+                return list;
+            }
+
+            function resize() {
+                const width = Math.max(1, canvas.clientWidth);
+                const height = Math.max(1, canvas.clientHeight);
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+                const fontSize = Math.max(6, Math.min(7.5, width / 85));
+                canvas.dataset.fontSize = fontSize;
+                rows = buildRows(width, height);
+            }
+
+            function draw() {
+                const width = canvas.clientWidth;
+                const height = canvas.clientHeight;
+                const fontSize = parseFloat(canvas.dataset.fontSize) || 7;
+
+                ctx.clearRect(0, 0, width, height);
+                ctx.font = `${fontSize}px "SF Mono", "Fira Code", Menlo, Consolas, monospace`;
+                ctx.textBaseline = 'top';
+
+                for (const row of rows) {
+                    ctx.fillStyle = row.bright
+                        ? 'rgba(172, 255, 255, 0.55)'
+                        : 'rgba(255, 255, 255, 0.14)';
+                    ctx.fillText(row.text, row.x, row.y);
+
+                    row.y += row.speed / 60;
+                    if (row.y > height + fontSize * 2) {
+                        row.y = -fontSize * 2;
+                        row.x = Math.random() * width;
+                        row.text = pickLine();
+                        row.bright = Math.random() < 0.12;
+                    }
+                }
+
+                if (running) rafId = requestAnimationFrame(draw);
+            }
+
+            function start() {
+                if (running) return;
+                running = true;
+                resize();
+                shell.classList.add('is-hovering');
+                rafId = requestAnimationFrame(draw);
+            }
+
+            function stop() {
+                running = false;
+                shell.classList.remove('is-hovering');
+                cancelAnimationFrame(rafId);
+            }
+
+            shell.addEventListener('mouseenter', start);
+            shell.addEventListener('mouseleave', stop);
+            shell.addEventListener('touchstart', start, { passive: true });
+            shell.addEventListener('touchend', stop);
+            window.addEventListener('resize', () => { if (running) resize(); });
+        })();
+    </script>
+
     <!-- Testimonial Touch Controls -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
