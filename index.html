@@ -80,9 +80,16 @@
             left: 0;
             right: 0;
             background: transparent;
-            transition: all 0.3s ease;
+            transition: opacity 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
             z-index: 1000;
             padding: 15px 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        body.header-revealed .mobile-header {
+            opacity: 1;
+            pointer-events: auto;
         }
         
         .mobile-header.scrolled {
@@ -527,7 +534,44 @@
 
         @media (max-width: 991px) {
             .globe-hero-brand {
-                display: none;
+                position: static;
+                display: flex;
+                justify-content: center;
+                padding-top: 28px;
+            }
+
+            .globe-hero {
+                flex-direction: column;
+            }
+
+            .globe-hero-row {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 20px;
+            }
+
+            .globe-hero-copy h1 {
+                font-size: clamp(1.9rem, 8vw, 2.6rem);
+            }
+
+            .globe-hero-copy {
+                padding: 20px 0 50px;
+                max-width: 100%;
+            }
+
+            .globe-hero-copy p.lead-copy {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .globe-hero-ctas {
+                justify-content: center;
+            }
+
+            .globe-hero-stage {
+                width: 100%;
+                max-width: 420px;
+                margin: 0 auto;
             }
         }
 
@@ -585,7 +629,8 @@
             transition: transform 0.3s ease-in-out;
         }
         
-        .mobile-cta-bar.visible {
+        .mobile-cta-bar.visible,
+        body.header-revealed .mobile-cta-bar {
             transform: translateY(0);
         }
         
@@ -4560,102 +4605,115 @@
     <!-- Testimonials Dynamic Loader -->
     <script src="assets/js/testimonials.js"></script>
 
-    <!-- Fixed Header Reveal-on-Scroll -->
+    <!-- Fixed Header Reveal-on-Scroll: drives both the desktop fixed header
+         and the mobile header/CTA bar, based on whichever hero (desktop or
+         mobile, only one is ever laid out at a time) is actually on screen. -->
     <script>
-        (function () {
-            const hero = document.getElementById('header-carousel');
-            if (!hero) return;
+        function checkHeaderReveal() {
+            const desktopHero = document.getElementById('header-carousel');
+            const mobileHero = document.getElementById('mobileGlobeHero');
+            const hero = (desktopHero && desktopHero.offsetHeight > 0) ? desktopHero
+                : (mobileHero && mobileHero.offsetHeight > 0) ? mobileHero
+                : null;
+            const threshold = hero ? Math.max(200, hero.offsetHeight - 150) : 200;
+            document.body.classList.toggle('header-revealed', window.scrollY > threshold);
+        }
 
-            function checkHeaderReveal() {
-                const threshold = Math.max(200, hero.offsetHeight - 150);
-                document.body.classList.toggle('header-revealed', window.scrollY > threshold);
-            }
-
-            window.addEventListener('scroll', checkHeaderReveal, { passive: true });
-            window.addEventListener('resize', checkHeaderReveal);
-            checkHeaderReveal();
-        })();
+        window.addEventListener('scroll', checkHeaderReveal, { passive: true });
+        window.addEventListener('resize', checkHeaderReveal);
+        checkHeaderReveal();
     </script>
 
-    <!-- Particle Globe Hero -->
+    <!-- Particle Globe Hero: shared init functions, called once per hero root
+         (desktop hero below, and again for the mobile hero once it's fetched
+         into #mobileContent). Each call is gated on the current viewport so
+         only the hero actually visible for that breakpoint spins up a WebGL
+         context — otherwise both would render simultaneously in the background. -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
     <script src="globe-particles/globe-particles.js"></script>
     <script>
-        (function () {
-            const globeCanvas = document.querySelector('[data-globe-particles]');
+        const GLOBE_HERO_OPTIONS = {
+            sphereCount: 4200,
+            ringCount: 0,
+            radius: 1.35,
+
+            cameraDistance: 4.4,
+            pointSize: 34,
+            rotationSpeed: 0.1,
+            mouseStrength: 0.045,
+
+            repelStrength: 0.75,
+            repelRadius: 0.85,
+            repelEase: 0.04,
+
+            accentColor: '#3AA6A4',
+            oceanColorShallow: '#f5f7fa',
+            oceanColorMid: '#9aa5b1',
+            oceanColorDeep: '#4b5563',
+            landColorLow: '#acffff',
+            landColorMid: '#3AA6A4',
+            landColorHigh: '#297474',
+        };
+
+        function initHeroGlobe(root) {
+            const globeCanvas = root.querySelector('[data-globe-particles]');
             if (!globeCanvas || typeof initGlobeParticles !== 'function') return;
+            initGlobeParticles(globeCanvas, GLOBE_HERO_OPTIONS);
+        }
 
-            initGlobeParticles(globeCanvas, {
-                sphereCount: 4200,
-                ringCount: 0,
-                radius: 1.35,
-
-                cameraDistance: 4.4,
-                pointSize: 34,
-                rotationSpeed: 0.1,
-                mouseStrength: 0.045,
-
-                repelStrength: 0.75,
-                repelRadius: 0.85,
-                repelEase: 0.04,
-
-                accentColor: '#3AA6A4',
-                oceanColorShallow: '#f5f7fa',
-                oceanColorMid: '#9aa5b1',
-                oceanColorDeep: '#4b5563',
-                landColorLow: '#acffff',
-                landColorMid: '#3AA6A4',
-                landColorHigh: '#297474',
-            });
+        (function () {
+            if (window.innerWidth < 992) return;
+            const hero = document.getElementById('header-carousel');
+            if (hero) initHeroGlobe(hero);
         })();
     </script>
 
     <!-- Code-rain backdrop behind the hero globe, active only while hovered -->
     <script>
-        (function () {
-            const CODE_LINES = [
-                "function debounce(fn, wait) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), wait); }; }",
-                "const sum = arr.reduce((a, b) => a + b, 0);",
-                "async function handleRequest(req, res) { const data = await db.query(sql); res.json(data); }",
-                "export default function App() { return <Globe spin />; }",
-                "npm install --save-dev vitest @testing-library/react",
-                "def average(numbers): return sum(numbers) / len(numbers)",
-                "class Node:  def __init__(self, val): self.val = val",
-                "for i in range(len(data)): total += data[i]",
-                "import secrets; key = secrets.token_hex(16)",
-                "@app.route('/api/health')  def health(): return {'status': 'ok'}",
-                "func Fibonacci(n int) int { if n < 2 { return n }; return Fibonacci(n-1) + Fibonacci(n-2) }",
-                "package main; import \"fmt\"; func main() { fmt.Println(\"ready\") }",
-                "go func() { results <- worker(job) }()",
-                "type Server struct { Addr string; Timeout time.Duration }",
-                "fn fib(n: u64) -> u64 { if n < 2 { n } else { fib(n - 1) + fib(n - 2) } }",
-                "let mut v: Vec<i32> = Vec::new();",
-                "struct Point { x: f64, y: f64 }",
-                "impl Shape for Circle { fn area(&self) -> f64 { PI * self.r * self.r } }",
-                "SELECT id, name FROM users WHERE active = true ORDER BY created_at DESC;",
-                "SELECT * FROM inventory WHERE stock < threshold;",
-                "CREATE INDEX idx_orders_user_id ON orders(user_id);",
-                "UPDATE sessions SET expires_at = NOW() + INTERVAL '1 hour';",
-                "public class Order implements Comparable<Order> { private double total; }",
-                "System.out.println(\"deploy complete\");",
-                "#include <stdio.h>  int main() { printf(\"hello\\n\"); return 0; }",
-                "SELECT COUNT(*) FROM sessions WHERE expires_at > now();",
-                "git commit -m \"fix: race condition in worker pool\"",
-                "kubectl rollout restart deployment/api",
-                "docker build -t sigmasoft/api:latest .",
-                "cargo build --release",
-                "go test ./... -race -v",
-                "curl -s https://api.sigmasoftai.com/v1/status",
-                "let response = await fetch('/api/orders', { method: 'POST', body });",
-                "assert response.status_code == 200, \"unexpected status\"",
-                "with open('data.json') as f: config = json.load(f)",
-                "module.exports = { plugins: [require('tailwindcss')] };",
-                "interface Task { id: string; done: boolean; dueDate?: Date; }",
-                "trait Repository<T> { fn find(&self, id: u64) -> Option<T>; }",
-            ];
+        const CODE_RAIN_LINES = [
+            "function debounce(fn, wait) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), wait); }; }",
+            "const sum = arr.reduce((a, b) => a + b, 0);",
+            "async function handleRequest(req, res) { const data = await db.query(sql); res.json(data); }",
+            "export default function App() { return <Globe spin />; }",
+            "npm install --save-dev vitest @testing-library/react",
+            "def average(numbers): return sum(numbers) / len(numbers)",
+            "class Node:  def __init__(self, val): self.val = val",
+            "for i in range(len(data)): total += data[i]",
+            "import secrets; key = secrets.token_hex(16)",
+            "@app.route('/api/health')  def health(): return {'status': 'ok'}",
+            "func Fibonacci(n int) int { if n < 2 { return n }; return Fibonacci(n-1) + Fibonacci(n-2) }",
+            "package main; import \"fmt\"; func main() { fmt.Println(\"ready\") }",
+            "go func() { results <- worker(job) }()",
+            "type Server struct { Addr string; Timeout time.Duration }",
+            "fn fib(n: u64) -> u64 { if n < 2 { n } else { fib(n - 1) + fib(n - 2) } }",
+            "let mut v: Vec<i32> = Vec::new();",
+            "struct Point { x: f64, y: f64 }",
+            "impl Shape for Circle { fn area(&self) -> f64 { PI * self.r * self.r } }",
+            "SELECT id, name FROM users WHERE active = true ORDER BY created_at DESC;",
+            "SELECT * FROM inventory WHERE stock < threshold;",
+            "CREATE INDEX idx_orders_user_id ON orders(user_id);",
+            "UPDATE sessions SET expires_at = NOW() + INTERVAL '1 hour';",
+            "public class Order implements Comparable<Order> { private double total; }",
+            "System.out.println(\"deploy complete\");",
+            "#include <stdio.h>  int main() { printf(\"hello\\n\"); return 0; }",
+            "SELECT COUNT(*) FROM sessions WHERE expires_at > now();",
+            "git commit -m \"fix: race condition in worker pool\"",
+            "kubectl rollout restart deployment/api",
+            "docker build -t sigmasoft/api:latest .",
+            "cargo build --release",
+            "go test ./... -race -v",
+            "curl -s https://api.sigmasoftai.com/v1/status",
+            "let response = await fetch('/api/orders', { method: 'POST', body });",
+            "assert response.status_code == 200, \"unexpected status\"",
+            "with open('data.json') as f: config = json.load(f)",
+            "module.exports = { plugins: [require('tailwindcss')] };",
+            "interface Task { id: string; done: boolean; dueDate?: Date; }",
+            "trait Repository<T> { fn find(&self, id: u64) -> Option<T>; }",
+        ];
 
-            const canvas = document.querySelector('[data-code-rain]');
-            const shell = document.querySelector('[data-globe-shell]');
+        function initHeroCodeRain(root) {
+            const canvas = root.querySelector('[data-code-rain]');
+            const shell = root.querySelector('[data-globe-shell]');
             if (!canvas || !shell) return;
 
             const ctx = canvas.getContext('2d');
@@ -4664,7 +4722,7 @@
             let running = false;
 
             function pickLine() {
-                return CODE_LINES[Math.floor(Math.random() * CODE_LINES.length)];
+                return CODE_RAIN_LINES[Math.floor(Math.random() * CODE_RAIN_LINES.length)];
             }
 
             function buildRows(width, height) {
@@ -4741,6 +4799,12 @@
             shell.addEventListener('touchstart', start, { passive: true });
             shell.addEventListener('touchend', stop);
             window.addEventListener('resize', () => { if (running) resize(); });
+        }
+
+        (function () {
+            if (window.innerWidth < 992) return;
+            const hero = document.getElementById('header-carousel');
+            if (hero) initHeroCodeRain(hero);
         })();
     </script>
 
@@ -5110,9 +5174,22 @@
         fetch('mobile-hero.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('mobileContent').innerHTML = data;
+                const mobileContent = document.getElementById('mobileContent');
+                mobileContent.innerHTML = data;
                 // Initialize mobile functionality after content is loaded
                 initializeMobileFunctionality();
+
+                // Particle globe hero (mobile): only spin up on an actual
+                // mobile viewport, so desktop browsers don't run a second,
+                // hidden WebGL scene alongside the desktop hero's.
+                if (window.innerWidth < 992) {
+                    if (typeof initHeroGlobe === 'function') initHeroGlobe(mobileContent);
+                    if (typeof initHeroCodeRain === 'function') initHeroCodeRain(mobileContent);
+                }
+
+                // Re-check the header-reveal threshold now that the mobile
+                // hero's real height is available (it was 0/hidden before this).
+                if (typeof checkHeaderReveal === 'function') checkHeaderReveal();
             })
             .catch(error => {
                 console.error('Error loading mobile content:', error);
@@ -5261,27 +5338,14 @@
             setTimeout(typeWriter, 1000); // Start after 1 second
         }
         
-        // Header scroll effect
+        // Header background swap (only relevant once header-revealed makes it visible)
         const mobileHeader = document.querySelector('.mobile-header');
-        const mobileCtaBar = document.querySelector('.mobile-cta-bar');
-        const mobileHeroSection = document.querySelector('.mobile-hero-section');
-        
+
         function handleScroll() {
-            // Header color change
             if (window.scrollY > 50) {
                 mobileHeader.classList.add('scrolled');
             } else {
                 mobileHeader.classList.remove('scrolled');
-            }
-            
-            // Mobile CTA bar visibility
-            if (mobileHeroSection && mobileCtaBar) {
-                const heroBottom = mobileHeroSection.offsetTop + mobileHeroSection.offsetHeight;
-                if (window.scrollY > heroBottom - 100) {
-                    mobileCtaBar.classList.add('visible');
-                } else {
-                    mobileCtaBar.classList.remove('visible');
-                }
             }
         }
         

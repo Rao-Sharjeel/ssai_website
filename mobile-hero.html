@@ -27,34 +27,44 @@
     </div>
 </header>
 
-<!-- Mobile Hero Section -->
-<div class="mobile-hero-section d-block d-lg-none">
-    <div class="mobile-hero-background">
-        <div class="mobile-hero-overlay"></div>
-        <div class="mobile-hero-content">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 text-center">
-                        <!-- Hero Statement -->
-                        <div class="hero-statement">
-                            <h1>
-                                We create meaningful <span class="brand-word" data-text="brands">brands</span> with our <span class="rotating-service" id="rotatingService">Web Development</span>
-                            </h1>
-                        </div>
-                        
-                        <!-- Mobile Hero Bottom CTA -->
-                        <div class="mobile-hero-bottom-cta">
-                            <a href="tel:+92-305-4094188" class="mobile-call-now-btn" aria-label="Call SigmasoftAI — Head Office (New York) +92 305 4094188">
-                                <i class="fa fa-phone me-2"></i>
-                                Call Now — +92 305 4094188
-                            </a>
-                        </div>
-                    </div>
+<!-- Mobile Hero Section (particle globe, matches hero-globe-test.html) -->
+<section id="mobileGlobeHero" class="globe-hero d-block d-lg-none">
+    <div class="globe-hero-brand">
+        <img src="new_logos/straight_wordmark_cropped.png" alt="Sigma Soft AI">
+    </div>
+    <div class="container-fluid">
+        <div class="globe-hero-row">
+
+            <!-- Copy -->
+            <div class="globe-hero-copy">
+                <h1 class="title-font">Softwares that change your <span class="accent">World</span></h1>
+                <p class="lead-copy">AI systems, automation, and full-stack platforms — designed and shipped by senior engineers to move your business forward.</p>
+
+                <div class="globe-hero-ctas">
+                    <a href="tel:+92-305-4094188" class="hero-cta-primary" aria-label="Call SigmasoftAI — Head Office (New York) +92 305 4094188">
+                        <i class="fa fa-phone"></i>
+                        Call Now — +92 305 4094188
+                    </a>
+                </div>
+
+                <div class="cta-microcopy">
+                    <p class="mb-0">No automated menu — you'll talk to a real senior engineer.</p>
                 </div>
             </div>
+
+            <!-- Globe -->
+            <div class="globe-hero-stage">
+                <div class="globe-particles-shell" data-globe-shell>
+                    <div class="code-rain-wrap">
+                        <canvas class="code-rain-canvas" data-code-rain></canvas>
+                    </div>
+                    <canvas class="globe-particles-canvas" data-globe-particles></canvas>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
+</section>
 
 <!-- Mobile CTA Bar -->
 <div class="mobile-cta-bar">
