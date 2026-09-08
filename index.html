@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>New York Software Development | Sigma Soft AI - Custom Software Developers</title>
+    <title>Sigma Soft AI | Custom Software, AI Systems &amp; Automation</title>
     
     <!-- SVG Filters for Glass Effect -->
     <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true" focusable="false">
@@ -26,8 +26,8 @@
             </filter>
         </defs>
     </svg>
-    <meta name="description" content="Sigma Soft AI provides expert software development services in New York. Custom AI solutions, web development, mobile apps, and business automation for NYC businesses.">
-    <meta name="keywords" content="New York software development, NYC custom software, AI solutions New York, web development NYC, mobile app development New York, business automation NYC">
+    <meta name="description" content="Sigma Soft AI builds custom software, AI systems and business automation — web and mobile platforms designed and shipped by senior engineers. Working with clients worldwide.">
+    <meta name="keywords" content="custom software development, AI solutions, business automation, web development, mobile app development, SEO and digital marketing">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
@@ -567,6 +567,230 @@
                 max-width: 420px;
                 margin: 0 auto;
             }
+        }
+
+        /* Selected Work — counter-scrolling marquee columns, rotated on the Z
+           axis only. No rotateX/rotateY, so cards stay true rectangles and the
+           text never foreshortens. Columns alternate direction and loop by
+           listing their cards twice and translating exactly -50%. */
+        .selected-work {
+            padding: 60px 0 70px;
+            background: linear-gradient(135deg, #f4f8f9 0%, #ffffff 60%);
+            overflow: hidden;
+        }
+
+        .work-stage {
+            perspective: 1600px;
+        }
+
+        .work-marquee {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            height: 660px;
+            max-width: 1180px;
+            margin: 0 auto;
+            overflow: hidden;
+            transform: rotateZ(-8deg) scale(1.1);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
+        }
+
+        .work-col-track {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            will-change: transform;
+        }
+
+        .work-col.dir-up .work-col-track {
+            animation: work-marquee-up 46s linear infinite;
+        }
+
+        .work-col.dir-down .work-col-track {
+            animation: work-marquee-down 54s linear infinite;
+        }
+
+        .work-col.is-slow .work-col-track {
+            animation-duration: 62s;
+        }
+
+        .work-marquee:hover .work-col-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes work-marquee-up {
+            from { transform: translateY(0); }
+            to   { transform: translateY(-50%); }
+        }
+
+        @keyframes work-marquee-down {
+            from { transform: translateY(-50%); }
+            to   { transform: translateY(0); }
+        }
+
+        .work-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 18px;
+            padding: 22px;
+            text-decoration: none;
+            background: #fff;
+            border: 1px solid rgba(9, 30, 62, 0.07);
+            box-shadow: 0 14px 34px rgba(9, 30, 62, 0.09);
+            transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.32s ease;
+        }
+
+        .work-card:hover {
+            transform: scale(1.045);
+            box-shadow: 0 26px 55px rgba(58, 166, 164, 0.3);
+            position: relative;
+            z-index: 5;
+        }
+
+        .work-card.is-accent {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-color: transparent;
+        }
+
+        .work-card.is-accent h3,
+        .work-card.is-accent .work-link {
+            color: #fff;
+        }
+
+        .work-card.is-accent .work-summary {
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        .work-card.is-accent .work-metrics span {
+            background: rgba(255, 255, 255, 0.16);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+
+        .work-card.is-accent .work-metrics strong { color: #fff; }
+
+        .work-card.is-dark {
+            background: linear-gradient(150deg, #0b1730 0%, #12233f 100%);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .work-card.is-dark h3,
+        .work-card.is-dark .work-link { color: #fff; }
+        .work-card.is-dark .work-summary { color: rgba(255, 255, 255, 0.72); }
+
+        .work-card.is-dark .work-metrics span {
+            background: rgba(58, 166, 164, 0.18);
+            border-color: rgba(58, 166, 164, 0.4);
+            color: #d8f5f4;
+        }
+
+        .work-card.is-dark .work-metrics strong { color: var(--light); }
+
+        .work-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            align-self: flex-start;
+            padding: 5px 13px;
+            border-radius: 50px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            background: rgba(58, 166, 164, 0.10);
+            border: 1px solid rgba(58, 166, 164, 0.28);
+            color: var(--secondary);
+        }
+
+        .work-card.is-accent .work-pill {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.45);
+            color: #fff;
+        }
+
+        .work-card.is-dark .work-pill {
+            background: rgba(58, 166, 164, 0.2);
+            border-color: rgba(58, 166, 164, 0.45);
+            color: var(--light);
+        }
+
+        .work-card h3 {
+            color: var(--dark);
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        .work-summary {
+            color: #64748b;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .work-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: auto;
+            margin-bottom: 12px;
+        }
+
+        .work-metrics span {
+            background: rgba(58, 166, 164, 0.09);
+            border: 1px solid rgba(58, 166, 164, 0.2);
+            border-radius: 7px;
+            padding: 5px 10px;
+            font-size: 0.74rem;
+            color: #4a5568;
+        }
+
+        .work-metrics strong {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .work-link {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.83rem;
+        }
+
+        @media (max-width: 991px) {
+            .work-marquee {
+                grid-template-columns: repeat(2, 1fr);
+                transform: rotateZ(-5deg) scale(1.12);
+                height: 580px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .selected-work { padding: 35px 0 45px; }
+
+            .work-marquee {
+                grid-template-columns: 1fr;
+                transform: none;
+                height: 520px;
+                margin: 0 15px;
+            }
+
+            .work-col.is-hide-sm { display: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .work-col-track { animation: none !important; }
+            .work-marquee {
+                height: auto;
+                max-height: 70vh;
+                overflow-y: auto;
+                transform: none;
+                mask-image: none;
+                -webkit-mask-image: none;
+            }
+            .work-card:hover { transform: none; }
         }
 
         /* Sticky Floating CTA */
@@ -2187,7 +2411,75 @@
                 transform: translateX(-50%);
             }
         }
-        
+
+        /* Client / product logo carousel — deliberately runs opposite to the
+           testimonial carousel above it, so the two bands counter-scroll. */
+        .logo-carousel {
+            width: 100%;
+            position: relative;
+            padding: 30px 0 45px;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+        }
+
+        .logo-scroll-track {
+            display: flex;
+            align-items: center;
+            gap: 75px;
+            width: max-content;
+            animation: scroll-reverse 32s linear infinite;
+        }
+
+        .logo-carousel:hover .logo-scroll-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-reverse {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .logo-scroll-track img {
+            height: 90px;
+            width: auto;
+            max-width: 240px;
+            object-fit: contain;
+            flex-shrink: 0;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+        }
+
+        .logo-scroll-track img:hover {
+            transform: scale(1.35);
+            filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.18));
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .logo-scroll-track,
+            .auto-scroll-carousel {
+                animation: none;
+            }
+
+            .logo-carousel {
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-scroll-track {
+                gap: 45px;
+            }
+
+            .logo-scroll-track img {
+                height: 62px;
+                max-width: 170px;
+            }
+        }
+
         /* Modern Testimonial Cards */
         .testimonial-card-modern {
             flex: 0 0 400px;
@@ -3074,7 +3366,8 @@
                 <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center" style="height: 45px;">
                         <small class="me-3 text-light"><i class="bi bi-whatsapp me-2"></i>+92 326 1776046</small>
-                        <small class="text-light"><i class="fa fa-envelope-open me-2"></i>contact@sigmasoftai.com</small>
+                        <small class="me-3 text-light"><i class="fa fa-envelope-open me-2"></i>contact@sigmasoftai.com</small>
+                        <small class="text-light"><i class="fa fa-clock me-2"></i>Available 24 hours</small>
                     </div>
                 </div>
                 <div class="col-lg-4 text-center text-lg-end">
@@ -3192,7 +3485,7 @@
                     <a href="blog.html" class="nav-item nav-link">Blog</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                     <div class="nav-item d-flex align-items-center ms-3">
-                        <a href="tel:+92-326-1776046" class="header-cta" aria-label="Call SigmasoftAI — Head Office (New York) +92 326 1776046">
+                        <a href="tel:+92-326-1776046" class="header-cta" aria-label="Call Sigma Soft AI — +92 326 1776046">
                             <i class="fa fa-phone"></i>
                             Call Now
                         </a>
@@ -3220,14 +3513,14 @@
                         <p class="lead-copy">AI systems, automation, and full-stack platforms — designed and shipped by senior engineers to move your business forward.</p>
 
                         <div class="globe-hero-ctas">
-                            <a href="tel:+92-326-1776046" class="hero-cta-primary" aria-label="Call SigmasoftAI — Head Office (New York) +92 326 1776046">
+                            <a href="tel:+92-326-1776046" class="hero-cta-primary" aria-label="Call Sigma Soft AI — +92 326 1776046">
                                 <i class="fa fa-phone"></i>
                                 Call Now — +92 326 1776046
                             </a>
                         </div>
 
                         <div class="cta-microcopy">
-                            <p class="mb-0">No automated menu — you'll talk to a real senior engineer.</p>
+                            <p class="mb-0">Available 24 hours — no automated menu, you'll talk to a real senior engineer.</p>
                         </div>
                     </div>
 
@@ -3251,7 +3544,7 @@
     <div id="mobileContent"></div>
 
     <!-- Sticky Floating CTA -->
-    <a href="tel:+92-326-1776046" class="floating-cta" aria-label="Call SigmasoftAI — Head Office (New York) +92 326 1776046">
+    <a href="tel:+92-326-1776046" class="floating-cta" aria-label="Call Sigma Soft AI — +92 326 1776046">
         <i class="fa fa-phone"></i>
     </a>
 
@@ -3519,8 +3812,8 @@
                         <i class="fa fa-star me-1"></i>Success Stories
                     </span>
                 </div>
-                <h2 class="mb-3 fw-bold">Trusted by Top Businesses</h2>
-                <p class="text-muted mb-0 lead">See how we've transformed businesses with our innovative solutions</p>
+                <h2 class="mb-3 fw-bold">What Our Clients Say</h2>
+                <p class="text-muted mb-0 lead">A few words from the people we've built for</p>
             </div>
         </div>
 
@@ -3528,6 +3821,34 @@
         <div class="testimonial-carousel-modern">
             <div class="auto-scroll-carousel">
                 <!-- Testimonials will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Client / product logos — counter-scrolls against the testimonials.
+             The track lists every logo twice so the loop is seamless. -->
+        <div class="logo-carousel" aria-label="Products and clients we've built for">
+            <div class="logo-scroll-track">
+                <img src="img/WTPU.png" alt="We The People University" loading="lazy">
+                <img src="img/findmebgpng.png" alt="Find Me" loading="lazy">
+                <img src="img/PBACS.png" alt="PBACS" loading="lazy">
+                <img src="img/smileenhancerlogo2.png" alt="Smile Enhancer" loading="lazy">
+                <img src="img/easymed.jpg" alt="EasyMed" loading="lazy">
+                <img src="img/bodymeasureAI.png" alt="Body Measure AI" loading="lazy">
+                <img src="img/VISIFACE.png" alt="VisiFace" loading="lazy">
+                <img src="img/weapon detection2.png" alt="Weapon Detection" loading="lazy">
+                <img src="img/automailer.png" alt="AutoMailer" loading="lazy">
+                <img src="img/videogen.png" alt="Video Generator" loading="lazy">
+
+                <img src="img/WTPU.png" alt="" aria-hidden="true" loading="lazy">
+                <img src="img/findmebgpng.png" alt="" aria-hidden="true" loading="lazy">
+                <img src="img/PBACS.png" alt="" aria-hidden="true" loading="lazy">
+                <img src="img/smileenhancerlogo2.png" alt="" aria-hidden="true" loading="lazy">
+                <img src="img/easymed.jpg" alt="" aria-hidden="true" loading="lazy">
+                <img src="img/bodymeasureAI.png" alt="" aria-hidden="true" loading="lazy">
+                <img src="img/VISIFACE.png" alt="" aria-hidden="true" loading="lazy">
+                <img src="img/weapon detection2.png" alt="" aria-hidden="true" loading="lazy">
+                <img src="img/automailer.png" alt="" aria-hidden="true" loading="lazy">
+                <img src="img/videogen.png" alt="" aria-hidden="true" loading="lazy">
             </div>
         </div>
 
@@ -3539,9 +3860,9 @@
                         <div class="cta-card">
                             <div class="cta-content">
                                 <h3 class="mb-3" style="background: linear-gradient(90deg, #091E3E 0%, #1a2f5a 50%, #2a4076 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700;">Ready to Transform Your Business?</h3>
-                                <p class="mb-4" style="color: #d1d5db;">Join hundreds of NYC businesses that trust us with their digital transformation</p>
+                                <p class="mb-4" style="color: #d1d5db;">Tell us what you're trying to build — we'll tell you honestly whether we're the right team for it</p>
                                 <div class="cta-buttons">
-                                    <a href="tel:+92-326-1776046" class="btn btn-primary btn-lg me-3" aria-label="Call SigmasoftAI — Head Office (New York) +92 326 1776046">
+                                    <a href="tel:+92-326-1776046" class="btn btn-primary btn-lg me-3" aria-label="Call Sigma Soft AI — +92 326 1776046">
                                         <i class="fa fa-phone me-2"></i>Call Now
                                     </a>
                                     <a href="#contact" class="hero-cta-secondary" style="font-size: 18px; padding: 15px 30px;">
@@ -3560,6 +3881,343 @@
         </div>
     </section>
     <!-- Modern Success Stories & Testimonials End -->
+
+    <!-- Selected Work Start -->
+    <section id="selected-work" aria-labelledby="selected-work-title" class="selected-work">
+        <div class="container">
+            <div class="text-center position-relative pb-2 mb-5 mx-auto" style="max-width: 640px;">
+                <h5 class="fw-bold text-primary text-uppercase">Selected Work</h5>
+                <h2 id="selected-work-title" class="mb-2">Problems We've Actually Solved</h2>
+                <p class="text-muted fs-5 mb-0">Platforms, automation and AI systems we've designed and shipped.</p>
+            </div>
+        </div>
+
+        <div class="work-stage">
+            <div class="work-marquee">
+                <div class="work-col dir-up">
+                    <div class="work-col-track">
+                        <a class="work-card is-accent" href="craigslist/case-studies/rcm-automation.html">
+                            <span class="work-pill"><i class="fa fa-bolt"></i> Automation</span>
+                            <h3>RCM Automation</h3>
+                            <p class="work-summary">A 700-person manual medical billing operation rebuilt around automated claims workflows — the same workload now runs with roughly 20 staff.</p>
+                            <div class="work-metrics">
+                                <span><strong>97%</strong> staff reduction</span>
+                                <span><strong>3x</strong> faster turnaround</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-truck"></i> Fleet</span>
+                            <h3>Fleetora</h3>
+                            <p class="work-summary">Multi-tenant fleet management: one Django API serving four independently deployed frontends, including a gate-exit kiosk PWA.</p>
+                            <div class="work-metrics">
+                                <span><strong>Django</strong> + DRF</span>
+                                <span><strong>Schema</strong> per tenant</span>
+                            </div>
+                        </div>
+                        <div class="work-card is-dark">
+                            <span class="work-pill"><i class="fa fa-robot"></i> RPA</span>
+                            <h3>Multi-Tenant RPA Platform</h3>
+                            <p class="work-summary">Browser automation workflows defined as JSON and executed through a Celery queue, with isolated configuration per tenant.</p>
+                            <div class="work-metrics">
+                                <span><strong>Playwright</strong> engine</span>
+                                <span><strong>Celery</strong> queue</span>
+                            </div>
+                        </div>
+                        <a class="work-card" href="craigslist/case-studies/smile-enhancer.html">
+                            <span class="work-pill"><i class="fa fa-eye"></i> AI Imaging</span>
+                            <h3>Smile Enhancer</h3>
+                            <p class="work-summary">Patients see simulated cosmetic dental outcomes before committing to treatment.</p>
+                            <div class="work-metrics">
+                                <span><strong>40%</strong> more consultations</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-graduation-cap"></i> EdTech</span>
+                            <h3>Ilm — Quran Learning</h3>
+                            <p class="work-summary">Families submit a learning plan and available hours; the team assigns a teacher. No browsing, no pricing — the service is free.</p>
+                            <div class="work-metrics">
+                                <span><strong>React</strong> + TypeScript</span>
+                            </div>
+                        </div>
+                        <a class="work-card is-accent" href="craigslist/case-studies/workforce-system.html">
+                            <span class="work-pill"><i class="fa fa-users"></i> Workforce</span>
+                            <h3>Workforce Supervision System</h3>
+                            <p class="work-summary">Productivity visibility across remote and on-site staff, giving HR objective data for reward decisions and capacity planning.</p>
+                            <div class="work-metrics">
+                                <span><strong>60%</strong> better capacity planning</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <a class="work-card is-accent" href="craigslist/case-studies/rcm-automation.html">
+                            <span class="work-pill"><i class="fa fa-bolt"></i> Automation</span>
+                            <h3>RCM Automation</h3>
+                            <p class="work-summary">A 700-person manual medical billing operation rebuilt around automated claims workflows — the same workload now runs with roughly 20 staff.</p>
+                            <div class="work-metrics">
+                                <span><strong>97%</strong> staff reduction</span>
+                                <span><strong>3x</strong> faster turnaround</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-truck"></i> Fleet</span>
+                            <h3>Fleetora</h3>
+                            <p class="work-summary">Multi-tenant fleet management: one Django API serving four independently deployed frontends, including a gate-exit kiosk PWA.</p>
+                            <div class="work-metrics">
+                                <span><strong>Django</strong> + DRF</span>
+                                <span><strong>Schema</strong> per tenant</span>
+                            </div>
+                        </div>
+                        <div class="work-card is-dark">
+                            <span class="work-pill"><i class="fa fa-robot"></i> RPA</span>
+                            <h3>Multi-Tenant RPA Platform</h3>
+                            <p class="work-summary">Browser automation workflows defined as JSON and executed through a Celery queue, with isolated configuration per tenant.</p>
+                            <div class="work-metrics">
+                                <span><strong>Playwright</strong> engine</span>
+                                <span><strong>Celery</strong> queue</span>
+                            </div>
+                        </div>
+                        <a class="work-card" href="craigslist/case-studies/smile-enhancer.html">
+                            <span class="work-pill"><i class="fa fa-eye"></i> AI Imaging</span>
+                            <h3>Smile Enhancer</h3>
+                            <p class="work-summary">Patients see simulated cosmetic dental outcomes before committing to treatment.</p>
+                            <div class="work-metrics">
+                                <span><strong>40%</strong> more consultations</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-graduation-cap"></i> EdTech</span>
+                            <h3>Ilm — Quran Learning</h3>
+                            <p class="work-summary">Families submit a learning plan and available hours; the team assigns a teacher. No browsing, no pricing — the service is free.</p>
+                            <div class="work-metrics">
+                                <span><strong>React</strong> + TypeScript</span>
+                            </div>
+                        </div>
+                        <a class="work-card is-accent" href="craigslist/case-studies/workforce-system.html">
+                            <span class="work-pill"><i class="fa fa-users"></i> Workforce</span>
+                            <h3>Workforce Supervision System</h3>
+                            <p class="work-summary">Productivity visibility across remote and on-site staff, giving HR objective data for reward decisions and capacity planning.</p>
+                            <div class="work-metrics">
+                                <span><strong>60%</strong> better capacity planning</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="work-col dir-down is-hide-sm">
+                    <div class="work-col-track">
+                        <div class="work-card is-dark">
+                            <span class="work-pill"><i class="fa fa-brain"></i> Health AI</span>
+                            <h3>Psychera EMR</h3>
+                            <p class="work-summary">Clinical platform with live session transcription and automated SOAP note generation, built as a FastAPI microservice architecture.</p>
+                            <div class="work-metrics">
+                                <span><strong>FastAPI</strong> microservices</span>
+                                <span><strong>Whisper</strong> pipeline</span>
+                            </div>
+                        </div>
+                        <a class="work-card" href="craigslist/case-studies/erp-enhancement.html">
+                            <span class="work-pill"><i class="fa fa-chart-line"></i> ERP</span>
+                            <h3>ERP Enhancement</h3>
+                            <p class="work-summary">Demand forecasting and anomaly detection layered onto a legacy ERP, so it stayed the central system instead of being replaced.</p>
+                            <div class="work-metrics">
+                                <span><strong>75%</strong> fewer errors</span>
+                                <span><strong>50%</strong> faster procurement</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <a class="work-card is-accent" href="craigslist/case-studies/ai-coach.html">
+                            <span class="work-pill"><i class="fa fa-comments"></i> AI Assistant</span>
+                            <h3>AI Coach Assistant</h3>
+                            <p class="work-summary">Routine client Q&amp;A handled in the coach's own voice, so support scaled without new hires.</p>
+                            <div class="work-metrics">
+                                <span><strong>15hrs</strong> saved weekly</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-boxes"></i> Inventory</span>
+                            <h3>Nexus ERP</h3>
+                            <p class="work-summary">Inventory, procurement and operations management — a React and Ant Design console over a shared API.</p>
+                            <div class="work-metrics">
+                                <span><strong>React</strong> + Vite</span>
+                                <span><strong>Ant Design</strong> UI</span>
+                            </div>
+                        </div>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-fingerprint"></i> Attendance</span>
+                            <h3>ZKTeco Attendance Bridge</h3>
+                            <p class="work-summary">Service that pulls biometric punch data off ZKTeco terminals and syncs it into the HRMS.</p>
+                            <div class="work-metrics">
+                                <span><strong>Python</strong> service</span>
+                                <span><strong>Biometric</strong> sync</span>
+                            </div>
+                        </div>
+                        <a class="work-card is-dark" href="craigslist/case-studies/algeria-marketplace.html">
+                            <span class="work-pill"><i class="fa fa-store"></i> Marketplace</span>
+                            <h3>Tourism &amp; Artisan Marketplace</h3>
+                            <p class="work-summary">Connecting Algerian artisans with tourists and export buyers, payments and merchant onboarding included.</p>
+                            <div class="work-metrics">
+                                <span><strong>50+</strong> artisans</span>
+                                <span><strong>$25K</strong> revenue</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="work-card is-dark">
+                            <span class="work-pill"><i class="fa fa-brain"></i> Health AI</span>
+                            <h3>Psychera EMR</h3>
+                            <p class="work-summary">Clinical platform with live session transcription and automated SOAP note generation, built as a FastAPI microservice architecture.</p>
+                            <div class="work-metrics">
+                                <span><strong>FastAPI</strong> microservices</span>
+                                <span><strong>Whisper</strong> pipeline</span>
+                            </div>
+                        </div>
+                        <a class="work-card" href="craigslist/case-studies/erp-enhancement.html">
+                            <span class="work-pill"><i class="fa fa-chart-line"></i> ERP</span>
+                            <h3>ERP Enhancement</h3>
+                            <p class="work-summary">Demand forecasting and anomaly detection layered onto a legacy ERP, so it stayed the central system instead of being replaced.</p>
+                            <div class="work-metrics">
+                                <span><strong>75%</strong> fewer errors</span>
+                                <span><strong>50%</strong> faster procurement</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <a class="work-card is-accent" href="craigslist/case-studies/ai-coach.html">
+                            <span class="work-pill"><i class="fa fa-comments"></i> AI Assistant</span>
+                            <h3>AI Coach Assistant</h3>
+                            <p class="work-summary">Routine client Q&amp;A handled in the coach's own voice, so support scaled without new hires.</p>
+                            <div class="work-metrics">
+                                <span><strong>15hrs</strong> saved weekly</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-boxes"></i> Inventory</span>
+                            <h3>Nexus ERP</h3>
+                            <p class="work-summary">Inventory, procurement and operations management — a React and Ant Design console over a shared API.</p>
+                            <div class="work-metrics">
+                                <span><strong>React</strong> + Vite</span>
+                                <span><strong>Ant Design</strong> UI</span>
+                            </div>
+                        </div>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-fingerprint"></i> Attendance</span>
+                            <h3>ZKTeco Attendance Bridge</h3>
+                            <p class="work-summary">Service that pulls biometric punch data off ZKTeco terminals and syncs it into the HRMS.</p>
+                            <div class="work-metrics">
+                                <span><strong>Python</strong> service</span>
+                                <span><strong>Biometric</strong> sync</span>
+                            </div>
+                        </div>
+                        <a class="work-card is-dark" href="craigslist/case-studies/algeria-marketplace.html">
+                            <span class="work-pill"><i class="fa fa-store"></i> Marketplace</span>
+                            <h3>Tourism &amp; Artisan Marketplace</h3>
+                            <p class="work-summary">Connecting Algerian artisans with tourists and export buyers, payments and merchant onboarding included.</p>
+                            <div class="work-metrics">
+                                <span><strong>50+</strong> artisans</span>
+                                <span><strong>$25K</strong> revenue</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="work-col dir-up is-slow is-hide-sm">
+                    <div class="work-col-track">
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-industry"></i> Procurement</span>
+                            <h3>SigmaProc</h3>
+                            <p class="work-summary">Yarn procurement automation — Django and React over PostgreSQL, with Celery handling background reconciliation.</p>
+                            <div class="work-metrics">
+                                <span><strong>Django 5.2</strong> API</span>
+                                <span><strong>Postgres</strong> + Redis</span>
+                            </div>
+                        </div>
+                        <a class="work-card is-accent" href="craigslist/case-studies/ai-training.html">
+                            <span class="work-pill"><i class="fa fa-graduation-cap"></i> Training</span>
+                            <h3>Applied AI Training</h3>
+                            <p class="work-summary">An engineering team taken from no applied ML experience to shipping AI features in production.</p>
+                            <div class="work-metrics">
+                                <span><strong>15</strong> engineers</span>
+                                <span><strong>8</strong> features shipped</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-desktop"></i> HR Software</span>
+                            <h3>HRMS Desktop</h3>
+                            <p class="work-summary">Desktop agent tracking application usage, focus time and network state, feeding a management dashboard.</p>
+                            <div class="work-metrics">
+                                <span><strong>Python</strong> desktop</span>
+                                <span><strong>Activity</strong> tracking</span>
+                            </div>
+                        </div>
+                        <div class="work-card is-dark">
+                            <span class="work-pill"><i class="fa fa-car"></i> Mobility</span>
+                            <h3>Velvet</h3>
+                            <p class="work-summary">Luxury cab service for events and executive travel — premium fleet, professional drivers, booking platform.</p>
+                            <div class="work-metrics">
+                                <span><strong>Monorepo</strong> platform</span>
+                            </div>
+                        </div>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-bullhorn"></i> Marketing AI</span>
+                            <h3>AI Marketing Suite</h3>
+                            <p class="work-summary">An agent toolkit that audits a site's marketing and automates the analysis work behind it.</p>
+                            <div class="work-metrics">
+                                <span><strong>Agent</strong> toolkit</span>
+                            </div>
+                        </div>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-industry"></i> Procurement</span>
+                            <h3>SigmaProc</h3>
+                            <p class="work-summary">Yarn procurement automation — Django and React over PostgreSQL, with Celery handling background reconciliation.</p>
+                            <div class="work-metrics">
+                                <span><strong>Django 5.2</strong> API</span>
+                                <span><strong>Postgres</strong> + Redis</span>
+                            </div>
+                        </div>
+                        <a class="work-card is-accent" href="craigslist/case-studies/ai-training.html">
+                            <span class="work-pill"><i class="fa fa-graduation-cap"></i> Training</span>
+                            <h3>Applied AI Training</h3>
+                            <p class="work-summary">An engineering team taken from no applied ML experience to shipping AI features in production.</p>
+                            <div class="work-metrics">
+                                <span><strong>15</strong> engineers</span>
+                                <span><strong>8</strong> features shipped</span>
+                            </div>
+                            <span class="work-link">Read the case study <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-desktop"></i> HR Software</span>
+                            <h3>HRMS Desktop</h3>
+                            <p class="work-summary">Desktop agent tracking application usage, focus time and network state, feeding a management dashboard.</p>
+                            <div class="work-metrics">
+                                <span><strong>Python</strong> desktop</span>
+                                <span><strong>Activity</strong> tracking</span>
+                            </div>
+                        </div>
+                        <div class="work-card is-dark">
+                            <span class="work-pill"><i class="fa fa-car"></i> Mobility</span>
+                            <h3>Velvet</h3>
+                            <p class="work-summary">Luxury cab service for events and executive travel — premium fleet, professional drivers, booking platform.</p>
+                            <div class="work-metrics">
+                                <span><strong>Monorepo</strong> platform</span>
+                            </div>
+                        </div>
+                        <div class="work-card">
+                            <span class="work-pill"><i class="fa fa-bullhorn"></i> Marketing AI</span>
+                            <h3>AI Marketing Suite</h3>
+                            <p class="work-summary">An agent toolkit that audits a site's marketing and automates the analysis work behind it.</p>
+                            <div class="work-metrics">
+                                <span><strong>Agent</strong> toolkit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Selected Work End -->
 
     <!-- Plans & Pricing Start -->
     <section id="pricing" class="pricing-modern" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 50px 0; color: #f9fafb; transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);">
@@ -4067,9 +4725,9 @@
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
                         <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
-                        <h1 class="mb-0">Leading Software Development in New York City</h1>
+                        <h1 class="mb-0">Software Engineering and Automation, Built to Ship</h1>
                     </div>
-                    <p class="mb-4">Sigma Soft AI is your trusted technology partner in New York City, delivering innovative software solutions that drive business growth. We specialize in custom AI applications, web development, mobile apps, and business automation tailored for NYC's dynamic business environment.</p>
+                    <p class="mb-4">Sigma Soft AI is a software and automation partner working with businesses across the US, UK and beyond. We build custom AI applications, web platforms, mobile apps and the automation that removes manual work — designed and shipped by senior engineers, not handed off to juniors.</p>
                     <div class="row g-0 mb-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
                             <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Custom AI Solutions</h5>
@@ -4090,7 +4748,7 @@
                         </div>
                     </div>
                     <div class="d-flex gap-3">
-                        <a href="tel:+92-326-1776046" class="btn btn-primary py-3 px-5 wow zoomIn" data-wow-delay="0.9s" aria-label="Call SigmasoftAI — Head Office (New York) +92 326 1776046">
+                        <a href="tel:+92-326-1776046" class="btn btn-primary py-3 px-5 wow zoomIn" data-wow-delay="0.9s" aria-label="Call Sigma Soft AI — +92 326 1776046">
                             <i class="fa fa-phone me-2"></i>Call Now
                         </a>
                         <a href="#contact" class="btn btn-outline-primary py-3 px-5 wow zoomIn" data-wow-delay="0.9s">
@@ -4100,7 +4758,7 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="assets/images/nyc-office.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="assets/images/nyc-office.jpg" alt="Sigma Soft AI workspace" loading="lazy" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -4113,7 +4771,7 @@
         <div class="container py-5">
             <div class="text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
                 <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
-                <h1 class="mb-0">Comprehensive Software Solutions for NYC Businesses</h1>
+                <h1 class="mb-0">Comprehensive Software Solutions for Growing Businesses</h1>
             </div>
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
@@ -4288,7 +4946,7 @@
                                 <img src="img/logonbg.png" alt="Sigma Soft AI Logo" height="100vw" width="100vw">
                             </h1>
                         </a>
-                        <p class="mt-3 mb-4">Leading software development company in New York City, delivering innovative AI solutions and custom software for businesses.</p>
+                        <p class="mt-3 mb-4">A software and automation team building custom AI solutions, web platforms and mobile apps for businesses worldwide.</p>
                         <form class="row g-2" action="https://formsubmit.co/contact@sigmasoftai.com" method="POST">
                             <div class="col-8">
                                 <label for="newsletter-email" class="visually-hidden">Your Email Address</label>
@@ -4311,15 +4969,19 @@
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                                <p class="mb-0">New York, NY, USA</p>
+                                <p class="mb-0">Lahore, Pakistan &nbsp;·&nbsp; London, UK</p>
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="fa fa-phone-alt text-primary me-2"></i>
-                                <p class="mb-0">+92 326 1776046</p>
+                                <p class="mb-0"><a class="text-light" href="tel:+92-326-1776046">+92 326 1776046</a></p>
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="fa fa-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">contact@sigmasoftai.com</p>
+                                <p class="mb-0"><a class="text-light" href="mailto:contact@sigmasoftai.com">contact@sigmasoftai.com</a></p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="fa fa-clock text-primary me-2"></i>
+                                <p class="mb-0">Available 24 hours, any time zone</p>
                             </div>
                             <div class="d-flex mt-4">
                                 <a class="btn btn-primary btn-square me-2" href="https://twitter.com/SigmaSoftAI" target="_blank" rel="noopener noreferrer" aria-label="Sigma Soft AI on Twitter"><i class="fab fa-twitter fw-normal"></i></a>

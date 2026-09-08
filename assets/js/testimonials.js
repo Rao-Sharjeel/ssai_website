@@ -51,8 +51,20 @@ class TestimonialsLoader {
         const card = document.createElement('div');
         card.className = 'testimonial-card-modern';
         
-        const stars = this.generateStars(testimonial.rating);
-        const services = testimonial.services.map(service => 
+        // Rating and the stat badge are only rendered when the record actually
+        // carries them — we don't display a score we haven't been given.
+        const stars = testimonial.rating
+            ? `<div class="rating-stars">${this.generateStars(testimonial.rating)}</div>`
+            : '';
+        const stat = testimonial.statNumber
+            ? `<div class="testimonial-stats">
+                   <div class="stat-badge ${testimonial.statType || ''}">
+                       <span class="stat-number">${testimonial.statNumber}</span>
+                       <span class="stat-label">${testimonial.statLabel || ''}</span>
+                   </div>
+               </div>`
+            : '';
+        const services = (testimonial.services || []).map(service =>
             `<span class="tag">${service}</span>`
         ).join('');
 
@@ -68,16 +80,9 @@ class TestimonialsLoader {
                     <div class="testimonial-meta">
                         <h5 class="mb-1 fw-bold">${testimonial.name}</h5>
                         <p class="text-muted mb-2">${testimonial.title}</p>
-                        <div class="rating-stars">
-                            ${stars}
-                        </div>
+                        ${stars}
                     </div>
-                    <div class="testimonial-stats">
-                        <div class="stat-badge ${testimonial.statType}">
-                            <span class="stat-number">${testimonial.statNumber}</span>
-                            <span class="stat-label">${testimonial.statLabel}</span>
-                        </div>
-                    </div>
+                    ${stat}
                 </div>
                 
                 <div class="testimonial-content">
