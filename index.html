@@ -615,7 +615,10 @@
             animation-duration: 62s;
         }
 
-        .work-marquee:hover .work-col-track {
+        /* Only the column being hovered (or tabbed into) holds still — the
+           other two keep scrolling. */
+        .work-col:hover .work-col-track,
+        .work-col:focus-within .work-col-track {
             animation-play-state: paused;
         }
 
