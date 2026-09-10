@@ -33,20 +33,14 @@
     <!-- Favicon -->
     <link href="img/favicon64.png" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,600;1,700;1,800&display=swap" rel="stylesheet">
-
+    <!-- Google Web Fonts — one request instead of six.
+         Only the families actually referenced in CSS are requested:
+         MuseoModerno (headings), Nunito (body), Rubik (bootstrap base),
+         Sora (dropdown/nav), Source Code Pro. Playfair Display, Orbitron,
+         Gruppo and Bonher Royale were being downloaded but never used. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Typewriter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Hero Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&family=Bonher+Royale&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -796,6 +790,154 @@
             .work-card:hover { transform: none; }
         }
 
+        /* ===== Mobile hero (<992px only) =====
+           Deliberately independent of the desktop .globe-hero rules so the two
+           can evolve separately. Renders with zero JS and zero WebGL. */
+        .m-hero { display: none; }
+
+        @media (max-width: 991px) {
+            .m-hero {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 100svh;
+                padding: 78px 22px 48px;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+                background:
+                    radial-gradient(ellipse 90% 55% at 50% 32%, rgba(58, 166, 164, 0.20) 0%, transparent 62%),
+                    radial-gradient(ellipse at center, #0b1730 0%, #071022 55%, #030711 100%);
+            }
+
+            /* faint grid, same language as the desktop hero */
+            .m-hero::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image:
+                    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+                background-size: 38px 38px;
+                mask-image: radial-gradient(ellipse at 50% 40%, black 0%, transparent 72%);
+                -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 0%, transparent 72%);
+                pointer-events: none;
+            }
+
+            .m-hero > * { position: relative; z-index: 1; }
+
+            .m-hero-brand img {
+                height: 24px;
+                width: auto;
+                display: block;
+                margin-bottom: 26px;
+            }
+
+            /* ---- CSS/SVG globe ---- */
+            .m-globe {
+                position: relative;
+                width: min(66vw, 260px);
+                aspect-ratio: 1 / 1;
+                border-radius: 50%;
+                margin-bottom: 30px;
+                overflow: hidden;
+                background: radial-gradient(circle at 34% 28%,
+                            rgba(58, 166, 164, 0.42) 0%,
+                            rgba(12, 32, 58, 0.92) 58%,
+                            rgba(3, 9, 20, 0.98) 100%);
+                box-shadow:
+                    0 0 60px rgba(58, 166, 164, 0.28),
+                    inset -16px -20px 46px rgba(0, 0, 0, 0.62);
+            }
+
+            .m-globe-dots {
+                position: absolute;
+                inset: 0;
+                background-image: radial-gradient(circle, rgba(172, 255, 255, 0.85) 1px, transparent 1.4px);
+                background-size: 12px 12px;
+                animation: m-globe-spin 14s linear infinite;
+                mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,0.35) 70%, transparent 78%);
+                -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,0.35) 70%, transparent 78%);
+            }
+
+            /* travels exactly one tile, so the loop is seamless */
+            @keyframes m-globe-spin {
+                from { background-position: 0 0; }
+                to   { background-position: -12px 0; }
+            }
+
+            .m-globe-rings {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .m-globe-rings ellipse,
+            .m-globe-rings circle {
+                stroke: rgba(58, 166, 164, 0.38);
+                stroke-width: 1;
+                fill: none;
+            }
+
+            .m-globe-shade {
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                background: radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.14) 0%, transparent 42%);
+                pointer-events: none;
+            }
+
+            /* ---- copy ---- */
+            .m-hero-copy { max-width: 460px; }
+
+            .m-hero-copy h1 {
+                font-family: 'MuseoModerno', cursive;
+                color: #fff;
+                font-size: clamp(1.85rem, 8vw, 2.5rem);
+                line-height: 1.16;
+                margin-bottom: 16px;
+            }
+
+            .m-hero-copy h1 .accent { color: var(--primary); }
+
+            .m-hero-copy p {
+                font-family: 'Nunito', sans-serif;
+                color: rgba(255, 255, 255, 0.78);
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 26px;
+            }
+
+            .m-hero-cta {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+                color: #fff;
+                font-weight: 700;
+                font-size: 1rem;
+                padding: 15px 26px;
+                border-radius: 50px;
+                text-decoration: none;
+                box-shadow: 0 6px 20px rgba(58, 166, 164, 0.35);
+            }
+
+            .m-hero-cta:active { transform: translateY(1px); color: #fff; }
+
+            .m-hero-micro {
+                font-size: 0.82rem !important;
+                color: rgba(255, 255, 255, 0.6) !important;
+                font-style: italic;
+                margin: 16px 0 0 !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .m-globe-dots { animation: none; }
+        }
+
         /* Sticky Floating CTA */
         .floating-cta {
             position: fixed;
@@ -919,9 +1061,6 @@
             transform: translateY(-2px) !important;
             box-shadow: 0 6px 20px rgba(58, 166, 164, 0.4) !important;
         }
-        
-        /* Import Gruppo font */
-        @import url('https://fonts.googleapis.com/css2?family=Gruppo:wght@400;700&display=swap');
         
         /* Mega Dropdown Menu Styles - Ultra Compact */
         .mega-dropdown {
@@ -3038,52 +3177,6 @@
             }
         }
         
-        .mobile-hero-badge {
-            animation: fadeInDown 1s ease-out;
-        }
-        
-        .mobile-hero-badge .badge {
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 12px rgba(58, 166, 164, 0.3);
-        }
-        
-        .mobile-hero-title {
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-        
-        .mobile-hero-main {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
-        
-        .mobile-hero-subtitle {
-            display: block;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.9);
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-        }
-        
-        .mobile-hero-description {
-            animation: fadeInUp 1s ease-out 0.4s both;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.6;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        .mobile-hero-stats {
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-        
         .stat-item {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
@@ -3109,12 +3202,6 @@
             font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.8);
             font-weight: 500;
-        }
-        
-
-        
-        .mobile-hero-trust {
-            animation: fadeInUp 1s ease-out 1s both;
         }
         
         .trust-badges {
@@ -3543,15 +3630,87 @@
     </div>
     <!-- Hero End -->
 
-    <!-- Mobile Content Container -->
-    <div id="mobileContent"></div>
+    <!-- ================= MOBILE (<992px) =================
+         Inlined rather than fetched: the old build pulled this markup from
+         mobile-hero.html after DOMContentLoaded, so the hero could not paint
+         until a second round trip finished. The globe here is CSS/SVG — no
+         three.js is downloaded on phones at all. -->
+    <div id="mobileContent">
+        <!-- Mobile Header -->
+        <header class="mobile-header d-block d-lg-none">
+            <div class="container">
+                <div class="logo-section">
+                    <img src="new_logos/straight_wordmark_cropped.png" alt="Sigma Soft AI">
+                </div>
+                <div class="hamburger-menu" id="hamburgerMenu" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNavMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="mobile-nav-menu" id="mobileNavMenu">
+                <nav class="mobile-nav">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="service.html" class="mobile-nav-link">Services</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                    <a href="tel:+92-326-1776046" class="mobile-nav-link mobile-nav-cta">
+                        <i class="fa fa-phone me-2"></i>Call Now
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Mobile Hero -->
+        <section class="m-hero">
+            <div class="m-hero-brand">
+                <img src="new_logos/straight_wordmark_cropped.png" alt="Sigma Soft AI" width="150" height="24">
+            </div>
+
+            <!-- CSS/SVG globe: a masked dot field for the surface, two SVG
+                 ellipses for the axis rings. Costs a few KB, paints instantly. -->
+            <div class="m-globe" aria-hidden="true">
+                <div class="m-globe-dots"></div>
+                <svg class="m-globe-rings" viewBox="0 0 200 200" fill="none">
+                    <ellipse cx="100" cy="100" rx="94" ry="34"></ellipse>
+                    <ellipse cx="100" cy="100" rx="94" ry="66"></ellipse>
+                    <circle cx="100" cy="100" r="94"></circle>
+                </svg>
+                <div class="m-globe-shade"></div>
+            </div>
+
+            <div class="m-hero-copy">
+                <h1>Softwares that change your <span class="accent">World</span></h1>
+                <p>AI systems, automation, and full-stack platforms — designed and shipped by senior engineers to move your business forward.</p>
+
+                <a href="tel:+92-326-1776046" class="m-hero-cta" aria-label="Call Sigma Soft AI — +92 326 1776046">
+                    <i class="fa fa-phone"></i>
+                    Call Now — +92 326 1776046
+                </a>
+
+                <p class="m-hero-micro">Available 24 hours — no automated menu, you'll talk to a real senior engineer.</p>
+            </div>
+        </section>
+
+        <!-- Mobile CTA Bar -->
+        <div class="mobile-cta-bar">
+            <a href="tel:+92-326-1776046" class="btn btn-primary" aria-label="Call Sigma Soft AI — +92 326 1776046">
+                <i class="fa fa-phone me-2"></i>Call Now
+            </a>
+            <a href="#contact" class="btn btn-outline-primary">
+                <i class="fa fa-calendar me-2"></i>Book Consult
+            </a>
+        </div>
+    </div>
 
     <!-- Sticky Floating CTA -->
     <a href="tel:+92-326-1776046" class="floating-cta" aria-label="Call Sigma Soft AI — +92 326 1776046">
         <i class="fa fa-phone"></i>
     </a>
 
-    <!-- Mobile CTA Bar lives in mobile-hero.html, injected into #mobileContent -->
+    <!-- Mobile CTA bar is inlined in #mobileContent above -->
 
          <!-- Services Showcase Start -->
      <div class="container-fluid facts py-5 pt-lg-0 d-none d-md-block">
@@ -5066,13 +5225,11 @@
         checkHeaderReveal();
     </script>
 
-    <!-- Particle Globe Hero: shared init functions, called once per hero root
-         (desktop hero below, and again for the mobile hero once it's fetched
-         into #mobileContent). Each call is gated on the current viewport so
-         only the hero actually visible for that breakpoint spins up a WebGL
-         context — otherwise both would render simultaneously in the background. -->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-    <script src="globe-particles/globe-particles.js"></script>
+    <!-- Particle Globe Hero — DESKTOP ONLY.
+         three.js (~600KB) and globe-particles.js are injected at runtime and
+         only above 992px. Phones get the CSS/SVG hero instead and never
+         download the 3D stack. Keep these out of static script-src tags:
+         a static tag downloads on every device regardless of breakpoint. -->
     <script>
         const GLOBE_HERO_OPTIONS = {
             sphereCount: 4200,
@@ -5103,10 +5260,34 @@
             initGlobeParticles(globeCanvas, GLOBE_HERO_OPTIONS);
         }
 
+        function loadScript(src) {
+            return new Promise(function (resolve, reject) {
+                const s = document.createElement('script');
+                s.src = src;
+                s.async = true;
+                s.onload = resolve;
+                s.onerror = reject;
+                document.head.appendChild(s);
+            });
+        }
+
+        // Desktop only: pull in the 3D stack, then start the globe.
         (function () {
             if (window.innerWidth < 992) return;
             const hero = document.getElementById('header-carousel');
-            if (hero) initHeroGlobe(hero);
+            if (!hero) return;
+
+            loadScript('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js')
+                .then(function () { return loadScript('globe-particles/globe-particles.js'); })
+                .then(function () {
+                    initHeroGlobe(hero);
+                    if (typeof initHeroCodeRain === 'function') initHeroCodeRain(hero);
+                })
+                .catch(function () {
+                    // Globe is decorative — if the CDN is unreachable the hero
+                    // still renders, just without the particles.
+                    console.warn('Hero globe unavailable (three.js failed to load)');
+                });
         })();
     </script>
 
@@ -5242,12 +5423,7 @@
             shell.addEventListener('touchend', stop);
             window.addEventListener('resize', () => { if (running) resize(); });
         }
-
-        (function () {
-            if (window.innerWidth < 992) return;
-            const hero = document.getElementById('header-carousel');
-            if (hero) initHeroCodeRain(hero);
-        })();
+        // Started from the desktop globe loader above, once three.js resolves.
     </script>
 
     <!-- Testimonial Touch Controls -->
@@ -5583,37 +5759,9 @@
     });
     </script>
     
-    <!-- Mobile Content Loader -->
+    <!-- Mobile behaviour (markup is inlined above, nothing to fetch) -->
     <script>
-    // Load mobile content from external file
-    function loadMobileContent() {
-        fetch('mobile-hero.html')
-            .then(response => response.text())
-            .then(data => {
-                const mobileContent = document.getElementById('mobileContent');
-                mobileContent.innerHTML = data;
-                // Initialize mobile functionality after content is loaded
-                initializeMobileFunctionality();
 
-                // Particle globe hero (mobile): only spin up on an actual
-                // mobile viewport, so desktop browsers don't run a second,
-                // hidden WebGL scene alongside the desktop hero's.
-                if (window.innerWidth < 992) {
-                    if (typeof initHeroGlobe === 'function') initHeroGlobe(mobileContent);
-                    if (typeof initHeroCodeRain === 'function') initHeroCodeRain(mobileContent);
-                }
-
-                // Re-check the header-reveal threshold now that the mobile
-                // hero's real height is available (it was 0/hidden before this).
-                if (typeof checkHeaderReveal === 'function') checkHeaderReveal();
-            })
-            .catch(error => {
-                console.error('Error loading mobile content:', error);
-                // Fallback: show a simple mobile message if loading fails
-                document.getElementById('mobileContent').innerHTML = '<div class="mobile-fallback">Mobile content loading...</div>';
-            });
-    }
-    
             // Initialize mobile functionality
         function initializeMobileFunctionality() {
             
@@ -5758,9 +5906,8 @@
         }
     }
     
-    // Load mobile content when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
-        loadMobileContent();
+        initializeMobileFunctionality();
     });
     </script>
     
